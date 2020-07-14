@@ -26,7 +26,7 @@ function banner
      /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
      /  /      \/  \/\   \  /      \    /   /    \.
      __/__/_______/___/__\___\__________________________________________________.
-                                (-h TO SEE COMMANDS)"
+                                (-h TO SEE COMMANDS) TEST UPDATE"
         echo ""
         echo ""
         echo ""
