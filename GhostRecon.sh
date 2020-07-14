@@ -26,7 +26,7 @@ function banner
      /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
      /  /      \/  \/\   \  /      \    /   /    \.
      __/__/_______/___/__\___\__________________________________________________.
-                                (-h TO SEE COMMANDS) TEST UPDATE"
+                                (-h TO SEE COMMANDS)"
         echo ""
         echo ""
         echo ""
@@ -125,19 +125,9 @@ while true; do
           clear
       fi
       if [ "$x" == "$a6" ]; then
-        clear
-        echo "UPDATING TOOL..."
-        cd ..
-        mv ./ ./GhostRecon.SAV
-        git clone https://github.com/mZzgamer/GhostRecon.git
-        echo "UPDATE SUCCESSFULLY"
-        rm -rf ./GhostRecon.SAV
-        read -p "PRESS ENTER TO CONTINUE"
-        clear
-        git clone https://github.com/mZzgamer/GhostRecon.git
-        cd GhostRecon/
-        chmod +x GhostRecon.sh
-        sudo bash GhostRecon.sh
+           echo ""
+           echo "    STILL WORK IN PROGRESS..."
+           echo ""
       fi
       if [ "$x" == "$a7" ]; then
           banner
