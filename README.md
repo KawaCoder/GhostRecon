@@ -7,7 +7,7 @@ A compact OSINT tool for begginers.
 ## HOW TO INSTALL???
 - git clone https://github.com/mZzgamer/GhostRecon.git
 - cd GhostRecon
-- chmod +x GhostRecon
+- chmod +x GhostRecon.sh
 - ./GhostRecon.sh
 ## HOW TO USE?
 - Just type (--help) to see all the commands.
