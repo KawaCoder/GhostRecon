@@ -10,6 +10,10 @@ A compact OSINT tool for begginers.
 ## SCREENSHOT
 ![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87510390-05d30980-c663-11ea-8827-fc8dd960513e.png)
 ![Screenshot_2020-07-15_14-18-12](https://user-images.githubusercontent.com/66206932/87510407-0d92ae00-c663-11ea-8fd5-76adecf8d684.png)
+## HOW TO SETUP REQUIREMENTS?
+- Go to GhostRecon directory
+- chmod +x install-requirements.sh
+- ./install-requirements.sh
 ## HOW TO INSTALL???
 - git clone https://github.com/mZzgamer/GhostRecon.git
 - cd GhostRecon
