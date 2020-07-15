@@ -6,7 +6,8 @@ A compact OSINT tool for begginers.
 ## DEVELOPERS
 - mZzgamer
 ## SCREENSHOT
-![Screenshot_2020-07-14_20-49-27](https://user-images.githubusercontent.com/66206932/87427643-a1676a00-c5d0-11ea-84f5-90c1c52cc45d.png)
+![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87510390-05d30980-c663-11ea-8827-fc8dd960513e.png)
+![Screenshot_2020-07-15_14-18-12](https://user-images.githubusercontent.com/66206932/87510407-0d92ae00-c663-11ea-8fd5-76adecf8d684.png)
 ## HOW TO INSTALL???
 - git clone https://github.com/mZzgamer/GhostRecon.git
 - cd GhostRecon
