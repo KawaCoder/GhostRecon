@@ -1,3 +1,6 @@
+## NOTE:
+This tool is still on BETA, you may experience some bugs and issues,
+but we're fixing those and we'll probably release V.1.0 soon.
 ## GhostRecon
 A compact OSINT tool for begginers.
 ## DEVELOPERS
