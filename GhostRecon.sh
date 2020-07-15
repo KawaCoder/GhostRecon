@@ -36,7 +36,7 @@ banner
 function help
     {
       echo "
-      USAGE: run [core_commands] [suggested] | <sub_commands>...
+  USAGE: run [core_commands] [suggested] | <sub_commands>...
 
       ABOUT:
         GhostRecon is compact OSINT tool for OSINT investigators.
@@ -60,20 +60,21 @@ function help
           ssh_scan            SSH scanner.
           sqlmap              SQL scanner.
           vuln_scan           Scans for Vulnerabilities.
+          link_sniffer        This could reveal social medias
 
         <sub_commands>
           clear               Clear terminal
           update              Update tool
           banner              To spawn banner
 
-      ABOUT ARGUMENTS:
-        Showing additional information about this program.
+   ABOUT ARGUMENTS:
+     Showing additional information about this program.
 
-        -h, --help            shows this help and exists.
-        -v  --version         shows the version of the program and exists.
+      -h, --help            shows this help and exists.
+      -v  --version         shows the version of the program and exists.
 
-      Use 'run <command> --help' to learn more about each command. You can contact me
-      if there is any issues by Twitter & Discord. (Discord) mZzgamer#8652 (Twitter) @mZzgamerDEV
+   Use 'run <command> --help' to learn more about each command. You can contact me
+   if there is any issues by Twitter & Discord. (Discord) mZzgamer#8652 (Twitter) @mZzgamerDEV
 
       CTRL+C to exit!"
       echo ""
@@ -102,6 +103,7 @@ a17='run sqlmap'
 a18='run vuln_scan'
 a19='run generate_user'
 a20='run email_info'
+a21='run link_sniffer'
 
 while true; do
   read -p " GhostRecon > " x
@@ -134,8 +136,8 @@ while true; do
       fi
       if [ "$x" == "$a8" ]; then #WHOIS
           echo ""
-          echo "WHAT WEBSITE DO YOU WANT TO SEARCH?"
-          read -p "DOMAIN: " whois
+          echo "WHAT IP OR DOMAIN YOU WANT TO SEARCH?"
+          read -p "IP/DOMAIN: " whois
           echo ""
           echo "Gathering Information..."
           echo ""
@@ -166,8 +168,8 @@ while true; do
       fi
       if [ "$x" == "$a11" ]; then #DNS_LOOKUP
       echo ""
-      echo "Enter IP Address - IP Range Or Domain"
-      read -p "DNS LOOKUP: " DNS_LOOKUP
+      echo "Enter Domain."
+      read -p "DOMAIN: " DNS_LOOKUP
       echo ""
       echo "Gathering Information..."
       echo ""
@@ -177,8 +179,8 @@ while true; do
       fi
       if [ "$x" == "$a12" ]; then #reverse_DNS
       echo ""
-      echo "Enter IP Or Domain."
-      read -p "IP/DOMAIN: " reversedns
+      echo "Enter IP Address from Domain."
+      read -p "IP Address: " reversedns
       echo ""
       echo "Gathering Information..."
       echo ""
@@ -271,6 +273,25 @@ while true; do
       echo ""
       apt install osrframework
       mailfy -m $email_info -p all
+      echo ""
+      echo ""
+      fi
+      if [ "$x" == "$a19" ]; then #generate_user
+      echo ""
+      apt install osrframework
+      osrf alias_generator
+      echo ""
+      echo ""
+      fi
+      if [ "$x" == "$a21" ]; then #link_sniffer
+      echo ""
+      echo "this can reveal social media pages etc."
+      echo "Enter Domain Name"
+      read -p "DOMAIN NAME: " link_sniffer
+      echo ""
+      echo "Gathering Information..."
+      echo ""
+      curl https://api.hackertarget.com/pagelinks/?q=$link_sniffer
       echo ""
       echo ""
       fi
