@@ -25,6 +25,9 @@ function banner
    }
 banner
 echo ""
+echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
+echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 echo ""
 
 #PYTHON
