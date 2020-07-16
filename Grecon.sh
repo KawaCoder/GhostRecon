@@ -85,7 +85,7 @@ function help
       echo ""
     }
 
-$DIRECTORY='GhostRecon'
+DIRECTORY='GhostRecon'
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
