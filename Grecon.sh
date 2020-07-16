@@ -165,10 +165,6 @@ while true; do
          echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
          echo "-------------------------------------------------------------------------------------------------------------"
          python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $domain -q -r
-         echo ""
-         echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
          msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
          echo ""
          echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
