@@ -118,16 +118,16 @@ while true; do
          cd ..
          mv ./GhostRecon ./GhostRecon.SAV
          git clone https://github.com/mZzgamer/GhostRecon.git
-             	if [ -d $DIRECTORY ]; then
-             		rm -rf ./ZEDD.SAV
-             		read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
-             	else
-             	read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
-             	clear
-             	cd GhostRecon
-             	chmod +x GhostRecon.sh
-         echo ""
-     fi
+         if [ -d $DIRECTORY ]; then
+            rm -rf ./ZEDD.SAV
+            read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
+         	else
+           	read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
+           	clear
+           	cd GhostRecon
+           	chmod +x GhostRecon.sh
+            echo ""
+       fi
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
          echo ""
@@ -206,29 +206,29 @@ while true; do
        echo "Gathering Informations...."
        echo ""
        echo -e "\e[1;31m [*] IP LOCATION\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        curl http://api.hackertarget.com/geoip/?q=$ipaddress
        echo ""
        echo ""
        echo ""
        echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        whois $ipaddress
        echo ""
        echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        whois $ipaddress
        echo ""
        echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        nmap $ipaddress
        echo ""
        echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        shodan stats --facets vuln net:$ipaddress
        echo ""
@@ -236,12 +236,12 @@ while true; do
        echo ""
        echo ""
        echo -e "\e[1;31m [*] EMAILS SCANNED\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        echo "UNDER DEVELOPEMENT..."
        echo ""
        echo -e "\e[1;31m [*] DNS RECORDS\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        curl http://api.hackertarget.com/reverseiplookup/?q=$ipaddress
        echo ""
@@ -256,7 +256,7 @@ while true; do
        echo "Gathering Information..."
        echo ""
        echo -e "\e[1;31m [*] PHONE $phone_info\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        curl https://api.telnyx.com/anonymous/v2/number_lookup/$phone_info
        echo ""
        echo ""
@@ -268,7 +268,7 @@ while true; do
        echo "Gathering Information..."
        echo ""
        echo -e "\e[1;31m [*] EMAIL $email_info\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        mailfy -m $email_info -p all
        echo ""
        echo ""
@@ -280,7 +280,7 @@ while true; do
        echo " Gathering Information..."
        echo ""
        echo -e "\e[1;31m [*] VULNERABILITY SCAN\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        msfconsole -q -x "nmap -v --script vuln $vuln ;exit ;"
        nmap -O $domain
        python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $vuln -q -r
@@ -293,7 +293,7 @@ while true; do
        echo "Gathering Information..."
        echo ""
        echo -e "\e[1;31m [*] SNIFFING LINKS\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        curl https://api.hackertarget.com/pagelinks/?q=$link
        echo ""
      fi
@@ -308,7 +308,7 @@ while true; do
        echo "Gathering Information..."
        echo ""
        echo -e "\e[1;31m [*] POSSIBLE SOCIAL MEDIA ACCOUNTS\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+       echo "-------------------------------------------------------------------------------------------------------------"
        cd
        cd spiderfoot/
        python3 ./sf.py -m sfp_accounts -s $username -q
