@@ -69,6 +69,5 @@ echo ""
 shodan init $shodan
 
 echo ""
-#INSTALL TOOL
-chmod +x Grecon.sh
-./Grecon.sh
+echo "DONE!"
+#DONE
