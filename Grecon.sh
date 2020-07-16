@@ -111,7 +111,7 @@ while true; do
      fi
      if [ "$x" == "$a3" ]; then
          echo ""
-         echo -e "\e[1;31m  UPDATE IS STILL UNDER DEVELOPEMENT...\e[0m"
+         echo -e "\e[1;31m  UPDATE IS STILL UNDER DEVELOPEMENT... AND THERE IS NO UPDATES!\e[0m"
          echo ""
        fi
 ############################################################################################################
