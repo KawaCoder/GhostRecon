@@ -1,6 +1,7 @@
 Hi! Thank you for downloading our program.
 If you're having this error on the installation (./install-requirements.sh: line 66: easy_install: command not found)
-Just manually install it by typing "easy_install shodan" on your terminal. You also need a Shodan API key for some features we
+Just manually install it by typing "easy_install shodan" on your terminal. If you also find this problem (mailfy command not found)
+Just install "osrframework". You also need a Shodan API key for some features we
 have on the tool.
 
 HOW TO EXECUTE COMMANDS?
