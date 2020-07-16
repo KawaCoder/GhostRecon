@@ -85,7 +85,6 @@ function help
       echo ""
     }
 
-DIRECTORY='GhostRecon'
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
@@ -112,21 +111,8 @@ while true; do
      fi
      if [ "$x" == "$a3" ]; then
          echo ""
-         echo -e "\e[1;31m [*] UPDATING\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
+         echo -e "\e[1;31m  UPDATE IS STILL UNDER DEVELOPEMENT...\e[0m"
          echo ""
-         cd ..
-         mv ./GhostRecon ./GhostRecon.SAV
-         git clone https://github.com/mZzgamer/GhostRecon.git
-         if [ -d $DIRECTORY ]; then
-            rm -rf ./ZEDD.SAV
-            read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
-         	else
-           	read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
-           	clear
-           	cd GhostRecon
-           	chmod +x GhostRecon.sh
-            echo ""
        fi
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
