@@ -26,7 +26,7 @@ function banner
                       | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
            /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
           /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-         /****\   /\.             DEVELOPER: MZZGAMER | VERSION: BETA
+         /****\   /\.             DEVELOPER: MZZGAMER | VERSION: V.1.0
         /      \ /**\.
        /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
       /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
@@ -117,7 +117,7 @@ while true; do
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
          echo ""
-         echo -e "\e[1;31m  VERSION: BETA\e[0m"
+         echo -e "\e[1;31m  VERSION: V.1.0\e[0m"
          echo ""
      fi
      if [ "$x" == "$b2" ]; then
@@ -128,7 +128,7 @@ while true; do
      fi
      if [ "$x" == "$b4" ]; then
        echo ""
-       echo -e "\e[1;31m  VERSION: BETA\e[0m"
+       echo -e "\e[1;31m  VERSION: V.1.0\e[0m"
        echo ""
      fi
      if [ "$x" == "$b5" ]; then
