@@ -40,7 +40,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING OSRFRAMEWORK\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-apt install osrframework
+pip3 install osrframework
 echo ""
 #NIKTO
 echo -e "\e[1;31m [*] INSTALLING NIKTO\e[0m"
