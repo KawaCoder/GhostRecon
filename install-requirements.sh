@@ -43,6 +43,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING OSRFRAMEWORK\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
+sudo apt-get install osrframework
 pip3 install osrframework
 echo ""
 #NIKTO
