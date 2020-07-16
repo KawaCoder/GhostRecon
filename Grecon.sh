@@ -43,8 +43,8 @@ banner
 function help
     {
       echo "
-  USAGE: run [core_commands]
-  example: run -i 192.168.121 -d kali.org ... etc.
+  USAGE: run [core_commands], <sub_commands>
+  example: run domain_scanner, | clear
   You get the point.
 
       ABOUT:
