@@ -43,6 +43,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING OSRFRAMEWORK\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
+apt install osrframework
 sudo apt-get install osrframework
 pip3 install osrframework
 echo ""
@@ -50,6 +51,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING NIKTO\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
+sudo apt install nikto
 sudo apt-get install nikto
 sudo apt-get install nikto -y
 echo ""
