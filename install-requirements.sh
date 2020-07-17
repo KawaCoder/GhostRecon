@@ -74,6 +74,7 @@ echo -e "\e[1;31m [*] INSTALLING SPIDERFOOT\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 git clone https://github.com/smicallef/spiderfoot.git
+mv spiderfoot /root/
 cd
 cd spiderfoot/
 pip3 install -r requirements.txt
