@@ -69,6 +69,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
+sudo easy_install shodan
 easy_install shodan
 read -p "Shodan API key (REQUIRED): " shodan
 echo ""
