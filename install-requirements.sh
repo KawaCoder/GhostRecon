@@ -97,8 +97,8 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-sudo mv -v Grecon /usr/bin/
-sudo mv -v firefly /root/
+sudo mvdir -v Grecon /usr/bin/
+sudo mvdir -v firefly /root/
 
 echo ""
 echo -e "\e[1;31m[*] DONE YOU CAN NOW EXECUTE IT BY TYPING (Grecon)\e[0m"
