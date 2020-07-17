@@ -12,7 +12,6 @@ A compact OSINT tool for begginers.
 - type --help or -h to see commands on the program.
 - READ THE (README_PLEASE.txt) for more reference and guide about the program.
 ## HOW TO INSTALL:
-- cd /home/kali/Documents/   (THIS IS IMPORTANT)
 - git clone https://github.com/mZzgamer/GhostRecon.git
 - cd GhostRecon/
 - chmod +x Grecon install-requirements.sh 
