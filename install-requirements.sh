@@ -69,7 +69,7 @@ sudo apt install nikto
 sudo apt-get install nikto
 sudo apt-get install nikto -y
 echo ""
-#SPIDERFOOT
+#SPIDERFOOT (ERROR)
 echo -e "\e[1;31m [*] INSTALLING SPIDERFOOT\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
@@ -82,7 +82,6 @@ echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 sudo easy_install shodan
-easy_install shodan
 sudo pip install shodan
 echo ""
 echo "HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI"
@@ -91,10 +90,12 @@ read -p "SHODAN API KEY (REQUIRED): " shodan
 echo ""
 shodan init $shodan
 echo ""
-#MOVE DIR
+#MOVE DIR (ERROR)
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
+mv -v Grecon /usr/bin/
+mv -v firefly /root/
 
 echo ""
 echo -e "\e[1;31m[*] DONE YOU CAN NOW EXECUTE IT BY TYPING (Grecon)\e[0m"
