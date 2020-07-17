@@ -13,12 +13,9 @@ A compact OSINT tool for begginers.
 - READ THE (README_PLEASE.txt) for more reference and guide about the program.
 ## HOW TO INSTALL:
 - git clone https://github.com/mZzgamer/GhostRecon.git
-- mv GhostRecon /root/
-- cd
 - cd GhostRecon/
-- chmod +x Grecon install-requirements.sh 
-- mv Grecon /usr/bin
-- ./install-requirements.sh 
+- chmod +x Grecon install-requirements.sh
+- ./install-requirements.sh
 ## HOW TO RUN TOOL?
 - Just simply type (Grecon) on your terminal.
 ## REMINDER:
