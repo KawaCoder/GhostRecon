@@ -74,7 +74,6 @@ echo -e "\e[1;31m [*] INSTALLING SPIDERFOOT\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 git clone https://github.com/smicallef/spiderfoot.git
-mv spiderfoot /root/
 cd
 cd spiderfoot/
 pip3 install -r requirements.txt
@@ -97,8 +96,8 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-sudo mvdir -v Grecon /usr/bin/
-sudo mvdir -v firefly /root/
+mv -v Grecon /usr/bin/
+mv -v firefly /root/
 
 echo ""
 echo -e "\e[1;31m[*] DONE YOU CAN NOW EXECUTE IT BY TYPING (Grecon)\e[0m"
