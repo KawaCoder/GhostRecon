@@ -97,7 +97,6 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-cd /home/kali/Documents/
 mv -v ./Grecon /usr/bin/
 mv -v firefly /root/
 
