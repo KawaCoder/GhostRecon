@@ -1,5 +1,8 @@
 ## GhostRecon:
 A compact OSINT tool for begginers.
+## OS AVAILABLE
+- LINUX DISTRIBUTIONS
+- OTHERS? I DON'T KNOW.
 ## DEVELOPER:
 - mZzgamer
 ## SPECIAL THANKS TO THESE PEOPLE FOR HELPING ME.
