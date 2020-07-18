@@ -75,11 +75,12 @@ function help
 
 
         <sub_commands>
-          start anonsurf       Start Tor
-          stop anonsurf        Stop Tor
-          clear                Clear terminal
-          update               Update tool
-          banner               To spawn banner
+          start anonsurf       Start Anonsurf.
+          stop anonsurf        Stop Anonsurf.
+          check status         Check Anonsurf status.
+          clear                Clear terminal.
+          update               Update tool.
+          banner               To spawn banner.
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -101,6 +102,7 @@ a2='banner' ##
 a3='update' ##
 a4='start anonsurf'
 a5='stop anonsurf'
+a6='check status'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -156,11 +158,16 @@ do
          echo -e "\e[1;31m[*] ANONSURF ENABLED\e[0m"
          echo ""
      fi 
-     if [ "$x" == "$a4" ]; then
+     if [ "$x" == "$a5" ]; then
          echo ""
          anonsurf stop
          echo ""
          echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
+         echo ""
+     fi 
+     if [ "$x" == "$a6" ]; then
+         echo ""
+         anonsurf status
          echo ""
      fi 
 ############################################################################################################
