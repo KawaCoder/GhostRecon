@@ -19,7 +19,7 @@ A compact OSINT tool for begginers.
 - spiderfoot
 - GhostRecon
 - IP_locator
-IF YOU MOVED THE FOLLOWING FILES, YOU MAY EXPERIENCE ERRORS ON THE TOOL.
+- IF YOU MOVED THE FOLLOWING FILES, YOU MAY EXPERIENCE ERRORS ON THE TOOL.
 ## HOW TO INSTALL:
 - cd
 - git clone https://github.com/mZzgamer/GhostRecon.git 
