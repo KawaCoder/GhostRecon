@@ -16,7 +16,8 @@ A compact OSINT tool for begginers.
 - READ THE (README_PLEASE.txt) for more reference and guide about the program.
 - MAKE SURE IF YOU ALREADY HAVE SPIDERFOOT, IT SHOULD ME ON /root/ DIRECTORY.
 ## HOW TO INSTALL:
-- git clone https://github.com/mZzgamer/GhostRecon.git
+- git clone https://github.com/mZzgamer/GhostRecon.git /root/
+- cd
 - cd GhostRecon/
 - chmod +x Grecon install-requirements.sh
 - ./install-requirements.sh
