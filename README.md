@@ -15,7 +15,7 @@ A compact OSINT tool for begginers.
 - GhostRecon
 - IP_locator
 - IF YOU MOVED THE FOLLOWING FILES, YOU MAY EXPERIENCE ERRORS ON THE TOOL.
-## HOW TO INSTALL: (THE cd IS IMPORTANT DON'T MISS IT)
+## HOW TO INSTALL (THE cd IS IMPORTANT DON'T MISS IT):
 - cd 
 - git clone https://github.com/mZzgamer/GhostRecon.git 
 - cd GhostRecon/
