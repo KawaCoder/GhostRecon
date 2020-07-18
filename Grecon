@@ -75,11 +75,11 @@ function help
 
 
         <sub_commands>
-          tor start            Start Tor
-          tor stop             Stop Tor
-          clear               Clear terminal
-          update              Update tool
-          banner              To spawn banner
+          start anonsurf       Start Tor
+          stop anonsurf        Stop Tor
+          clear                Clear terminal
+          update               Update tool
+          banner               To spawn banner
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -99,8 +99,8 @@ function help
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
-a4='tor start'
-a5='tor stop'
+a4='start anonsurf'
+a5='stop anonsurf'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -149,32 +149,20 @@ do
             sudo bash install-requierments
           fi
      fi
-
-
-     if [ "$x" == "$a4" ]; then       #START TOR
-       if [ "$torstart" == true ]; then
-           echo "TOR IS ALREADY RUNNING. YOU ARE PROTECTED NOW."
-       else
-           echo "STARTING TOR..."
-          systemctl start tor
-          echo "TOR HAS STARTED. YOU ARE PROTECTED NOW."
-          torstart=true
-        fi
-     fi
-
-     if [ "$x" == "$a5" ]; then     #STOP TOR
-          echo "ARE YOU SURE YOU WANT TO BE TRACABLE BY STOPPING TOR?"
-          read -p "|
--->" y
-          if [ "$y" == "yes" ]; then
-            echo "OK. DISABLING TOR."
-            systemctl stop tor
-            echo "TOR IS DISABLED."
-            torstart=false
-          else
-            echo "OK. TOR IS STILL RUNNING."
-          fi
-     fi
+     if [ "$x" == "$a4" ]; then
+         echo ""
+         anonsurf start
+         echo ""
+         echo -e "\e[1;31m[*] ANONSURF ENABLED\e[0m"
+         echo ""
+     fi 
+     if [ "$x" == "$a4" ]; then
+         echo ""
+         anonsurf stop
+         echo ""
+         echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
+         echo ""
+     fi 
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
          echo ""
