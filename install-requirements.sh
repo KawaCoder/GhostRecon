@@ -55,7 +55,7 @@ sudo apt-get install python3-pip
 sudo apt-get install python-setuptools
 echo ""
 #phonelocator
-echo -e "\e[1;31m [*] INSTALLING ANONSURF\e[0m"
+echo -e "\e[1;31m [*] INSTALLING ANONIMITY\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 cd
