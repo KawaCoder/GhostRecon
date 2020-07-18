@@ -11,6 +11,7 @@ A compact OSINT tool for begginers.
 - MUST BE ROOTED BEFORE INSTALLING AND RUNNING!
 - type --help or -h to see commands on the program.
 - READ THE (README_PLEASE.txt) for more reference and guide about the program.
+- MAKE SURE IF YOU ALREADY HAVE SPIDERFOOT, IT SHOULD ME ON /root/ DIRECTORY.
 ## HOW TO INSTALL:
 - git clone https://github.com/mZzgamer/GhostRecon.git
 - cd GhostRecon/
