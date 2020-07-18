@@ -16,6 +16,7 @@ A compact OSINT tool for begginers.
 - cd GhostRecon/
 - chmod +x Grecon install-requirements.sh
 - ./install-requirements.sh
+- ./Grecon.sh
 ## HOW TO RUN TOOL?
 - Just simply type (Grecon) on your terminal.
 ## REMINDER:
