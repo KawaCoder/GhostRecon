@@ -27,4 +27,7 @@ A compact OSINT tool for begginers.
 - ./install-requirements.sh
 ## HOW TO RUN TOOL?
 - Just simply type Grecon on your terminal.
+## HOW TO USE TOOL? (SHORTCUT)
+- run [core_commands]
+- [sub_commands] (NO run)
 
