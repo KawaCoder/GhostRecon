@@ -55,11 +55,12 @@ sudo apt-get install python3-pip
 sudo apt-get install python-setuptools
 echo ""
 #phonelocator
-echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
+echo -e "\e[1;31m [*] INSTALLING ANONSURF\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-apt-get install tor
-tor
+git clone https://github.com/Und3rf10w/kali-ano...
+cd kali-anonsurf/
+./installer.sh
 echo ""
 #phonelocator
 echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
