@@ -10,11 +10,6 @@ A compact OSINT tool for begginers.
 ![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87510390-05d30980-c663-11ea-8827-fc8dd960513e.png)
 ## HELP OPTIONS:
 ![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87846335-a7a26280-c8be-11ea-8881-bee50a2264ef.png)
-## NOTE
-- MUST BE ROOTED BEFORE INSTALLING AND RUNNING!
-- type --help or -h to see commands on the program.
-- READ THE (README_PLEASE.txt) for more reference and guide about the program.
-- MAKE SURE IF YOU ALREADY HAVE SPIDERFOOT, IT SHOULD ME ON /root/ DIRECTORY.
 ## REMINDER: KEEP THE FOLLOWING FILES ON /root/ DIRECTORY.
 - spiderfoot
 - GhostRecon
@@ -28,7 +23,4 @@ A compact OSINT tool for begginers.
 - ./install-requirements.sh
 ## HOW TO RUN TOOL?
 - Just simply type Grecon on your terminal.
-## REMINDER:
-- UPDATE OPTION IS STILL UNDER DEVELOPEMENT...
-- NO UPDATES YET...
 
