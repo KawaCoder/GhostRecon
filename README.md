@@ -16,7 +16,8 @@ A compact OSINT tool for begginers.
 - IP_locator
 - IF YOU MOVED THE FOLLOWING FILES, YOU MAY EXPERIENCE ERRORS ON THE TOOL.
 ## HOW TO INSTALL:
-- cd  (THIS IS IMPORTANT)
+## THE cd IS IMPORTANT!
+- cd 
 - git clone https://github.com/mZzgamer/GhostRecon.git 
 - cd GhostRecon/
 - chmod +x Grecon install-requirements.sh
