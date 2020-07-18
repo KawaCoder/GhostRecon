@@ -151,6 +151,7 @@ while true; do
          echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
          echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
          echo ""
+         echo "Example: kali.org (JUST ONE DOMAIN)"
          read -p "[DOMAIN]: " domain
          echo ""
          echo "Gathering Informations...."
