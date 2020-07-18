@@ -69,10 +69,11 @@ sudo apt install nikto
 sudo apt-get install nikto
 sudo apt-get install nikto -y
 echo ""
-#SPIDERFOOT (ERROR)
+#SPIDERFOOT
 echo -e "\e[1;31m [*] INSTALLING SPIDERFOOT\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
+cd 
 git clone https://github.com/smicallef/spiderfoot.git
 cd spiderfoot/
 pip3 install -r requirements.txt
@@ -82,6 +83,7 @@ echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 sudo easy_install shodan
+easy_install shodan
 sudo pip install shodan
 echo ""
 echo "HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI"
@@ -90,7 +92,7 @@ read -p "SHODAN API KEY (REQUIRED): " shodan
 echo ""
 shodan init $shodan
 echo ""
-#MOVE DIR (ERROR)
+#MOVE DIR
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
