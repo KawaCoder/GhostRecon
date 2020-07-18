@@ -9,7 +9,7 @@ A compact OSINT tool for begginers.
 ## SCREENSHOT:
 ![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87510390-05d30980-c663-11ea-8827-fc8dd960513e.png)
 ## HELP OPTIONS:
-![Screenshot_2020-07-15_14-18-12](https://user-images.githubusercontent.com/66206932/87665129-f54f8b80-c755-11ea-93aa-fe326f5db3ac.png)
+![Screenshot_2020-07-14_18-47-29](https://user-images.githubusercontent.com/66206932/87846335-a7a26280-c8be-11ea-8881-bee50a2264ef.png)
 ## NOTE
 - MUST BE ROOTED BEFORE INSTALLING AND RUNNING!
 - type --help or -h to see commands on the program.
