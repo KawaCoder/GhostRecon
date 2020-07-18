@@ -103,7 +103,9 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-eval 'mv $PWD/Grecon /usr/bin'
+cd
+cd /root/GhostRecon/
+mv -v Grecon /usr/bin/
 
 
 echo ""
