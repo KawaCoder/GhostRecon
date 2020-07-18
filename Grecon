@@ -253,7 +253,7 @@ while true; do
        echo ""
        cd
        cd Phone_locator/
-       python Phone_locator.py $phone_info
+       python IP_locator.py $phone_info 
        echo ""
        echo ""
      fi
