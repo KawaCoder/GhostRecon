@@ -204,6 +204,7 @@ while true; do
        echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
        echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
        echo ""
+       echo "Example: 192.164.123"
        read -p "[IP ADDRESS]: " ipaddress
        echo ""
        echo "Gathering Informations...."
@@ -258,6 +259,7 @@ while true; do
      fi
      if [ "$x" == "$b8" ]; then
        echo ""
+       echo "Example: example@gmail.com"
        read -p "Email Address: " email_info
        echo ""
        echo "Gathering Information..."
@@ -270,6 +272,7 @@ while true; do
      fi
      if [ "$x" == "$b9" ]; then
        echo ""
+       echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
        read -p "IP/DOMAIN: " vuln
        echo ""
        echo " Gathering Information..."
@@ -294,6 +297,7 @@ while true; do
      fi
      if [ "$x" == "$b10" ]; then
        echo ""
+       echo "Example: kali.org"
        read -p "Enter DOMAIN: " link
        echo ""
        echo "Gathering Information..."
@@ -309,6 +313,7 @@ while true; do
        echo -e "\e[1;31m!!!  PUT IN POSSIBLE USERNAME  !!!\e[0m"
        echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
        echo ""
+       echo "Example: elonmusk"
        read -p "Username: " username
        echo ""
        echo "Gathering Information..."
