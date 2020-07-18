@@ -58,6 +58,7 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING ANONSURF\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
+cd
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf/
 ./installer.sh
