@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#VARIABLES
+dir='pwd'
+
 #COMMANDS
 clear
 function banner
@@ -103,7 +106,8 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-mv -v /home/kali/Documents/Grecon /usr/bin/
+mv -v $dir/grecon.sh /usr/bin
+
 
 echo ""
 echo -e "\e[1;31m[*] DONE YOU CAN NOW EXECUTE IT BY TYPING Grecon\e[0m"
