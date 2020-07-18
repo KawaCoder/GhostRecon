@@ -103,7 +103,7 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-mv -v /root/Grecon/ /usr/bin
+eval 'mv $PWD/Grecon /usr/bin'
 
 
 echo ""
