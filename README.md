@@ -1,9 +1,9 @@
 ## GhostRecon:
 A compact OSINT tool for begginers.
-## DEVELOPERS:
+## DEVELOPER:
 - mZzgamer
+## SPECIAL THANKS TO THESE PEOPLE FOR HELPING ME.
 - DR34M-M4K3R
-## SPECIAL THANKS TO THESE PEOPLE FOR HELPING ME FIX THE BUG.
 - Cyber
 - Acid Dynamics
 ## SCREENSHOT:
