@@ -124,7 +124,6 @@ do
   read -p " [GRECON] > " x
      if [ "$x" == "$a1" ]; then
          clear
-         banner
      fi
      if [ "$x" == "$a2" ]; then
          banner
