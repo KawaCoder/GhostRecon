@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#VARIABLES
-eval '$PWD/Grecon'
-
 #COMMANDS
 clear
 function banner
@@ -106,7 +103,7 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-mv -v $eval /usr/bin
+mv -v /root/Grecon/ /usr/bin
 
 
 echo ""
