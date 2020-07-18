@@ -58,7 +58,7 @@ echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 cd
-git clone https://github.com/mZzgamer/IP_locator.git
+git clone https://github.com/mZzgamer/Phone_locator.git
 echo ""
 #osrframework
 echo -e "\e[1;31m [*] INSTALLING OSRFRAMEWORK\e[0m"
