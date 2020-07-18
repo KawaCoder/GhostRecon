@@ -75,9 +75,9 @@ function help
 
 
         <sub_commands>
-          start anonsurf       Start Anonsurf.
-          stop anonsurf        Stop Anonsurf.
-          check status         Check Anonsurf status.
+          hide identity        enable anonimity (will hide your identity)
+          unhide identity      disable anonimity (Will not hide your identity)
+          check status         Check Anonimity status.
           clear                Clear terminal.
           update               Update tool.
           banner               To spawn banner.
@@ -100,8 +100,8 @@ function help
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
-a4='start anonsurf'
-a5='stop anonsurf'
+a4='hide identity'
+a5='unhide identity'
 a6='check status'
 #####################
 b1='-v' ##
