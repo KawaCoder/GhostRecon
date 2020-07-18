@@ -38,6 +38,7 @@ function banner
      /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
      /  /      \/  \/\   \  /      \    /   /    \.
      __/__/_______/___/__\___\__________________________________________________."
+        echo -e "\e[34m                     GhostRecon: investigate, search, anonymously.\e[0m"
         echo -e "\e[1;31m                           !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
         echo -e "\e[1;31m                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
         echo ""
@@ -54,7 +55,7 @@ function help
   You get the point.
 
       ABOUT:
-        GhostRecon is compact OSINT tool for OSINT investigators.
+        GhostRecon is compact OSINT tool for OSINT investigators, use Tor by default.
         Developer: mZzgamerDEV
         Status: Still under developement.
 
@@ -74,6 +75,8 @@ function help
 
 
         <sub_commands>
+          tor start            Start Tor
+          tor stop             Stop Tor
           clear               Clear terminal
           update              Update tool
           banner              To spawn banner
@@ -96,6 +99,8 @@ function help
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
+a4='tor start'
+a5='tor stop'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -109,23 +114,68 @@ b9='run vuln_scanner'
 b10='run link_scanner'
 b11='run media_scanner'
 b12='run bitcoin_scanner'
+#START TOR
+systemctl start tor
+torstart=true
 
 #NEW COMMANDS
-while true; do
+while true
+do
   read -p " [GRECON] > " x
      if [ "$x" == "$a1" ]; then
          clear
+         banner
      fi
      if [ "$x" == "$a2" ]; then
          banner
      fi
+
      if [ "$x" == "$a3" ]; then
-         echo ""
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo -e "\e[1;31m  UPDATE IS STILL UNDER DEVELOPEMENT... AND THERE IS NO UPDATES!\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-       fi
+        clear
+        echo "READY TO UPTATE...THERE IS AN EMERGENCY RECUPERATION FILES SYSTEM. CONTACT US FOR MORE."
+        path=$(find / -name "GhostRecon" | sed -n '1p')
+        cd $path
+        mv ./GhostRecon ./GhostRecon.SAV
+        git clone https://github.com/mZzgamer/GhostRecon.git
+          if [ -d "GhostRecon" ]; then
+            rm -rf ./GhostRecon.SAV
+            read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
+          else
+            read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
+            clear
+            cd $path
+            cd
+            chmod +x GhostRecon.sh
+            chmod +x install-requierments.#!/bin/sh
+            sudo bash install-requierments
+          fi
+     fi
+
+
+     if [ "$x" == "$a4" ]; then       #START TOR
+       if [ "$torstart" == true ]; then
+           echo "TOR IS ALREADY RUNNING. YOU ARE PROTECTED NOW."
+       else
+           echo "STARTING TOR..."
+          systemctl start tor
+          echo "TOR HAS STARTED. YOU ARE PROTECTED NOW."
+          torstart=true
+        fi
+     fi
+
+     if [ "$x" == "$a5" ]; then     #STOP TOR
+          echo "ARE YOU SURE YOU WANT TO BE TRACABLE BY STOPPING TOR?"
+          read -p "|
+-->" y
+          if [ "$y" == "yes" ]; then
+            echo "OK. DISABLING TOR."
+            systemctl stop tor
+            echo "TOR IS DISABLED."
+            torstart=false
+          else
+            echo "OK. TOR IS STILL RUNNING."
+          fi
+     fi
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
          echo ""
@@ -253,7 +303,7 @@ while true; do
        echo ""
        cd
        cd Phone_locator/
-       python IP_locator.py $phone_info 
+       python IP_locator.py $phone_info
        echo ""
        echo ""
      fi
