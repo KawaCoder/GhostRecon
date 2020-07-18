@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VARIABLES
-dir='pwd'
+eval '$PWD/Grecon'
 
 #COMMANDS
 clear
@@ -93,6 +93,7 @@ echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 sudo easy_install shodan
+easy_install shodan
 sudo pip install shodan
 echo ""
 echo "HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI"
@@ -105,7 +106,7 @@ echo ""
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-mv -v $dir/Grecon /usr/bin
+mv -v $eval /usr/bin
 
 
 echo ""
