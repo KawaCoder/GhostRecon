@@ -49,7 +49,7 @@ banner
 function help
     {
       echo "
-  USAGE: run [core_commands], <sub_commands>
+  USAGE: run [core_commands] | <sub_commands> <OTHERS>
   example: run domain_scanner, | clear
   You get the point.
 
@@ -79,6 +79,7 @@ function help
           banner              To spawn banner
 
    ABOUT ARGUMENTS:
+     <OTHERS>
      Showing additional information about this program.
 
       -h, --help            shows this help and exists.
@@ -95,10 +96,11 @@ function help
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
-b1='run -v' ##
+#####################
+b1='-v' ##
 b2='-h' ##
 b3='--help' ##
-b4='run --version' ##
+b4='--version' ##
 b5='run domain_scanner' #
 b6='run IP_scanner' #
 b7='run phone_scanner'
