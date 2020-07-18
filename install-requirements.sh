@@ -96,7 +96,7 @@ echo ""
 sudo easy_install shodan
 sudo pip install shodan
 echo ""
-echo -e "\e[1;31m[*] HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI\e[0m""
+echo -e "\e[1;31m[*] HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI\e[0m"
 echo ""
 read -p "SHODAN API KEY (REQUIRED): " shodan
 echo ""
