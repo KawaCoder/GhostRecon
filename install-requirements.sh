@@ -2,6 +2,9 @@
 
 #COMMANDS
 clear
+sudo su
+clear
+
 function banner
     {
       echo "
