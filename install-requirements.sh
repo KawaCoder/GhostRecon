@@ -57,6 +57,13 @@ echo ""
 echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
+apt-get install tor
+tor
+echo ""
+#phonelocator
+echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
+echo "-------------------------------------------------------------------------------------------------------------"
+echo ""
 cd
 git clone https://github.com/mZzgamer/Phone_locator.git
 echo ""
