@@ -81,6 +81,7 @@ function help
           clear                Clear terminal.
           update               Update tool.
           banner               To spawn banner.
+          exit                 Exit the tool
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -103,6 +104,7 @@ a3='update' ##
 a4='hide identity'
 a5='unhide identity'
 a6='check status'
+a7='exit'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -118,7 +120,6 @@ b11='run media_scanner'
 b12='run bitcoin_scanner'
 #START TOR
 systemctl start tor
-torstart=true
 
 #NEW COMMANDS
 while true
@@ -126,6 +127,7 @@ do
   read -p " [GRECON] > " x
      if [ "$x" == "$a1" ]; then
          clear
+         banner
      fi
      if [ "$x" == "$a2" ]; then
          banner
@@ -141,14 +143,14 @@ do
           if [ -d "GhostRecon" ]; then
             rm -rf ./GhostRecon.SAV
             read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
+            cd
+            chmod +x GhostRecon.sh
+            chmod +x install-requierments.
+            sudo bash install-requierments
           else
             read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
             clear
             cd $path
-            cd
-            chmod +x GhostRecon.sh
-            chmod +x install-requierments.#!/bin/sh
-            sudo bash install-requierments
           fi
      fi
      if [ "$x" == "$a4" ]; then
@@ -159,7 +161,7 @@ do
          echo ""
          echo -e "\e[1;31m[*] ANONSURF ENABLED\e[0m"
          echo ""
-     fi 
+     fi
      if [ "$x" == "$a5" ]; then
          echo ""
          cd
@@ -168,14 +170,18 @@ do
          echo ""
          echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
          echo ""
-     fi 
+     fi
      if [ "$x" == "$a6" ]; then
          echo ""
          cd
          cd /root/kali-anonsurf/
          anonsurf status
          echo ""
-     fi 
+     fi
+     if [ "$x" == "$a7" ]; then
+       echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
+         exit
+     fi
 ############################################################################################################
      if [ "$x" == "$b1" ]; then
          echo ""
@@ -238,6 +244,11 @@ do
          echo ""
          msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
          echo ""
+         echo -e "\e[1;31m [*] NIKTO SCAN\e[0m"
+         echo "-------------------------------------------------------------------------------------------------------------"
+         echo ""
+         nikto -h $domain
+         echo ""
          echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
          echo "-------------------------------------------------------------------------------------------------------------"
          echo ""
@@ -273,6 +284,13 @@ do
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
        nmap -sS $ipaddress -O
+       echo ""
+       echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
+       echo "-------------------------------------------------------------------------------------------------------------"
+       echo ""
+       nmap -sV --script vuln $ipaddress -O
+       echo "-------------------------------------------------------------------------------------------------------------"
+       nmap -sS $ipaddress
        echo ""
        echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
        echo "-------------------------------------------------------------------------------------------------------------"
@@ -397,7 +415,10 @@ do
        python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
+     else
+       echo " WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
      fi
+       #statements
 done
 
 #    MODULES
