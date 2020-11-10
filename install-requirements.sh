@@ -31,6 +31,17 @@ echo -e "\e[1;31m !!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 echo ""
   }
 banner
+#USERRECON
+echo -e "\e[1;31m [*] INSTALLING TOR\e[0m"
+echo "-------------------------------------------------------------------------------------------------------------"
+git clone https://github.com/jaykali/userrecon
+cd userrecon
+chmod +x userrecon.sh
+cd
+#TOR
+echo -e "\e[1;31m [*] INSTALLING TOR\e[0m"
+echo "-------------------------------------------------------------------------------------------------------------"
+apt-get install tor
 #IP TRACER
 echo -e "\e[1;31m [*] INSTALLING IP-TRACER\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
