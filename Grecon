@@ -81,6 +81,7 @@ function help
           clear                Clear terminal.
           update               Update tool.
           banner               To spawn banner.
+          exit                 Exit the tool
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -103,6 +104,7 @@ a3='update' ##
 a4='hide identity'
 a5='unhide identity'
 a6='check status'
+a7='exit'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -118,7 +120,6 @@ b11='run media_scanner'
 b12='run bitcoin_scanner'
 #START TOR
 systemctl start tor
-torstart=true
 
 #NEW COMMANDS
 while true
@@ -126,32 +127,30 @@ do
   read -p " [GRECON] > " x
      if [ "$x" == "$a1" ]; then
          clear
-     fi
-     if [ "$x" == "$a2" ]; then
          banner
-     fi
-
-     if [ "$x" == "$a3" ]; then
-        clear
-        echo "READY TO UPTATE...THERE IS AN EMERGENCY RECUPERATION FILES SYSTEM. CONTACT US FOR MORE."
-        path=$(find / -name "GhostRecon" | sed -n '1p')
-        cd $path
-        mv ./GhostRecon ./GhostRecon.SAV
-        git clone https://github.com/mZzgamer/GhostRecon.git
-          if [ -d "GhostRecon" ]; then
-            rm -rf ./GhostRecon.SAV
-            read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
-          else
-            read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
-            clear
-            cd $path
-            cd
-            chmod +x GhostRecon.sh
-            chmod +x install-requierments.#!/bin/sh
-            sudo bash install-requierments
-          fi
-     fi
-     if [ "$x" == "$a4" ]; then
+     elif [ "$x" == "$a2" ]; then
+         banner
+     elif [ "$x" == "$a3" ]; then
+     echo -e "\e[34m WORK IN PROGRESS! FOR THE MOMENT, JUST OFTEN DELETE AND RE-INSTALL THE FOLDER FROM GITHUB.\e[0m"
+        #clear
+        #echo "READY TO UPTATE...THERE IS AN EMERGENCY RECUPERATION FILES SYSTEM. CONTACT US FOR MORE."
+        #path=$(find / -name "GhostRecon" | sed -n '1p')
+        #cd $path
+        #mv ./GhostRecon ./GhostRecon.SAV
+        #git clone https://github.com/mZzgamer/GhostRecon.git
+        #    if [ -d "GhostRecon" ]; then
+        #    rm -rf ./GhostRecon.SAV
+        #    read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
+        #    cd
+        #    chmod +x GhostRecon.sh
+        #    chmod +x install-requierments.
+        #    sudo bash install-requierments
+        #  else
+        #    read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
+        #    clear
+        #    cd $path
+        #  fi
+     elif [ "$x" == "$a4" ]; then
          echo ""
          cd
          cd /root/kali-anonsurf/
@@ -159,8 +158,7 @@ do
          echo ""
          echo -e "\e[1;31m[*] ANONSURF ENABLED\e[0m"
          echo ""
-     fi 
-     if [ "$x" == "$a5" ]; then
+     elif [ "$x" == "$a5" ]; then
          echo ""
          cd
          cd /root/kali-anonsurf/
@@ -168,36 +166,34 @@ do
          echo ""
          echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
          echo ""
-     fi 
-     if [ "$x" == "$a6" ]; then
+     elif [ "$x" == "$a6" ]; then
          echo ""
          cd
          cd /root/kali-anonsurf/
          anonsurf status
          echo ""
-     fi 
+     elif [ "$x" == "$a7" ]; then
+       echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
+         exit
+
 ############################################################################################################
-     if [ "$x" == "$b1" ]; then
+      elif [ "$x" == "$b1" ]; then
          echo ""
          echo "-------------------------------------------------------------------------------------------------------------"
-         echo -e "\e[1;31m  VERSION: V.1.0\e[0m"
+         echo -e "\e[1;31m  VERSION: V.1.1\e[0m"
          echo "-------------------------------------------------------------------------------------------------------------"
          echo ""
-     fi
-     if [ "$x" == "$b2" ]; then
+     elif [ "$x" == "$b2" ]; then
          help
-     fi
-     if [ "$x" == "$b3" ]; then
+     elif [ "$x" == "$b3" ]; then
          help
-     fi
-     if [ "$x" == "$b4" ]; then
+     elif [ "$x" == "$b4" ]; then
        echo ""
        echo "-------------------------------------------------------------------------------------------------------------"
        echo -e "\e[1;31m  VERSION: V.1.0\e[0m"
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
-     fi
-     if [ "$x" == "$b5" ]; then
+     elif [ "$x" == "$b5" ]; then
          echo ""
          echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
          echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
@@ -238,6 +234,11 @@ do
          echo ""
          msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
          echo ""
+         echo -e "\e[1;31m [*] NIKTO SCAN\e[0m"
+         echo "-------------------------------------------------------------------------------------------------------------"
+         echo ""
+         nikto -h $domain
+         echo ""
          echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
          echo "-------------------------------------------------------------------------------------------------------------"
          echo ""
@@ -247,8 +248,7 @@ do
          echo ""
          echo -e "\e[1;31m [*] DONE\e[0m"
          echo ""
-     fi
-     if [ "$x" == "$b6" ]; then
+     elif [ "$x" == "$b6" ]; then
        echo ""
        echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
        echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
@@ -274,6 +274,13 @@ do
        echo ""
        nmap -sS $ipaddress -O
        echo ""
+       echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
+       echo "-------------------------------------------------------------------------------------------------------------"
+       echo ""
+       nmap -sV --script vuln $ipaddress -O
+       echo "-------------------------------------------------------------------------------------------------------------"
+       nmap -sS $ipaddress
+       echo ""
        echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
@@ -289,8 +296,7 @@ do
        echo ""
        echo -e "\e[1;31m [*] DONE\e[0m"
        echo ""
-     fi
-     if [ "$x" == "$b7" ]; then
+     elif [ "$x" == "$b7" ]; then
        echo ""
        echo "Please Enter The Number Followed By The Dialing Code"
        echo "for example : +447410490080 / +44 Is My Dialing Code"
@@ -306,8 +312,7 @@ do
        python IP_locator.py $phone_info
        echo ""
        echo ""
-     fi
-     if [ "$x" == "$b8" ]; then
+     elif [ "$x" == "$b8" ]; then
        echo ""
        echo "Example: example@gmail.com"
        read -p "Email Address: " email_info
@@ -319,8 +324,7 @@ do
        mailfy -m $email_info -p all
        echo ""
        echo ""
-     fi
-     if [ "$x" == "$b9" ]; then
+     elif [ "$x" == "$b9" ]; then
        echo ""
        echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
        read -p "IP/DOMAIN: " vuln
@@ -344,8 +348,7 @@ do
        cd spiderfoot/
        python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $vuln -q -r
        echo ""
-     fi
-     if [ "$x" == "$b10" ]; then
+     elif [ "$x" == "$b10" ]; then
        echo ""
        echo "Example: kali.org"
        read -p "Enter DOMAIN: " link
@@ -356,26 +359,11 @@ do
        echo "-------------------------------------------------------------------------------------------------------------"
        curl https://api.hackertarget.com/pagelinks/?q=$link
        echo ""
-     fi
-     if [ "$x" == "$b11" ]; then
-       echo ""
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo -e "\e[1;31m!!!  PUT IN POSSIBLE USERNAME  !!!\e[0m"
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo ""
-       echo "Example: elonmusk"
-       read -p "Username: " username
-       echo ""
-       echo "Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] POSSIBLE SOCIAL MEDIA ACCOUNTS\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       cd
-       cd spiderfoot/
-       python3 ./sf.py -m sfp_accounts -s $username -q
-       echo ""
-     fi
-     if [ "$x" == "$b12" ]; then
+     elif [ "$x" == "$b11" ]; then
+       clear
+       cd userrecon
+       bash userrecon.sh
+     elif [ "$x" == "$b12" ]; then
        echo ""
        echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
        echo -e "\e[1;31m!!!  PUT IN TARGET  !!!\e[0m"
@@ -397,7 +385,10 @@ do
        python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
+     else
+       echo " WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
      fi
+       #statements
 done
 
 #    MODULES
