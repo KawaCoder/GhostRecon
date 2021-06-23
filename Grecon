@@ -4,6 +4,8 @@
 #COMMAND
 clear
 
+lastupdate_date="23/06/2021"
+
 #COLORS
 #RED = \e[1;31m
 #BLUE = \e[34m
@@ -142,7 +144,7 @@ do
          banner
      elif [ "$x" == "$a3" ]; then
       git pull
-      echo "LAST UPDATE: 23/06/2020"
+      echo "LAST UPDATE: $lastupdate_date"
       echo "IF ANY CHANGE OCCURED, THEN RESTART THE TOOL TO APLY THEM."
      elif [ "$x" == "$a4" ]; then
          echo ""
@@ -174,7 +176,7 @@ do
 elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
          echo ""
 
-         echo -e "\e[1;31m  VERSION: V.1.2 by DR34M-M4K3R\e[0m"
+         echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
          echo "----------------------------------------------------------------------------"
          echo -e " -PRIVACY IMPROVED \n -MINOR BUGS FIXED"
          echo "----------------------------------------------------------------------------"
