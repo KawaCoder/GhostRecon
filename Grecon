@@ -145,7 +145,7 @@ do
       echo "LAST UPDATE: $lastupdate_date"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
-      ./install-requirements
+      ./install-requirements.sh
      elif [ "$x" == "$a4" ]; then
          echo ""
          cd
