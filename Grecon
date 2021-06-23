@@ -40,7 +40,7 @@ function quit (){
 }
 
 # CATCH CTRL
-trap "trap_ctrlc" 2
+trap "quit" 2
 
 function banner
     {
