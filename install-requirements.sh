@@ -125,7 +125,7 @@ pathtogrecon=$(find /home/$USER -type f -iname "Grecon")
 chmod +x $pathtogrecon
 
 
-mv -v $pathtogrecon /usr/bin/
+cp -v $pathtogrecon /usr/bin/
 
 
 echo ""
