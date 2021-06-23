@@ -22,18 +22,24 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
-#catch ctrl + C
-function trap_ctrlc (){
+# QUIT FUNCTION
+function quit (){
     # perform cleanup here
-    echo "Ctrl-C caught...performing clean up"
+    echo "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
+    echo ""
+    cd
+    cd /root/kali-anonsurf/
+    anonsurf stop
+    echo ""
+    echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
+    echo ""
 
-    echo "Doing cleanup"
+    echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
 
-    # exit shell script with error code 2
-    # if omitted, shell script will continue execution
     exit 2
 }
 
+# CATCH CTRL
 trap "trap_ctrlc" 2
 
 function banner
@@ -166,8 +172,7 @@ do
          anonsurf status
          echo ""
      elif [ "$x" == "$a7" ]; then
-       echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
-         exit
+         quit
 
 ############################################################################################################
 elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
