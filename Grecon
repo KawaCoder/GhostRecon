@@ -129,24 +129,7 @@ do
          banner
      elif [ "$x" == "$a3" ]; then
       git pull
-        #clear
-        #echo "READY TO UPTATE...THERE IS AN EMERGENCY RECUPERATION FILES SYSTEM. CONTACT US FOR MORE."
-        #path=$(find / -name "GhostRecon" | sed -n '1p')
-        #cd $path
-        #mv ./GhostRecon ./GhostRecon.SAV
-        #git clone https://github.com/mZzgamer/GhostRecon.git
-        #    if [ -d "GhostRecon" ]; then
-        #    rm -rf ./GhostRecon.SAV
-        #    read -p "UPDATE SUCCESSFULLY; PRESS ENTER TO CONTINUE"
-        #    cd
-        #    chmod +x GhostRecon.sh
-        #    chmod +x install-requierments.
-        #    sudo bash install-requierments
-        #  else
-        #    read -p "UPTADE FAILED, EMERGENCY SYSTEM KEEP YOUR FILES ON /GhostRecon.SAV DIRECTORY; PRESS ENTER TO CONTINUE"
-        #    clear
-        #    cd $path
-        #  fi
+      echo "IF ANY CHANGE OCCURED, THEN RESTART THE TOOL."
      elif [ "$x" == "$a4" ]; then
          echo ""
          cd
