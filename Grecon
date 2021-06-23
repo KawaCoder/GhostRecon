@@ -155,7 +155,7 @@ do
          anonsurf start
          newip=$(curl ifconfig.me)
          echo ""
-         echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[1;31m$newip\e[0m]\e[0m"
+         echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [ \e[0m \e[1;31m $newip \e[0m \e[1;31m ] \e[0m"
          echo ""
      elif [ "$x" == "$a5" ]; then
          echo ""
