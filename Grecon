@@ -72,13 +72,13 @@ function help
       echo -e "
 
       ABOUT:
-        \e[31m GhostRecon is compact OSINT tool for OSINT investigators, .
+        \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
         Developer: \e[0m mZzgamerDEV
         \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
 
-      \e[35m USAGE: run  \e[0m [core_commands] | <sub_commands> <OTHERS>
-      \e[35m EXAMPLE: run domain_scanner, | clear \e[0m
+      \e[35m USAGE: \e[35m run  \e[0m [core_commands] | <sub_commands> <OTHERS>
+      \e[35m EXAMPLE:  \e[0m run domain_scanner, | clear
       You get the point.
 
       <core_commands>
@@ -152,7 +152,7 @@ do
          anonsurf start
          newip=$(curl ifconfig.me)
          echo ""
-         echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [ \e[0m \e[1;34m $newip \e[0m \e[1;31m ] \e[0m"
+         echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[0m\e[1;34m$newip\e[0m\e[1;31m]\e[0m"
          echo ""
      elif [ "$x" == "$a5" ]; then
          echo ""
