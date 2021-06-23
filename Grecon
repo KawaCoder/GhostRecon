@@ -21,6 +21,21 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+
+#catch ctrl + C
+function trap_ctrlc (){
+    # perform cleanup here
+    echo "Ctrl-C caught...performing clean up"
+
+    echo "Doing cleanup"
+
+    # exit shell script with error code 2
+    # if omitted, shell script will continue execution
+    exit 2
+}
+
+trap "trap_ctrlc" 2
+
 function banner
     {
       echo "
@@ -53,32 +68,32 @@ function help
   You get the point.
 
       ABOUT:
-        GhostRecon is compact OSINT tool for OSINT investigators, .
-        Developer: mZzgamerDEV
-        Status: Still under developement, script taken over by DR34M-M4K3R
+        \e[31m GhostRecon is compact OSINT tool for OSINT investigators, .
+        Developer: \e[0m mZzgamerDEV
+        \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
       SUBCOMMANDS:
         List of available commands that can be invoked using GhostRecon.
 
-      <core_commands>Red Text
-             \e[31m domain_scanner \e[0m           Search all possible information for Domains.
-             \e[31m IP_scanner \e[0m              Search all possible information from an IP Address.
-             \e[31m phone_scanner \e[0m           Search all possible information from a phone number.
-             \e[31m email_scanner \e[0m           Search all possible information from an email.
-             \e[31m vuln_scanner \e[0m           Search all possible Vulnerabilities.
-             \e[31m link_scanner \e[0m            Sniff all links from a Domain.
-             \e[31m media_scanner \e[0m            Search all possible social media accounts from a username.
-             \e[31m bitcoin_scanner \e[0m          Search all bitcoin wallets addresses from target.
+      <core_commands>
+          \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
+          \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
+          \e[31m phone_scanner \e[0m            \e[32m Search all possible information from a phone number. \e[0m
+          \e[31m email_scanner \e[0m            \e[32m Search all possible information from an email. \e[0m
+          \e[31m vuln_scanner \e[0m             \e[32m Search all possible Vulnerabilities. \e[0m
+          \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
+          \e[31m media_scanner \e[0m            \e[32m Search all possible social media accounts from a username. \e[0m
+          \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
 
 
         <sub_commands>
-          \e[31m hide identity \e[0m        enable anonimity (will hide your identity)
-          \e[31m unhide identity \e[0m      disable anonimity (Will not hide your identity)
-          \e[31m check status \e[0m         Check Anonimity status.
-          \e[31m clear \e[0m                Clear terminal.
-          \e[31m update \e[0m               Update tool.
-          \e[31m banner \e[0m              To spawn banner.
-          \e[31m exit \e[0m                 Exit the tool
+          \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
+          \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
+          \e[31m check status \e[0m         \e[32m Check Anonimity status. \e[0m
+          \e[31m clear \e[0m                \e[32m Clear terminal. \e[0m
+          \e[31m update \e[0m               \e[32m Update tool. \e[0m
+          \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
+          \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -115,8 +130,6 @@ b9='run vuln_scanner'
 b10='run link_scanner'
 b11='run media_scanner'
 b12='run bitcoin_scanner'
-#START TOR
-systemctl start tor
 
 #NEW COMMANDS
 while true
