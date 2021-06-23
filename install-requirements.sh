@@ -31,13 +31,7 @@ echo -e "\e[1;31m !!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 echo ""
   }
 banner
-#USERRECON
-echo -e "\e[1;31m [*] INSTALLING TOR\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-git clone https://github.com/jaykali/userrecon
-cd userrecon
-chmod +x userrecon.sh
-cd
+
 #TOR
 echo -e "\e[1;31m [*] INSTALLING TOR\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
@@ -128,8 +122,16 @@ echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
 cd
-cd /root/GhostRecon/
-mv -v Grecon /usr/bin/
+
+
+
+pathtogrecon=$(find /home/$USER -type f -iname "Grecon")
+
+chmod +x $pathtogrecon
+
+cd find /home/$USER -type f -iname "Grecon"
+
+mv -v $pathtogrecon /usr/bin/
 
 
 echo ""
