@@ -29,7 +29,7 @@ function banner
                       | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
            /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
           /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-         /****\   /\.             DEVELOPER: MZZGAMER | VERSION: V.1.0
+         /****\   /\.   DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
         /      \ /**\.
        /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
       /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
@@ -47,39 +47,38 @@ banner
 
 function help
     {
-      echo "
+      echo -e "
   USAGE: run [core_commands] | <sub_commands> <OTHERS>
   example: run domain_scanner, | clear
   You get the point.
 
       ABOUT:
-        GhostRecon is compact OSINT tool for OSINT investigators, use Tor by default.
+        GhostRecon is compact OSINT tool for OSINT investigators, .
         Developer: mZzgamerDEV
-        Status: Still under developement.
+        Status: Still under developement, script taken over by DR34M-M4K3R
 
       SUBCOMMANDS:
         List of available commands that can be invoked using GhostRecon.
 
-      <core_commands>
-
-             domain_scanner           Search all possible information for Domains.
-             IP_scanner               Search all possible information from an IP Address.
-             phone_scanner            Search all possible information from a phone number.
-             email_scanner            Search all possible information from an email.
-             vuln_scanner             Search all possible Vulnerabilities.
-             link_scanner             Sniff all links from a Domain.
-             media_scanner            Search all possible social media accounts from a username.
-             bitcoin_scanner          Search all bitcoin wallets addresses from target.
+      <core_commands>Red Text
+             \e[31m domain_scanner \e[0m           Search all possible information for Domains.
+             \e[31m IP_scanner \e[0m              Search all possible information from an IP Address.
+             \e[31m phone_scanner \e[0m           Search all possible information from a phone number.
+             \e[31m email_scanner \e[0m           Search all possible information from an email.
+             \e[31m vuln_scanner \e[0m           Search all possible Vulnerabilities.
+             \e[31m link_scanner \e[0m            Sniff all links from a Domain.
+             \e[31m media_scanner \e[0m            Search all possible social media accounts from a username.
+             \e[31m bitcoin_scanner \e[0m          Search all bitcoin wallets addresses from target.
 
 
         <sub_commands>
-          hide identity        enable anonimity (will hide your identity)
-          unhide identity      disable anonimity (Will not hide your identity)
-          check status         Check Anonimity status.
-          clear                Clear terminal.
-          update               Update tool.
-          banner               To spawn banner.
-          exit                 Exit the tool
+          \e[31m hide identity \e[0m        enable anonimity (will hide your identity)
+          \e[31m unhide identity \e[0m      disable anonimity (Will not hide your identity)
+          \e[31m check status \e[0m         Check Anonimity status.
+          \e[31m clear \e[0m                Clear terminal.
+          \e[31m update \e[0m               Update tool.
+          \e[31m banner \e[0m              To spawn banner.
+          \e[31m exit \e[0m                 Exit the tool
 
    ABOUT ARGUMENTS:
      <OTHERS>
@@ -175,24 +174,19 @@ do
          exit
 
 ############################################################################################################
-      elif [ "$x" == "$b1" || "$b4" ]; then
+elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
          echo ""
-         echo "-------------------------------------------------------------------------------------------------------------"
+
          echo -e "\e[1;31m  VERSION: V.1.2 by DR34M-M4K3R\e[0m"
-         echo -e "-PRIVACY IMPROVED, \n-MINOR BUGS FIXED \n-ADDED MORE OPTIONS"
-         echo "-------------------------------------------------------------------------------------------------------------"
+         echo "----------------------------------------------------------------------------"
+         echo -e " -PRIVACY IMPROVED \n -MINOR BUGS FIXED"
+         echo "----------------------------------------------------------------------------"
          echo ""
      elif [ "$x" == "$b2" ]; then
          help
      elif [ "$x" == "$b3" ]; then
          help
-#     elif [ "$x" == "$b4" ]; then
-#       echo ""
-#       echo "-------------------------------------------------------------------------------------------------------------"
-#       echo -e "\e[1;31m  VERSION: V.1.1\e[0m"
-#       echo -e "-PRIVACY IMPROVED, \n-MINOR BUGS FIXED \n-ADDED MORE OPTIONS"
-#       echo "-------------------------------------------------------------------------------------------------------------"
-#       echo ""
+
      elif [ "$x" == "$b5" ]; then
          echo ""
          echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
