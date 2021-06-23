@@ -1,13 +1,14 @@
-## GhostRecon:
-A compact research and OSINT tool.
-## OS AVAILABLE
-- Linux distributions (deb)
+## 🔎 GhostRecon (🚨READ THE DOC!🚨)
+A compact research and OSINT tool for linux.
+
 ## DEVELOPER:
 - mZzgamer - taken over by DR34M-M4K3R
+
 ## CONTRIBUTORS
 - DR34M-M4K3R
 - Cyber
 - Acid Dynamics
+- 
 ## SCREENSHOT:
 ![123097718-b11e3e00-d430-11eb-9a42-2ecb1b36dd44](https://user-images.githubusercontent.com/67145585/123178551-b8246b00-d487-11eb-812d-06e4ae303318.png)
 
