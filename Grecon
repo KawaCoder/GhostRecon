@@ -77,8 +77,8 @@ function help
         \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
 
-      \e[35m USAGE: \e[35m run  \e[0m [core_commands] | <sub_commands> <OTHERS>
-      \e[35m EXAMPLE:  \e[0m run domain_scanner, | clear
+      \e[35m USAGE: [core_commands] | <sub_commands>
+      \e[35m EXAMPLE:  \e[0m domain_scanner, | clear
       You get the point.
 
       <core_commands>
@@ -89,6 +89,7 @@ function help
           \e[31m vuln_scanner \e[0m             \e[32m Search all possible Vulnerabilities. \e[0m
           \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
           \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
+          \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
 
 
         <sub_commands>
@@ -123,13 +124,14 @@ b1='-v' ##
 b2='-h' ##
 b3='--help' ##
 b4='--version' ##
-b5='run domain_scanner' #
-b6='run IP_scanner' #
-b7='run phone_scanner'
-b8='run email_scanner'
-b9='run vuln_scanner'
-b10='run link_scanner'
-b11='run bitcoin_scanner'
+b5='domain_scanner' #
+b6='IP_scanner' #
+b7='phone_scanner'
+b8='email_scanner'
+b9='vuln_scanner'
+b10='link_scanner'
+b11='bitcoin_scanner'
+b12='criminal_scanner'
 
 #NEW COMMANDS
 while true
