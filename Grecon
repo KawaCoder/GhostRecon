@@ -128,7 +128,6 @@ do
      elif [ "$x" == "$a2" ]; then
          banner
      elif [ "$x" == "$a3" ]; then
-     	echo -e "\e[34m WORK IN PROGRESS! FOR THE MOMENT, JUST OFTEN DELETE AND RE-INSTALL THE FOLDER FROM GITHUB.\e[0m"
       git pull
         #clear
         #echo "READY TO UPTATE...THERE IS AN EMERGENCY RECUPERATION FILES SYSTEM. CONTACT US FOR MORE."
