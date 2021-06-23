@@ -396,7 +396,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
        criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
        echo -e "\e[0;32m [OK]\e[0m"
-       echo -e "\e[1;31mClick on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
+       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
 
 
      else
