@@ -152,7 +152,7 @@ do
       echo -e "\e[1;31m[*] OK\e[0m"
 
       echo -e "\e[1;31m[*] UPDATE FROM GITHUB...\e[0m"
-      git pull
+      git pull origin master
       echo -e "\e[1;31m[*] MOVING FILE...\e[0m"
 
       cp Grecon /usr/bin
