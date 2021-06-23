@@ -122,10 +122,8 @@ cd
 
 
 pathtogrecon=$(find /home/$USER -type f -iname "Grecon")
-
 chmod +x $pathtogrecon
 
-cd find /home/$USER -type f -iname "Grecon"
 
 mv -v $pathtogrecon /usr/bin/
 
