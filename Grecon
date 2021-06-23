@@ -105,6 +105,7 @@ function help
       \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
 
 
+      \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
    (CTRL+C  or \"exit\" to exit)"
       echo ""
       echo ""
@@ -142,7 +143,7 @@ do
      elif [ "$x" == "$a3" ]; then
       git pull
       echo "LAST UPDATE: $lastupdate_date"
-      echo "IF ANY CHANGE OCCURED, THEN RESTART THE TOOL TO APLY THEM."
+      ./install-requirements
      elif [ "$x" == "$a4" ]; then
          echo ""
          cd
