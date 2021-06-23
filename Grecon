@@ -24,7 +24,7 @@ fi
 
 # QUIT FUNCTION
 function quit (){
-    echo "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
+    echo -e "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
     echo ""
     cd
     cd /root/kali-anonsurf/
