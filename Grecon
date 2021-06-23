@@ -107,7 +107,7 @@ function help
 
 
       \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
-   (CTRL+C  or \"exit\" to exit)"
+   (CTRL+C  or \"exit\" to exit)\e[0m"
       echo ""
       echo ""
     }
@@ -365,7 +365,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        echo "-------------------------------------------------------------------------------------------------------------"
        curl https://api.hackertarget.com/pagelinks/?q=$link
        echo ""
-     elif [ "$x" == "$b12" ]; then
+     elif [ "$x" == "$b11" ]; then
        echo ""
        echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
        echo -e "\e[1;31m!!!  PUT IN TARGET  !!!\e[0m"
