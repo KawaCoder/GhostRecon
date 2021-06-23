@@ -77,10 +77,9 @@ function help
         \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
 
-      USAGE: run [core_commands] | <sub_commands> <OTHERS>
-      example: run domain_scanner, | clear
+      \e[35m USAGE: run  \e[0m [core_commands] | <sub_commands> <OTHERS>
+      \e[35m EXAMPLE: run domain_scanner, | clear \e[0m
       You get the point.
-
 
       <core_commands>
           \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
