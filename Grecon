@@ -387,7 +387,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
        echo "-------------------------------------------------------------------------------------------------------------"
        echo ""
-     elif [ "$x" == "$b10" ]; then
+     elif [ "$x" == "$b12" ]; then
        echo ""
        read -p "TARGET'S FIRST NAME > " target_firstname
        read -p "TARGET'S LAST NAME >" target_lastname
