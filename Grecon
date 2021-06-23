@@ -49,7 +49,7 @@ function banner
                       | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
            /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
           /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-         /****\   /\.   DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
+         /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
         /      \ /**\.
        /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
       /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
@@ -68,17 +68,17 @@ banner
 function help
     {
       echo -e "
-  USAGE: run [core_commands] | <sub_commands> <OTHERS>
-  example: run domain_scanner, | clear
-  You get the point.
 
       ABOUT:
         \e[31m GhostRecon is compact OSINT tool for OSINT investigators, .
         Developer: \e[0m mZzgamerDEV
         \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
-      SUBCOMMANDS:
-        List of available commands that can be invoked using GhostRecon.
+
+      USAGE: run [core_commands] | <sub_commands> <OTHERS>
+      example: run domain_scanner, | clear
+      You get the point.
+
 
       <core_commands>
           \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
@@ -100,17 +100,12 @@ function help
           \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
           \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
 
-   ABOUT ARGUMENTS:
-     <OTHERS>
-     Showing additional information about this program.
 
-      -h, --help            shows this help and exists.
-      -v  --version         shows the version of the program and exists.
+      \e[31m -h, --help \e[0m            \e[32m shows this help and exists. \e[0m
+      \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
 
-   Use 'run <core_command>' to learn more about each command. You can contact me
-   if there is any issues by Twitter & Discord. (Discord) mZzgamer#8652 (Twitter) @mZzgamerDEV
 
-   (CTRL+C to exit)"
+   (CTRL+C  or \"exit\" to exit)"
       echo ""
       echo ""
     }
@@ -147,7 +142,8 @@ do
          banner
      elif [ "$x" == "$a3" ]; then
       git pull
-      echo "IF ANY CHANGE OCCURED, THEN RESTART THE TOOL."
+      echo "LAST UPDATE: 23/06/2020"
+      echo "IF ANY CHANGE OCCURED, THEN RESTART THE TOOL TO APLY THEM."
      elif [ "$x" == "$a4" ]; then
          echo ""
          cd
