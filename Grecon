@@ -142,10 +142,21 @@ do
          banner
      elif [ "$x" == "$a3" ]; then
       echo "LAST UPDATE: $lastupdate_date"
+
+
+      echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
+      echo -e "\e[1;31m[*] OK\e[0m"
+
+      echo -e "\e[1;31m[*] UPDATE FROM GITHUB...\e[0m"
       git pull
+      echo -e "\e[1;31m[*] MOVING FILE...\e[0m"
+
       cp Grecon /usr/bin
+      echo -e "\e[1;31m[*] OK\n UPDATE COMPLETED.\e[0m"
+      exit
+
      elif [ "$x" == "$a4" ]; then
          echo ""
          cd
