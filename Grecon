@@ -97,7 +97,7 @@ function help
           \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
           \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
           \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person
-                                                       by giving multiple personal inforations. \e[0m
+                                              by giving multiple personal inforations. \e[0m
 
 
 
@@ -142,7 +142,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
-b13='person_finder'
+#b13='person_finder'
 
 #NEW COMMANDS
 while true
@@ -411,7 +411,8 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
      elif [ "$x" == "$b13" ]; then
        echo ""
        echo "[*]: REQUIERED"
-       read -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read  -e -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read -p $'\e[31mFoobar\e[0m: '
        read -p "TARGET'S LAST NAME >" target_lastname
        read -p "TARGET'S APROXIMATE AGE >" target_age
        read -p "TARGET'S STATE >" target_state
