@@ -411,28 +411,36 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
      elif [ "$x" == "$b13" ]; then
 
        echo ""
-       echo "[*]: REQUIERED"
+       echo -e "\e[0;31m[*]: REQUIERED\e[0m"
        read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
        read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
-       read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
-       read -p "TARGET'S APROXIMATE AGE >" target_age
-       read -p "TARGET'S STATE >" target_state
-       read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
-       read -p "TARGET'S EMAIL >" target_email
-       read -p "TARGET'S STREET >" target_street
-       read -p "TARGET'S CITY >" target_city
-       read -p "TARGET'S ZIP CODE >" target_zipcode
-       read -p "TARGET'S  PHONE>" target_phone
-       read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
-       read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
-       read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
-       read -p "TARGET'S CITY >" target_city
+       #read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
+       #read -p "TARGET'S APROXIMATE AGE >" target_age
+       #read -p "TARGET'S STATE >" target_state
+       #read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
+       #read -p "TARGET'S EMAIL >" target_email
+       #read -p "TARGET'S STREET >" target_street
+       #read -p "TARGET'S CITY >" target_city
+       #read -p "TARGET'S ZIP CODE >" target_zipcode
+       #read -p "TARGET'S  PHONE>" target_phone
+       #read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
+       #read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
+       #read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
+       #read -p "TARGET'S CITY >" target_city
+       #findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/1454471185"
 
        echo ""
-       echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
-       findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/16245483231359"
+       echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
+       $thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
        echo -e "\e[0;32m [OK]\e[0m"
-       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$findpeoplesearch_link\e[0m\e[1;31m]\e[0m"
+       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
+       curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+       echo -e "\e[0;32m [OK]\e[0m"
+       echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
+       sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
+       sed '7,123d' resultpage.txt
+
+
 
 
 
