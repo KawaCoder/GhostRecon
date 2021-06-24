@@ -434,7 +434,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
        echo -e "\e[0;32m [OK]\e[0m"
        echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-       curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html > /dev/null 2>&1
+       curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
        echo -e "\e[0;32m [OK]\e[0m"
        echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
        sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
