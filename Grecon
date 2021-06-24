@@ -412,7 +412,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
 
        echo ""
        echo "[*]: REQUIERED"
-       read -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
        read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
        read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
        read -p "TARGET'S APROXIMATE AGE >" target_age
@@ -420,7 +420,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
        read -p "TARGET'S EMAIL >" target_email
        read -p "TARGET'S STREET >" target_street
-       read -p "TARGET'S CITY >"target_city
+       read -p "TARGET'S CITY >" target_city
        read -p "TARGET'S ZIP CODE >" target_zipcode
        read -p "TARGET'S  PHONE>" target_phone
        read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
@@ -430,13 +430,12 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
 
        echo ""
        echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
-       findpeoplesearchlink="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/16245483231359"
+       findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/16245483231359"
        echo -e "\e[0;32m [OK]\e[0m"
        echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$findpeoplesearch_link\e[0m\e[1;31m]\e[0m"
 
 
 
-0617330851
      else
        echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
      fi
