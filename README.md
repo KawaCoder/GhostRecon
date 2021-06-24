@@ -1,6 +1,8 @@
 ## 🔎 GhostRecon (🚨READ THE DOC!🚨)
 A compact research and OSINT tool for linux.
 
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://opensource.org/licenses/MPL-2.0)
+
 
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
