@@ -29,9 +29,7 @@ A compact research and OSINT tool for linux.
 - Acid Dynamics
 
 
-## TUTORIAL VIDEO (SUGGESTED TO WATCH):
-
-https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be
+[comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
 ## HOW TO INSTALL (DON'T MISS A THING OR GET A ERROR):
 - `git clone https://github.com/mZzgamer/GhostRecon.git` 
