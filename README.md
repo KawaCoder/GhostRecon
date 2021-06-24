@@ -1,6 +1,12 @@
 ## 🔎 GhostRecon (🚨READ THE DOC!🚨)
 A compact research and OSINT tool for linux.
 
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+
+
                                 ____ _               _   ____
                                / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
                               | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
