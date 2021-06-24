@@ -144,16 +144,6 @@ do
          banner
      elif [ "$x" == "$a3" ]; then
 
-
-      echo -e "\e[1;31m [*] DISABLING ANONSURF... \e[0m"
-       echo ""
-       cd
-       cd /root/kali-anonsurf/
-       anonsurf stop
-       echo ""
-       echo -e "\e[1;31m [*] ANONSURF DISABLED \e[0m"
-       echo ""
-       echo -e "\e[1;31m [*] STARTING UPDATE... \e[0m"
       echo "LAST UPDATE: $lastupdate_date"
 
 
