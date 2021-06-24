@@ -19,28 +19,20 @@ A compact research and OSINT tool for linux.
 
 
 ## DEVELOPER:
-- mZzgamer - taken over by DR34M-M4K3R
+- mZzgamer - taken over by DR34M-M4K3R (DR34M-M4K3R#7751)
+
+[![hey](https://img.shields.io/badge/Run%20the%20online%20demo-181717?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAArlBMVEUAAAAAzP8Aov8Aov8AqP8Aof8Ao/8Aov8AoP8ApP8Aov8AoP8Ao/8Ao/8An/8AoP8Aof8Aov8Aof8Aov8Aov8AluwAoP8Aof8AoP8Aof8Aof8AiNcAoP8Aov8Aof8Aov8Aof8Aov8Aof8Aof8Aof8AoP8Aof8AoP4AoP8AoP8Aof8Aof8Aov8Aof4AmvcAlO0AlvAAh9cAidoAitwAjN4Aj+MAkOYAkugAk+v///+P6XhkAAAAMXRSTlMABQshKS4vNzs7PEZLXmBhgIONjpaXn6Okpqiur7CxsrO1tri5ur7BwszO0djb5Oj45w0EeQAAAF9JREFUeNqtwoO1wwAAAMD7Zu02tc1g/8XqEXLvpGPsqZgRvLHahz/uYh87ssea3//khXrDLI/ToeNriege800Pyn2jCnLBYj34S15FJPDe3bZ9DhWmmlV3E1D61pKSC9reBzUZeaVSAAAAAElFTkSuQmCC&color=000000)](http://showterm.io/e04ada2c2a88f9d258a12)
 
 ## CONTRIBUTORS
 - DR34M-M4K3R
 - Cyber
 - Acid Dynamics
-- 
+
 ## SCREENSHOT:
 
- <iframe src="http://showterm.io/e04ada2c2a88f9d258a12" width="640" height="480"></iframe> 
 
-
-![123097718-b11e3e00-d430-11eb-9a42-2ecb1b36dd44](https://user-images.githubusercontent.com/67145585/123178551-b8246b00-d487-11eb-812d-06e4ae303318.png)
-
-![123097677-a5cb1280-d430-11eb-9bda-601548fadf86](https://user-images.githubusercontent.com/67145585/123178565-bfe40f80-d487-11eb-8886-62502f91ed02.png)
-
-![123098716-bb8d0780-d431-11eb-8f39-3cdad32175ef](https://user-images.githubusercontent.com/67145585/123178580-c6728700-d487-11eb-90f6-2f65e6d1e794.png)
-
-![123097558-8cc26180-d430-11eb-9344-dbc9c0180c88](https://user-images.githubusercontent.com/67145585/123178593-cd00fe80-d487-11eb-9d07-d4831d70e4c8.png)
-
-## TUTORIAL VIDEO (SUGGESTED TO WATCH):
-https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be
+$## TUTORIAL VIDEO (SUGGESTED TO WATCH):
+$https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be
 
 ## HOW TO INSTALL (DON'T MISS A THING OR GET A ERROR):
 - `git clone https://github.com/mZzgamer/GhostRecon.git` 
