@@ -409,10 +409,11 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        echo -e "\e[0;32m [OK]\e[0m"
        echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
      elif [ "$x" == "$b13" ]; then
+
        echo ""
        echo "[*]: REQUIERED"
        read  -e -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
-       read -p $'\e[31mFoobar\e[0m: '
+       read -p '^[[31mFoobar^[[0m: ' foo
        read -p "TARGET'S LAST NAME >" target_lastname
        read -p "TARGET'S APROXIMATE AGE >" target_age
        read -p "TARGET'S STATE >" target_state
