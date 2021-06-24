@@ -412,22 +412,27 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
 
        echo ""
        echo "[*]: REQUIERED"
-       read  -e -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
-       read -p $'\e[31mFoobar\e[0m: ' foo
-       read -p "TARGET'S LAST NAME >" target_lastname
+       read -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
+       read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
        read -p "TARGET'S APROXIMATE AGE >" target_age
        read -p "TARGET'S STATE >" target_state
        read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
-       read -p "TARGET'S EMAIL"
+       read -p "TARGET'S EMAIL >" target_email
+       read -p "TARGET'S STREET >" target_street
+       read -p "TARGET'S CITY >"target_city
+       read -p "TARGET'S ZIP CODE >" target_zipcode
+       read -p "TARGET'S  PHONE>" target_phone
+       read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
+       read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
+       read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
        read -p "TARGET'S CITY >" target_city
+
+       echo ""
        echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
-       criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
+       findpeoplesearchlink="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/16245483231359"
        echo -e "\e[0;32m [OK]\e[0m"
-       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
-
-
-
-       https://www.findpeoplesearch.com/john%2C+doe/18/AL/emailtest/teststreet/testcity/zip/maidenlastname/Phonetest/01/01/1980/1/16245414298479
+       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$findpeoplesearch_link\e[0m\e[1;31m]\e[0m"
 
 
 
