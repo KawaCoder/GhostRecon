@@ -118,6 +118,7 @@ function help
       echo ""
     }
 
+
 a1='clear' ##
 a2='banner' ##
 a3='update' ##
@@ -138,6 +139,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
+b13='person_finder'
 
 #NEW COMMANDS
 while true
@@ -403,8 +405,28 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
        criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
        echo -e "\e[0;32m [OK]\e[0m"
        echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
+     elif [ "$x" == "$b13" ]; then
+       echo ""
+       echo "[*]: REQUIERED"
+       read  -e -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read -p "TARGET'S LAST NAME >" target_lastname
+       read -p "TARGET'S APROXIMATE AGE >" target_age
+       read -p "TARGET'S STATE >" target_state
+       read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
+       read -p "TARGET'S EMAIL"
+       read -p "TARGET'S CITY >" target_city
+       echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
+       criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
+       echo -e "\e[0;32m [OK]\e[0m"
+       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
 
 
+
+       https://www.findpeoplesearch.com/john%2C+doe/18/AL/emailtest/teststreet/testcity/zip/maidenlastname/Phonetest/01/01/1980/1/16245414298479
+
+
+
+0617330851
      else
        echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
      fi
