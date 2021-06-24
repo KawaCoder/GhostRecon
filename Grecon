@@ -157,7 +157,7 @@ do
 
       cp Grecon /usr/bin
       echo -e "\e[1;31m[*] OK\n UPDATE COMPLETED.\e[0m"
-      exit
+      Grecon
 
      elif [ "$x" == "$a4" ]; then
          echo ""
