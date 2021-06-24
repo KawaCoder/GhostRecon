@@ -96,7 +96,8 @@ function help
           \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
           \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
           \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
-          \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person \nby giving multiple personal inforations. \e[0m
+          \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person
+                                                       by giving multiple personal inforations. \e[0m
 
 
 
