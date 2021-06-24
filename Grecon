@@ -411,7 +411,7 @@ elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
      elif [ "$x" == "$b13" ]; then
        echo ""
        echo "[*]: REQUIERED"
-       read  -e -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
+       read -p "\e[0;32m[*]\e[0mTARGET'S FIRST NAME > " target_firstname
        read -p "TARGET'S LAST NAME >" target_lastname
        read -p "TARGET'S APROXIMATE AGE >" target_age
        read -p "TARGET'S STATE >" target_state
