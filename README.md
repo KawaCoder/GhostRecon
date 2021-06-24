@@ -27,6 +27,10 @@ A compact research and OSINT tool for linux.
 - Acid Dynamics
 - 
 ## SCREENSHOT:
+
+ <iframe src="http://showterm.io/e04ada2c2a88f9d258a12" width="640" height="480"></iframe> 
+
+
 ![123097718-b11e3e00-d430-11eb-9a42-2ecb1b36dd44](https://user-images.githubusercontent.com/67145585/123178551-b8246b00-d487-11eb-812d-06e4ae303318.png)
 
 ![123097677-a5cb1280-d430-11eb-9bda-601548fadf86](https://user-images.githubusercontent.com/67145585/123178565-bfe40f80-d487-11eb-8886-62502f91ed02.png)
