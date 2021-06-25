@@ -443,6 +443,7 @@ do
       echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
+      echo "debug: curently working into $pwd"
       # tests path(useless for you):
       # cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       echo -e "\e[1;31m[*] OK\e[0m"
