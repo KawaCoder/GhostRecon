@@ -443,17 +443,20 @@ do
     echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
     pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
     cd $pathtogrecon
+    cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
     echo -e "\e[1;31m[*] OK\e[0m"
     echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-    curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+    #curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
     echo -e "\e[0;32m [OK]\e[0m"
     echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
     sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
     sed -i '1,108d' resultpage.txt
-    sed '/window.addEventListener ("load", function () {/,/^\s*$/{d}'
     sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
-    sed '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
+    sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
     sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
+    sed -i '/About Us/,/^\s*$/{d}' resultpage.txt
+
+
     echo -e "\e[0;32m [OK]\e[0m"
 
 
