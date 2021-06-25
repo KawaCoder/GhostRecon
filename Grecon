@@ -47,23 +47,23 @@ function quit (){
 }
 
 # CATCH CTRL
-trap "quit" 2
+#trap "quit" 2
 
 function banner
 {
   echo "
-                              ____ _               _   ____
-                             / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
-                            | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
-                 /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
-                /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-               /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
-              /      \ /**\.
-             /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
-            /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
-           /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
-          /  /      \/  \/\   \  /      \    /   /    \.
-       __/__/_______/___/__\___\__________________________________________________."
+                          ____ _               _   ____
+                         / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
+                        | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
+             /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
+            /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
+           /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
+          /      \ /**\.
+         /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
+        /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
+       /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
+      /  /      \/  \/\   \  /      \    /   /    \.
+    __/__/_______/___/__\___\__________________________________________________."
   echo -e "\e[34m                     GhostRecon: investigate, search, anonymously.\e[0m"
   echo -e "\e[1;31m                           !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
   echo -e "\e[1;31m                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
@@ -416,7 +416,7 @@ do
     read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
 
 
-    if [ i == "1" ] ; then
+    if [ $i == 1 ] ; then
     echo ""
     echo -e "\e[0;31m[*]: REQUIERED\e[0m"
     read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
@@ -440,6 +440,10 @@ do
     echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
     thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
     echo -e "\e[0;32m [OK]\e[0m"
+    echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
+    pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
+    cd $pathtogrecon
+    echo -e "\e[1;31m[*] OK\e[0m"
     echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
     curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
     echo -e "\e[0;32m [OK]\e[0m"
