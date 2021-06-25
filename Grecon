@@ -24,102 +24,102 @@ Blue='\e[1;34m'
 
 # ROOT
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root"
-   echo "Your not rooted, please root your Terminal."
-   exit 1
+  echo "This script must be run as root"
+  echo "Your not rooted, please root your Terminal."
+  exit 1
 fi
 
 
 # QUIT FUNCTION
 function quit (){
-    echo -e "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
-    echo ""
-    cd
-    cd /root/kali-anonsurf/
-    anonsurf stop
-    echo ""
-    echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
-    echo ""
+  echo -e "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
+  echo ""
+  cd
+  cd /root/kali-anonsurf/
+  anonsurf stop
+  echo ""
+  echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
+  echo ""
 
-    echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
+  echo -e "\e[1;31m THANKS FOR USING GHOST RECON! \e[0m"
 
-    exit 2
+  exit 2
 }
 
 # CATCH CTRL
 trap "quit" 2
 
 function banner
-    {
-      echo "
-                        ____ _               _   ____
-                       / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
-                      | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
-           /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
-          /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-         /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
-        /      \ /**\.
-       /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
-      /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
-     /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
-     /  /      \/  \/\   \  /      \    /   /    \.
-     __/__/_______/___/__\___\__________________________________________________."
-        echo -e "\e[34m                     GhostRecon: investigate, search, anonymously.\e[0m"
-        echo -e "\e[1;31m                           !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
-        echo -e "\e[1;31m                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
-        echo ""
-        echo ""
-        echo ""
-   }
+{
+  echo "
+  ____ _               _   ____
+  / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
+  | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
+  /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
+  /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
+  /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
+  /      \ /**\.
+  /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
+  /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
+  /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
+  /  /      \/  \/\   \  /      \    /   /    \.
+  __/__/_______/___/__\___\__________________________________________________."
+  echo -e "\e[34m                     GhostRecon: investigate, search, anonymously.\e[0m"
+  echo -e "\e[1;31m                           !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
+  echo -e "\e[1;31m                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
+  echo ""
+  echo ""
+  echo ""
+}
 banner
 
 function help
-    {
-      echo -e "
+{
+  echo -e "
 
-      ABOUT:
-        \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
-        Developer: \e[0m mZzgamerDEV
-        \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
-
-
-      \e[35m USAGE: [core_commands] | <sub_commands>
-      \e[35m EXAMPLE:  \e[0m domain_scanner, | clear
-      You get the point.
-
-      <core_commands>
-          \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
-          \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
-          \e[31m phone_scanner \e[0m            \e[32m Search all possible information from a phone number. \e[0m
-          \e[31m email_scanner \e[0m            \e[32m Search all possible information from an email. \e[0m
-          \e[31m vuln_scanner \e[0m             \e[32m Search all possible Vulnerabilities. \e[0m
-          \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
-          \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
-          \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
-          \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person
-                                              by giving multiple personal inforations. \e[0m
+  ABOUT:
+  \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
+  Developer: \e[0m mZzgamerDEV
+  \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
 
+  \e[35m USAGE: [core_commands] | <sub_commands>
+  \e[35m EXAMPLE:  \e[0m domain_scanner, | clear
+  You get the point.
 
-        <sub_commands>
-          \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
-          \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
-          \e[31m check status \e[0m         \e[32m Check Anonimity status. \e[0m
-          \e[31m clear \e[0m                \e[32m Clear terminal. \e[0m
-          \e[31m update \e[0m               \e[32m Update tool. \e[0m
-          \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
-          \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
+  <core_commands>
+  \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
+  \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
+  \e[31m phone_scanner \e[0m            \e[32m Search all possible information from a phone number. \e[0m
+  \e[31m email_scanner \e[0m            \e[32m Search all possible information from an email. \e[0m
+  \e[31m vuln_scanner \e[0m             \e[32m Search all possible Vulnerabilities. \e[0m
+  \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
+  \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
+  \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
+  \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person
+  by giving multiple personal inforations. \e[0m
 
 
-      \e[31m -h, --help \e[0m            \e[32m shows this help and exists. \e[0m
-      \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
+
+  <sub_commands>
+  \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
+  \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
+  \e[31m check status \e[0m         \e[32m Check Anonimity status. \e[0m
+  \e[31m clear \e[0m                \e[32m Clear terminal. \e[0m
+  \e[31m update \e[0m               \e[32m Update tool. \e[0m
+  \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
+  \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
 
 
-      \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
-   (CTRL+C  or \"exit\" to exit)\e[0m"
-      echo ""
-      echo ""
-    }
+  \e[31m -h, --help \e[0m            \e[32m shows this help and exists. \e[0m
+  \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
+
+
+  \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
+  (CTRL+C  or \"exit\" to exit)\e[0m"
+  echo ""
+  echo ""
+}
 
 
 a1='clear' ##
@@ -148,325 +148,325 @@ b13='person_finder'
 while true
 do
   read -p " [GRECON] > " x
-     if [ "$x" == "$a1" ]; then
-         clear
-         banner
-     elif [ "$x" == "$a2" ]; then
-         banner
-     elif [ "$x" == "$a3" ]; then
+  if [ "$x" == "$a1" ]; then
+    clear
+    banner
+  elif [ "$x" == "$a2" ]; then
+    banner
+  elif [ "$x" == "$a3" ]; then
 
-      echo "LAST UPDATE: $lastupdate_date"
-
-
-      echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
-      pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-      cd $pathtogrecon
-      echo -e "\e[1;31m[*] OK\e[0m"
-
-      echo -e "\e[1;31m[*] UPDATE FROM GITHUB..."
-      git pull origin master
-      echo -e "\e[1;31m[*] MOVING FILE...\e[0m"
-
-      cp Grecon /usr/bin
-      echo -e "\e[1;31m[*] OK\n UPDATE COMPLETED.\e[0m"
-      exit
-     elif [ "$x" == "$a4" ]; then
-         echo ""
-         cd
-         cd /root/kali-anonsurf/
-         anonsurf start
-         newip=$(curl ifconfig.me)
-         echo ""
-         echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[0m\e[1;34m$newip\e[0m\e[1;31m]\e[0m"
-         echo ""
-     elif [ "$x" == "$a5" ]; then
-         echo ""
-         cd
-         cd /root/kali-anonsurf/
-         anonsurf stop
-         echo ""
-         echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
-         echo ""
-     elif [ "$x" == "$a6" ]; then
-         echo ""
-         cd
-         cd /root/kali-anonsurf/
-         anonsurf status
-         echo ""
-     elif [ "$x" == "$a7" ]; then
-         quit
-
-############################################################################################################
-elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
-         echo ""
-
-         echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
-         echo "----------------------------------------------------------------------------"
-         echo -e " -PRIVACY IMPROVED \n -MINOR BUGS FIXED"
-         echo "----------------------------------------------------------------------------"
-         echo ""
-     elif [ "$x" == "$b2" ]; then
-         help
-     elif [ "$x" == "$b3" ]; then
-         help
-
-     elif [ "$x" == "$b5" ]; then
-         echo ""
-         echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-         echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
-         echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-         echo ""
-         echo "Example: kali.org (JUST ONE DOMAIN)"
-         read -p "[DOMAIN]: " domain
-         echo ""
-         echo "Gathering Informations...."
-         echo ""
-         echo -e "\e[1;31m [*] ADMIN INFO (WHOIS INFO)\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         whois $domain
-         echo ""
-         echo -e "\e[1;31m [*] HOSTS AND IP ADDRESSES\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         cd
-         cd spiderfoot/
-         python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve -s $domain -q
-         echo ""
-         echo ""
-         echo ""
-         echo -e "\e[1;31m [*] NAMES AND EMAILS\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         cd
-         cd spiderfoot/
-         python3 ./sf.py -m sfp_spider,sfp_names,sfp_email,sfp_phone -s $domain -q -F HUMAN_NAME,EMAILADDR,PHONENUMBER
-         echo ""
-         echo -e "\e[1;31m [*] DNS INFO\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $domain -q -r
-         echo ""
-         echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
-         echo ""
-         echo -e "\e[1;31m [*] NIKTO SCAN\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         nikto -h $domain
-         echo ""
-         echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         curl https://api.hackertarget.com/pagelinks/?q=$domain
-         echo ""
-         echo "-------------------------------------------------------------------------------------------------------------"
-         echo ""
-         echo -e "\e[1;31m [*] DONE\e[0m"
-         echo ""
-     elif [ "$x" == "$b6" ]; then
-       echo ""
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo ""
-       echo "Example: 192.164.123"
-       read -p "[IP ADDRESS]: " ipaddress
-       echo ""
-       echo "Gathering Informations...."
-       echo ""
-       echo -e "\e[1;31m [*] IP LOCATION\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       trace -t $ipaddress
-       echo ""
-       echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       whois $ipaddress
-       echo ""
-       echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       nmap -sS $ipaddress -O
-       echo ""
-       echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       nmap -sV --script vuln $ipaddress -O
-       echo "-------------------------------------------------------------------------------------------------------------"
-       nmap -sS $ipaddress
-       echo ""
-       echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       shodan stats --facets vuln net:$ipaddress
-       echo ""
-       shodan host $ipaddress
-       echo ""
-       echo -e "\e[1;31m [*] DNS RECORDS\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       curl http://api.hackertarget.com/reverseiplookup/?q=$ipaddress
-       echo ""
-       echo ""
-       echo -e "\e[1;31m [*] DONE\e[0m"
-       echo ""
-     elif [ "$x" == "$b7" ]; then
-       echo ""
-       echo "Please Enter The Number Followed By The Dialing Code"
-       echo "for example : +447410490080 / +44 Is My Dialing Code"
-       read -p "Phone Number: " phone_info
-       echo ""
-       echo "Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] PHONE $phone_info\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       cd
-       cd Phone_locator/
-       python IP_locator.py $phone_info
-       echo ""
-       echo ""
-     elif [ "$x" == "$b8" ]; then
-       echo ""
-       echo "Example: example@gmail.com"
-       read -p "Email Address: " email_info
-       echo ""
-       echo "Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] EMAIL $email_info\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       mailfy -m $email_info -p all
-       echo ""
-       echo ""
-     elif [ "$x" == "$b9" ]; then
-       echo ""
-       echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
-       read -p "IP/DOMAIN: " vuln
-       echo ""
-       echo " Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] VULNERABILITY SCAN (METASPLOIT)\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       msfconsole -q -x "nmap -v --script vuln $vuln ;exit ;"
-       echo ""
-       echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       nmap -sS $vuln -O
-       echo ""
-       echo -e "\e[1;31m [*] EXTRA VULNERABILITY SCAN\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-       cd
-       cd spiderfoot/
-       python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $vuln -q -r
-       echo ""
-     elif [ "$x" == "$b10" ]; then
-       echo ""
-       echo "Example: kali.org"
-       read -p "Enter DOMAIN: " link
-       echo ""
-       echo "Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] SNIFFING LINKS\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       curl https://api.hackertarget.com/pagelinks/?q=$link
-       echo ""
-     elif [ "$x" == "$b11" ]; then
-       echo ""
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo -e "\e[1;31m!!!  PUT IN TARGET  !!!\e[0m"
-       echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-       echo ""
-       echo "TARGET EXAMPLE - bitcoinforcharity.com"
-       read -p "Target: " bitcoin
-       echo ""
-       echo "Gathering Information..."
-       echo ""
-       echo -e "\e[1;31m [*] BITCOIN WALLET ADDRESSES\e[0m"
-       echo "-------------------------------------------------------------------------------------------------------------"
-       cd
-       cd spiderfoot/
-       python3 ./sf.py -m sfp_spider,sfp_bitcoin -s $bitcoin -F BITCOIN_ADDRESS -q
-       echo "-------------------------------------------------------------------------------------------------------------"
-       python3 ./sf.py -m sfp_spider,sfp_ethereum -s $bitcoin -F ETHEREUM_ADDRESS -q
-       echo "-------------------------------------------------------------------------------------------------------------"
-       python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
-       echo "-------------------------------------------------------------------------------------------------------------"
-       echo ""
-     elif [ "$x" == "$b12" ]; then
-       echo ""
-       read -p "TARGET'S FIRST NAME > " target_firstname
-       read -p "TARGET'S LAST NAME >" target_lastname
-       read -p "TARGET'S STATE >" target_state
-       read -p "TARGET'S CITY >" target_city
-       echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
-       criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
-       echo -e "\e[0;32m [OK]\e[0m"
-       echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
-     elif [ "$x" == "$b13" ]; then
-       echo -e "Choose database:
-                [1]\e[0;32m www.thatsthem.com\e[0m (10 uses per day)
-                [2]\e[0;32m  coming next...\e[0m"
-
-       read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
+    echo "LAST UPDATE: $lastupdate_date"
 
 
-       if [ i == "1" ] ; then
-         echo ""
-         echo -e "\e[0;31m[*]: REQUIERED\e[0m"
-         read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
-         read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
-         #read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
-         #read -p "TARGET'S APROXIMATE AGE >" target_age
-         #read -p "TARGET'S STATE >" target_state
-         #read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
-         #read -p "TARGET'S EMAIL >" target_email
-         #read -p "TARGET'S STREET >" target_street
-         #read -p "TARGET'S CITY >" target_city
-         #read -p "TARGET'S ZIP CODE >" target_zipcode
-         #read -p "TARGET'S  PHONE>" target_phone
-         #read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
-         #read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
-         #read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
-         #read -p "TARGET'S CITY >" target_city
-         #findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/1454471185"
+    echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
+    pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
+    cd $pathtogrecon
+    echo -e "\e[1;31m[*] OK\e[0m"
 
-         echo ""
-         echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
-         thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
-         echo -e "\e[0;32m [OK]\e[0m"
-         echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-         curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
-         echo -e "\e[0;32m [OK]\e[0m"
-         echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
-         sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
-         sed -i '1,108d' resultpage.txt
-         sed '/window.addEventListener ("load", function () {/,/^\s*$/{d}'
-         sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
-         sed '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
-         sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
-         echo -e "\e[0;32m [OK]\e[0m"
+    echo -e "\e[1;31m[*] UPDATE FROM GITHUB..."
+    git pull origin master
+    echo -e "\e[1;31m[*] MOVING FILE...\e[0m"
+
+    cp Grecon /usr/bin
+    echo -e "\e[1;31m[*] OK\n UPDATE COMPLETED.\e[0m"
+    exit
+  elif [ "$x" == "$a4" ]; then
+    echo ""
+    cd
+    cd /root/kali-anonsurf/
+    anonsurf start
+    newip=$(curl ifconfig.me)
+    echo ""
+    echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[0m\e[1;34m$newip\e[0m\e[1;31m]\e[0m"
+    echo ""
+  elif [ "$x" == "$a5" ]; then
+    echo ""
+    cd
+    cd /root/kali-anonsurf/
+    anonsurf stop
+    echo ""
+    echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
+    echo ""
+  elif [ "$x" == "$a6" ]; then
+    echo ""
+    cd
+    cd /root/kali-anonsurf/
+    anonsurf status
+    echo ""
+  elif [ "$x" == "$a7" ]; then
+    quit
+
+    ############################################################################################################
+  elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
+    echo ""
+
+    echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
+    echo "----------------------------------------------------------------------------"
+    echo -e " -PRIVACY IMPROVED \n -MINOR BUGS FIXED"
+    echo "----------------------------------------------------------------------------"
+    echo ""
+  elif [ "$x" == "$b2" ]; then
+    help
+  elif [ "$x" == "$b3" ]; then
+    help
+
+  elif [ "$x" == "$b5" ]; then
+    echo ""
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo ""
+    echo "Example: kali.org (JUST ONE DOMAIN)"
+    read -p "[DOMAIN]: " domain
+    echo ""
+    echo "Gathering Informations...."
+    echo ""
+    echo -e "\e[1;31m [*] ADMIN INFO (WHOIS INFO)\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    whois $domain
+    echo ""
+    echo -e "\e[1;31m [*] HOSTS AND IP ADDRESSES\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    cd
+    cd spiderfoot/
+    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve -s $domain -q
+    echo ""
+    echo ""
+    echo ""
+    echo -e "\e[1;31m [*] NAMES AND EMAILS\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    cd
+    cd spiderfoot/
+    python3 ./sf.py -m sfp_spider,sfp_names,sfp_email,sfp_phone -s $domain -q -F HUMAN_NAME,EMAILADDR,PHONENUMBER
+    echo ""
+    echo -e "\e[1;31m [*] DNS INFO\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $domain -q -r
+    echo ""
+    echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
+    echo ""
+    echo -e "\e[1;31m [*] NIKTO SCAN\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    nikto -h $domain
+    echo ""
+    echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    curl https://api.hackertarget.com/pagelinks/?q=$domain
+    echo ""
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    echo -e "\e[1;31m [*] DONE\e[0m"
+    echo ""
+  elif [ "$x" == "$b6" ]; then
+    echo ""
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo ""
+    echo "Example: 192.164.123"
+    read -p "[IP ADDRESS]: " ipaddress
+    echo ""
+    echo "Gathering Informations...."
+    echo ""
+    echo -e "\e[1;31m [*] IP LOCATION\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    trace -t $ipaddress
+    echo ""
+    echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    whois $ipaddress
+    echo ""
+    echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    nmap -sS $ipaddress -O
+    echo ""
+    echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    nmap -sV --script vuln $ipaddress -O
+    echo "-------------------------------------------------------------------------------------------------------------"
+    nmap -sS $ipaddress
+    echo ""
+    echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    shodan stats --facets vuln net:$ipaddress
+    echo ""
+    shodan host $ipaddress
+    echo ""
+    echo -e "\e[1;31m [*] DNS RECORDS\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    curl http://api.hackertarget.com/reverseiplookup/?q=$ipaddress
+    echo ""
+    echo ""
+    echo -e "\e[1;31m [*] DONE\e[0m"
+    echo ""
+  elif [ "$x" == "$b7" ]; then
+    echo ""
+    echo "Please Enter The Number Followed By The Dialing Code"
+    echo "for example : +447410490080 / +44 Is My Dialing Code"
+    read -p "Phone Number: " phone_info
+    echo ""
+    echo "Gathering Information..."
+    echo ""
+    echo -e "\e[1;31m [*] PHONE $phone_info\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    cd
+    cd Phone_locator/
+    python IP_locator.py $phone_info
+    echo ""
+    echo ""
+  elif [ "$x" == "$b8" ]; then
+    echo ""
+    echo "Example: example@gmail.com"
+    read -p "Email Address: " email_info
+    echo ""
+    echo "Gathering Information..."
+    echo ""
+    echo -e "\e[1;31m [*] EMAIL $email_info\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    mailfy -m $email_info -p all
+    echo ""
+    echo ""
+  elif [ "$x" == "$b9" ]; then
+    echo ""
+    echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
+    read -p "IP/DOMAIN: " vuln
+    echo ""
+    echo " Gathering Information..."
+    echo ""
+    echo -e "\e[1;31m [*] VULNERABILITY SCAN (METASPLOIT)\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    msfconsole -q -x "nmap -v --script vuln $vuln ;exit ;"
+    echo ""
+    echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    nmap -sS $vuln -O
+    echo ""
+    echo -e "\e[1;31m [*] EXTRA VULNERABILITY SCAN\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+    cd
+    cd spiderfoot/
+    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $vuln -q -r
+    echo ""
+  elif [ "$x" == "$b10" ]; then
+    echo ""
+    echo "Example: kali.org"
+    read -p "Enter DOMAIN: " link
+    echo ""
+    echo "Gathering Information..."
+    echo ""
+    echo -e "\e[1;31m [*] SNIFFING LINKS\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    curl https://api.hackertarget.com/pagelinks/?q=$link
+    echo ""
+  elif [ "$x" == "$b11" ]; then
+    echo ""
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m!!!  PUT IN TARGET  !!!\e[0m"
+    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo ""
+    echo "TARGET EXAMPLE - bitcoinforcharity.com"
+    read -p "Target: " bitcoin
+    echo ""
+    echo "Gathering Information..."
+    echo ""
+    echo -e "\e[1;31m [*] BITCOIN WALLET ADDRESSES\e[0m"
+    echo "-------------------------------------------------------------------------------------------------------------"
+    cd
+    cd spiderfoot/
+    python3 ./sf.py -m sfp_spider,sfp_bitcoin -s $bitcoin -F BITCOIN_ADDRESS -q
+    echo "-------------------------------------------------------------------------------------------------------------"
+    python3 ./sf.py -m sfp_spider,sfp_ethereum -s $bitcoin -F ETHEREUM_ADDRESS -q
+    echo "-------------------------------------------------------------------------------------------------------------"
+    python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
+    echo "-------------------------------------------------------------------------------------------------------------"
+    echo ""
+  elif [ "$x" == "$b12" ]; then
+    echo ""
+    read -p "TARGET'S FIRST NAME > " target_firstname
+    read -p "TARGET'S LAST NAME >" target_lastname
+    read -p "TARGET'S STATE >" target_state
+    read -p "TARGET'S CITY >" target_city
+    echo -e -n "\e[1;31m [*] GENERATING LINK... \e[0m"
+    criminal_report_link="https://$target_state.staterecords.org/search.php?firstname=$target_firstname&lastname=$target_lastname&city=$target_city"
+    echo -e "\e[0;32m [OK]\e[0m"
+    echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
+  elif [ "$x" == "$b13" ]; then
+    echo -e "Choose database:
+    [1]\e[0;32m www.thatsthem.com\e[0m (10 uses per day)
+    [2]\e[0;32m  coming next...\e[0m"
+
+    read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
 
 
-       elif [ i == "2" ] ; then
-         
+    if [ i == "1" ] ; then
+    echo ""
+    echo -e "\e[0;31m[*]: REQUIERED\e[0m"
+    read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
+    read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
+    #read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
+    #read -p "TARGET'S APROXIMATE AGE >" target_age
+    #read -p "TARGET'S STATE >" target_state
+    #read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
+    #read -p "TARGET'S EMAIL >" target_email
+    #read -p "TARGET'S STREET >" target_street
+    #read -p "TARGET'S CITY >" target_city
+    #read -p "TARGET'S ZIP CODE >" target_zipcode
+    #read -p "TARGET'S  PHONE>" target_phone
+    #read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
+    #read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
+    #read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
+    #read -p "TARGET'S CITY >" target_city
+    #findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/1454471185"
 
-       fi
+    echo ""
+    echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
+    thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
+    echo -e "\e[0;32m [OK]\e[0m"
+    echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
+    curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+    echo -e "\e[0;32m [OK]\e[0m"
+    echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
+    sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
+    sed -i '1,108d' resultpage.txt
+    sed '/window.addEventListener ("load", function () {/,/^\s*$/{d}'
+    sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
+    sed '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
+    sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
+    echo -e "\e[0;32m [OK]\e[0m"
 
 
+  elif [ i == "2" ] ; then
+    echo -e -n "\e[1;31m THIS DATABASE IS COMING... \e[0m"
+    
+  fi
 
 
 
 
-     else
-       echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
-     fi
-       #statements
+
+
+else
+  echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
+fi
+#statements
 done
 
 #    MODULES
