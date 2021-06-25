@@ -443,7 +443,6 @@ do
       echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
-      echo "debug: curently working into $pwd"
       # tests path(useless for you):
       # cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       echo -e "\e[1;31m[*] OK\e[0m"
@@ -468,7 +467,7 @@ do
       extract_nameoftarget=$(head -2 resultpage.txt | tail -1)
       sed -i '1,2d' resultpage.txt
       path_to_raw_resultpagetxt=$(pwd)
-      mkdir results
+      mkdir results$target_firstname
       cd results$target_firstname
       awk '/Bill/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $pathtoresultpagetxt/resultpage.txt
       echo -e "\n$extract_numberofresult\n$extract_nameoftarget
