@@ -47,7 +47,7 @@ function quit (){
 }
 
 # CATCH CTRL
-trap "quit" 2
+#trap "quit" 2
 
 function banner
 {
@@ -416,57 +416,177 @@ do
     read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
 
 
-    if [ i == "1" ] ; then
-    echo ""
-    echo -e "\e[0;31m[*]: REQUIERED\e[0m"
-    read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
-    read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
-    #read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
-    #read -p "TARGET'S APROXIMATE AGE >" target_age
-    #read -p "TARGET'S STATE >" target_state
-    #read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
-    #read -p "TARGET'S EMAIL >" target_email
-    #read -p "TARGET'S STREET >" target_street
-    #read -p "TARGET'S CITY >" target_city
-    #read -p "TARGET'S ZIP CODE >" target_zipcode
-    #read -p "TARGET'S  PHONE>" target_phone
-    #read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
-    #read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
-    #read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
-    #read -p "TARGET'S CITY >" target_city
-    #findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/1454471185"
+    if [ $i == 1 ] ; then
+      echo ""
+      echo -e "\e[0;31m[*]: REQUIERED\e[0m"
+      read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
+      read -p $'[\e[31m*\e[0m] TARGET\'S LAST NAME >' target_lastname
+      #read -p "TARGET'S MAIDEN LAST NAME >" target_maiden_name
+      #read -p "TARGET'S APROXIMATE AGE >" target_age
+      #read -p "TARGET'S STATE >" target_state
+      #read -p "TARGET'S STATE CODE (AL, UT, TX)>" target_state
+      #read -p "TARGET'S EMAIL >" target_email
+      #read -p "TARGET'S STREET >" target_street
+      #read -p "TARGET'S CITY >" target_city
+      #read -p "TARGET'S ZIP CODE >" target_zipcode
+      #read -p "TARGET'S  PHONE>" target_phone
+      #read -p "TARGET'S DAY OF BIRTH >" target_day_of_birth
+      #read -p "TARGET'S MONTH OF BIRTH >" target_month_of_birth
+      #read -p "TARGET'S YEAR OF BIRTH >" target_year_of_birth
+      #read -p "TARGET'S CITY >" target_city
+      #findpeoplesearch_link="https://www.findpeoplesearch.com/$target_firstname+$target_lastname/$target_age/$target_state/$target_email/$target_street/$target_city/$target_zipcode/$target_maiden_name/$target_phone/$target_month_of_birth/$target_day_of_birth/$target_year_of_birth/1/1454471185"
 
-    echo ""
-    echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
-    thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
-    echo -e "\e[0;32m [OK]\e[0m"
-    echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-    curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
-    echo -e "\e[0;32m [OK]\e[0m"
-    echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
-    sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
-    sed -i '1,108d' resultpage.txt
-    sed '/window.addEventListener ("load", function () {/,/^\s*$/{d}'
-    sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
-    sed '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
-    sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
-    echo -e "\e[0;32m [OK]\e[0m"
+      echo ""
+      echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
+      thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
+      echo -e "\e[0;32m [OK]\e[0m"
+      echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
+      pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
+      cd $pathtogrecon
+      # tests path(useless for you):
+      # cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
+      echo -e "\e[1;31m[*] OK\e[0m"
+      echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
+      curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+      echo -e "\e[0;32m [OK]\e[0m"
+      echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
+      sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
+      sed -i '1,108d' resultpage.txt
+      sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
+      sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
+      sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
+      sed -i '/About Us/,/^\s*$/{d}' resultpage.txt
+      sed -i '/18-24/,/^\s*$/{d}' resultpage.txt
+      sed -i '/ Run Background Search/,/^\s*$/{d}' resultpage.txt
+      sed -i '/ Is this you? Bulk Optout/,/^\s*$/{d}' resultpage.txt
+      sed -i '/Copyright/,$d' resultpage.txt
+      grep -v '^[[:space:]]*$' resultpage.txt > resultpage.txt.tmp
+      mv resultpage.txt.tmp resultpage.txt
+
+      extract_numberofresult=$(head -1 resultpage.txt)
+      extract_nameoftarget=$(head -2 resultpage.txt | tail -1)
+      sed -i '1,2d' resultpage.txt
+      path_to_raw_resultpagetxt=$(pwd)
+      mkdir results
+      cd results$target_firstname
+      awk '/Bill/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $pathtoresultpagetxt/resultpage.txt
+      echo -e "\n$extract_numberofresult\n$extract_nameoftarget
+      _____________
+      "
 
 
-  elif [ i == "2" ] ; then
-    echo -e -n "\e[1;31m THIS DATABASE IS COMING... \e[0m"
 
+      numberofresultfiles=$(ls | wc -l)
+
+      for (( c=1; c<=$numberofresultfiles; c++ ))
+      do
+        extract_phone=$(sed  -n '/Phone Number/{n;p}' result$c | grep -wv -e Alternate)
+        extract_alt_phone=$(sed  -n '/Alternate/{n;p}' result$c | grep -wv -e Email)
+        extract_email=$(sed  -n '/Email/{n;p}' result$c | grep -wv -e Residence)
+        extract_residencelength=$(sed  -n '/Redidence/{n;p}' result$c | grep -wv -e Size)
+        extract_household_size=$(sed  -n '/Household/{n;p}' result$c | grep -wv -e IP)
+        extract_ip=$(sed  -n '/IP/{n;p}' result$c | grep -wv -e Net)
+        extract_net_worth=$(sed  -n '/Net/{n;p}' result$c | grep -wv -e Income)
+        extract_income=$(sed  -n '/Income/{n;p}' result$c | grep -wv -e Education)
+        extract_occupation=$(sed  -n '/Occupation/{n;p}' result$c | grep -wv -e Other)
+        extract_language=$(sed  -n '/Language/{n;p}' result$c | grep -wv -e Wealth)
+        extract_scores=$(sed -n '/Score/,$p' result$c)
+        echo "
+        $(head -1 result$c)
+        ---------------------
+
+        _____________   Adress   _____________
+
+        $(sed -n '2p' result$c)
+
+
+        _________   Phone Number(s)   _________
+
+Main:        $extract_phone
+Alternate:   $extract_alt_phone
+
+
+       ___________   Email adress   ___________
+
+       $extract_email
+
+
+       ________   Length of Residence   ________
+
+       $extract_residencelength
+
+
+       __________   Household Size   __________
+
+       $extract_household_size
+
+
+       ___________   Ip adress   ___________
+
+       $extract_ip
+
+
+      ________   Estimated Net Worth   ________
+
+      $extract_net_worth
+
+
+      _________   Estimated Income   _________
+
+      $extract_income
+
+
+      ___________   Occupation   __________
+
+      $extract_occupation
+
+
+      ____________   Language   ____________
+
+      $extract_language
+
+
+
+      ____________   Scores   ____________
+
+      $extract_scores
+
+
+
+
+
+
+
+
+
+        "
+
+
+
+
+
+
+      done
+
+      echo -e "
+
+      \e[0;32m RAW RESULT FILES SAVED INTO $pathtoresultpagetxt\e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
+
+
+    elif [ i == "2" ] ; then
+      echo -e -n "\e[1;31m THERE WILL BE MORE DATABASE LATER \e[0m"
+
+    fi
+
+
+
+
+
+
+  else
+    echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
   fi
-
-
-
-
-
-
-else
-  echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
-fi
-#statements
+  #statements
 done
 
 #    MODULES
