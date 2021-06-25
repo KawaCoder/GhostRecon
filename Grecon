@@ -142,7 +142,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
-b13='person_finder'
+#b13='person_finder'
 
 #NEW COMMANDS
 while true
