@@ -455,7 +455,27 @@ do
     sed -i '/window.addEventListener ("load", function () {/,/^\s*$/{d}' resultpage.txt
     sed -i '/<ins class="adsbygoogle"/,/^\s*$/{d}' resultpage.txt
     sed -i '/About Us/,/^\s*$/{d}' resultpage.txt
+    sed -i '/18-24/,/^\s*$/{d}' resultpage.txt
+    sed -i '/ Run Background Search/,/^\s*$/{d}' resultpage.txt
+    sed -i '/ Is this you? Bulk Optout/,/^\s*$/{d}' resultpage.txt
+    sed -i '/Copyright/,$d' resultpage.txt
+    grep -v '^[[:space:]]*$' resultpage.txt > resultpage.txt.tmp
+    mv resultpage.txt.tmp resultpage.txt
 
+    extract_numberofresult=$(head -1 resultpage.txt)
+    extract_nameoftarget=$(head -2 resultpage.txt | tail -1)
+
+    awk '/Bill/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"file"k}' i=0 k=1  resultpage.txt
+    echo -e "
+
+    $extract_numberofresult\n    $extract_nameoftarget
+    _____________________________________
+    |
+    |
+    |
+    |
+    |
+    "
 
     echo -e "\e[0;32m [OK]\e[0m"
 
