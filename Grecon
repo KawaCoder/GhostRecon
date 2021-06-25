@@ -10,7 +10,7 @@
 #COMMAND
 clear
 
-lastupdate_date="24/06/2021"
+lastupdate_date="25/06/2021"
 
 #COLORS
 #RED = \e[1;31m
