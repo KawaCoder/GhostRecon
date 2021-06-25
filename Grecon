@@ -447,7 +447,7 @@ do
       # cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       echo -e "\e[1;31m[*] OK\e[0m"
       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-      curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+      #curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
       sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
@@ -469,7 +469,7 @@ do
       path_to_raw_resultpagetxt=$(pwd)
       mkdir results$target_firstname
       cd results$target_firstname
-      awk '/Bill/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
+      awk '/$target_firstname/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
       echo -e "\n$extract_numberofresult\n$extract_nameoftarget
       _____________
       "
