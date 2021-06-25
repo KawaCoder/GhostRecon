@@ -64,9 +64,9 @@ function banner
              /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
             /  /      \/  \/\   \  /      \    /   /    \.
          __/__/_______/___/__\___\__________________________________________________."
-  echo -e "\e[34m                     GhostRecon: investigate, search, anonymously.\e[0m"
-  echo -e "\e[1;31m                           !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
-  echo -e "\e[1;31m                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
+  echo -e "\e[34m                        GhostRecon: investigate, search, anonymously.\e[0m"
+  echo -e "\e[1;31m                              !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
+  echo -e "\e[1;31m                              !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
   echo ""
   echo ""
   echo ""
