@@ -469,7 +469,7 @@ do
       path_to_raw_resultpagetxt=$(pwd)
       mkdir results$target_firstname
       cd results$target_firstname
-      awk -v name='${target_firstname^}'name'/John/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
+      awk -v name='${target_firstname^}'name'/John/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $pathtogrecon/resultpage.txt
       echo -e "\n$extract_numberofresult\n$extract_nameoftarget
       _____________
       "
