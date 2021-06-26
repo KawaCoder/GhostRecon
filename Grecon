@@ -117,7 +117,9 @@ function help
 
 
   \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
-  (CTRL+C  or \"exit\" to exit)\e[0m"
+  (CTRL+C  or \"exit\" to exit)
+
+  DON'T FORGET TO UPDATE THE TOOL MULTIPLE TIME A DAY AND JOIN THE DISCORD \e[0m"
   echo ""
   echo ""
 }
@@ -143,7 +145,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
-b13='person_finder'
+#b13='person_finder'
 
 #NEW COMMANDS
 while true
