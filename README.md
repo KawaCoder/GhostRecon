@@ -2,7 +2,12 @@
 A compact research and OSINT tool for linux.
 ### WARNING: I am curently working on it, so you may occur some errors and your ANONYMITY MAY BE IMPACTED. Please join the discord to talk about this !
 
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://www.mozilla.org/en-US/MPL/) [![hey](https://img.shields.io/badge/Join%20the%20discord-181717?style=for-the-badge&logo=discord)](https://discord.gg/FPhHhBG25d)
+ [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://www.mozilla.org/en-US/MPL/) 
+[![hey](https://img.shields.io/badge/Join%20me%20on%20discord-181717?style=for-the-badge&logo=discord)](https://discord.gg/FPhHhBG25d)  [![Support Server](https://img.shields.io/discord/858046559316344852.svg?label=We%20are&colorB=7289da&style=for-the-badge)](https://discord.gg/FPhHhBG25d)
+
+
+
+ test: [![Github All Releases](https://img.shields.io/github/downloads/DR34M-M4K3R/GhostRecon/total.svg)]()
 
 
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
