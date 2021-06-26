@@ -96,8 +96,8 @@ function help
   \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
   \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
   \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
-  \e[31m person_finder (in dev)\e[0m    \e[32m Advanced search on internet for a person
-  by giving multiple personal inforations. \e[0m
+  \e[31m person_finder (in dev)\e[0m    \e[32m [in developement]Advanced search on internet for a person
+                                        by giving multiple personal inforations. \e[0m
 
 
 
@@ -142,7 +142,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
-b13='person_finder'
+#b13='person_finder'
 
 #NEW COMMANDS
 while true
@@ -438,13 +438,15 @@ do
 
       echo ""
       echo -e -n "\e[1;31m [*] GENERATING REQUEST FOR DATABASE... \e[0m"
-      thatsthem_link="https://thatsthem.com/name/${target_firstname^}-${target_lastname^}"
+      target_firstname=${target_firstname^}
+      target_lastname=${target_lastname^}
+      thatsthem_link="https://thatsthem.com/name/$target_firstname-$target_lastname"
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
       # tests path(useless for you):
-      # cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
+      cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       echo -e "\e[1;31m[*] OK\e[0m"
       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
       #curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
@@ -469,7 +471,7 @@ do
       path_to_raw_resultpagetxt=$(pwd)
       mkdir results$target_firstname
       cd results$target_firstname
-      #awk -v myvar="$target_firstname" '/John/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
+      awk '/Bill/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
       awk '/^Rate:/ {result=$2; getline }
            { print $0 >> ( result ) }' resultpage.txt
       echo -e "\n$extract_numberofresult\n$extract_nameoftarget
