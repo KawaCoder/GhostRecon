@@ -454,7 +454,7 @@ do
       cd results$target_firstname
       echo -e "\e[1;31m[*] OK\e[0m"
       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-      #curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+      curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
       sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
