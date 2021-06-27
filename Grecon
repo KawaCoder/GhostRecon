@@ -449,7 +449,7 @@ do
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
       cd $pathtogrecon
       # tests path(useless for you):
-      cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
+      #cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       mkdir results$target_firstname
       cd results$target_firstname
       echo -e "\e[1;31m[*] OK\e[0m"
