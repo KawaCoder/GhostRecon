@@ -145,7 +145,7 @@ b9='vuln_scanner'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
-#b13='person_finder'
+b13='person_finder'
 
 #NEW COMMANDS
 while true
@@ -450,6 +450,8 @@ do
       cd $pathtogrecon
       # tests path(useless for you):
       cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
+      mkdir results$target_firstname
+      cd results$target_firstname
       echo -e "\e[1;31m[*] OK\e[0m"
       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
       #curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
@@ -470,20 +472,20 @@ do
 
       extract_numberofresult=$(head -1 resultpage.txt)
       extract_nameoftarget=$(head -2 resultpage.txt | tail -1)
-      sed -i '1,2d' resultpage.txt
-      path_to_raw_resultpagetxt=$(pwd)
-      mkdir results$target_firstname
-      cd results$target_firstname
-      awk '/\$target_firstname/{if(NR!=1){for(i=0;i<j;i++)print a[i]>"result"k;j=0;k++;}a[j++]=$0;next}{a[j++]=$0;}END{for(i=0;i<j;i++)print a[i]>"result"k}' i=0 k=1  $path_to_raw_resultpagetxt/resultpage.txt
-      awk '/^Rate:/ {result=$2; getline }
-           { print $0 >> ( result ) }' resultpage.txt
-      echo -e "\n$extract_numberofresult\n$extract_nameoftarget
-      _____________
-      "
+      #sed -i '1,2d' resultpage.txt
+      echo $target_firstname
+      awk "/$target_firstname/{if(NR!=1){for(i=0;i<j;i++)print a[i]>\"result\"k;j=0;k++;}a[j++]=\$0;next}{a[j++]=\$0;}END{for(i=0;i<j;i++)print a[i]>\"result\"k}" i=0 k=1 resultpage.txt
+
+      #echo -e "\n$extract_numberofresult\n$extract_nameoftarget
+      #_____________
+      #"
 
 
 
       numberofresultfiles=$(ls | wc -l)
+      numberofresultfiles=$numberofresultfiles-2
+
+      echo "HELOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
 
       for (( c=1; c<=$numberofresultfiles; c++ ))
       do
@@ -577,7 +579,7 @@ Alternate:   $extract_alt_phone
 
       echo -e "
 
-      \e[0;32m RAW RESULT FILES SAVED INTO $pathtoresultpagetxt\e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
+      \e[0;32m RAW RESULT FILES SAVED INTO $pathtogrecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
 
 
     elif [ i == "2" ] ; then
