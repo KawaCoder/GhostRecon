@@ -485,7 +485,6 @@ do
       numberofresultfiles=$(ls | wc -l)
       numberofresultfiles=$numberofresultfiles-2
 
-      echo "HELOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
 
       for (( c=1; c<=$numberofresultfiles; c++ ))
       do
