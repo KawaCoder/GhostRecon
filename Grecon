@@ -48,7 +48,7 @@ function quit (){
 }
 
 # CATCH CTRL
-#trap "quit" 2
+trap "quit" 2
 
 function banner
 {
