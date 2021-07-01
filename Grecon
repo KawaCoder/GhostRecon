@@ -318,7 +318,7 @@ do
     elif [ "$x" == "$b9" ]; then
     echo ""
     echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
-    read -p "IP/DOMAIN: " vuln
+    read -p "IP/DOMAIN: " vuln 
     echo ""
     echo " Gathering Information..."
     echo ""
