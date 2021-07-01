@@ -62,6 +62,8 @@ A compact research and OSINT tool for linux.
 - Cyber
 - Acid Dynamics
 
+<br/>- - - -<br/>
+Website scan script by @Dmaral3noz (twitter)
 
 [comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
