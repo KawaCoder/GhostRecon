@@ -37,15 +37,6 @@ echo ""
   }
 banner
 
-#IP TRACER
-echo -e "\e[1;31m [*] INSTALLING IP-TRACER\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-echo ""
-git clone https://github.com/rajkumardusad/IP-Tracer.git
-cd IP-Tracer
-chmod +x install
-./install
-echo ""
 #BANNER EXTRA
 clear
 banner
@@ -70,46 +61,13 @@ cd kali-anonsurf/
 ./installer.sh
 echo ""
 #phonelocator
-echo -e "\e[1;31m [*] INSTALLING PHONE LOCATOR\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-echo ""
-cd
-git clone https://github.com/mZzgamer/Phone_locator.git
-echo ""
-#osrframework
-echo -e "\e[1;31m [*] INSTALLING OSRFRAMEWORK\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-echo ""
-apt install osrframework
-sudo apt-get install osrframework
-pip3 install osrframework
-pip2 install osrframework
-pip install osrframework
-echo ""
-#NIKTO
-echo -e "\e[1;31m [*] INSTALLING NIKTO\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-echo ""
-sudo apt install nikto
-sudo apt-get install nikto
-sudo apt-get install nikto -y
-echo ""
-#SPIDERFOOT
-echo -e "\e[1;31m [*] INSTALLING SPIDERFOOT\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
-echo ""
-cd
-git clone https://github.com/smicallef/spiderfoot.git
-cd spiderfoot/
-pip3 install -r requirements.txt
-pip2 install -r requirements.txt
-pip install -r requirements.txt
-echo ""
+
+
+
 #SHODAN
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
-sudo easy_install shodan
 sudo pip install shodan
 echo ""
 echo -e "\e[1;31m[*] HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI\e[0m"

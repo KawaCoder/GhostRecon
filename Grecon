@@ -147,6 +147,9 @@ b11='bitcoin_scanner'
 b12='criminal_scanner'
 b13='person_finder'
 
+
+pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
+
 #NEW COMMANDS
 while true
 do
@@ -229,35 +232,8 @@ do
     echo ""
     whois $domain
     echo ""
-    echo -e "\e[1;31m [*] HOSTS AND IP ADDRESSES\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    cd
-    cd spiderfoot/
-    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve -s $domain -q
-    echo ""
-    echo ""
-    echo ""
-    echo -e "\e[1;31m [*] NAMES AND EMAILS\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    cd
-    cd spiderfoot/
-    python3 ./sf.py -m sfp_spider,sfp_names,sfp_email,sfp_phone -s $domain -q -F HUMAN_NAME,EMAILADDR,PHONENUMBER
-    echo ""
-    echo -e "\e[1;31m [*] DNS INFO\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $domain -q -r
-    echo ""
-    echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    msfconsole -q -x "nmap -v --script vuln $domain ;exit ;"
-    echo ""
-    echo -e "\e[1;31m [*] NIKTO SCAN\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    nikto -h $domain
+    cd pathtogrecon
+    python 0xscan.py -d $domain
     echo ""
     echo -e "\e[1;31m [*] LINKS SCANNED\e[0m"
     echo "-------------------------------------------------------------------------------------------------------------"
@@ -339,34 +315,17 @@ do
     echo ""
     echo "Gathering Information..."
     echo ""
-    echo -e "\e[1;31m [*] EMAIL $email_info\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    mailfy -m $email_info -p all
-    echo ""
-    echo ""
-  elif [ "$x" == "$b9" ]; then
+    elif [ "$x" == "$b9" ]; then
     echo ""
     echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
     read -p "IP/DOMAIN: " vuln
     echo ""
     echo " Gathering Information..."
     echo ""
-    echo -e "\e[1;31m [*] VULNERABILITY SCAN (METASPLOIT)\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    msfconsole -q -x "nmap -v --script vuln $vuln ;exit ;"
-    echo ""
     echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
     echo "-------------------------------------------------------------------------------------------------------------"
     echo ""
     nmap -sS $vuln -O
-    echo ""
-    echo -e "\e[1;31m [*] EXTRA VULNERABILITY SCAN\e[0m"
-    echo "-------------------------------------------------------------------------------------------------------------"
-    echo ""
-    cd
-    cd spiderfoot/
-    python3 ./sf.py -m sfp_dnsbrute,sfp_dnsresolve,sfp_portscan_tcp -s $vuln -q -r
     echo ""
   elif [ "$x" == "$b10" ]; then
     echo ""
