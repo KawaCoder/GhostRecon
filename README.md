@@ -63,7 +63,7 @@ A compact research and OSINT tool for linux.
 - Acid Dynamics
 
 <br/>- - - -<br/>
-Website scan script by @Dmaral3noz (twitter)
+Website scan script by dmaral3noz
 
 [comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
