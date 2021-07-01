@@ -24,7 +24,7 @@ function banner
          /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
          /  /      \/  \/\   \  /      \    /   /    \.
          __/__/_______/___/__\___\_______________________________________________________."
-        echo -e "\e[1;31m                             !!!  INSTALLING ALL REQUIREMENTS  !!!\e[0m"
+        echo -e "\e[1;31m                             !!!      CLEANING HARD DRIVE      !!!\e[0m"
         echo -e "\e[1;31m                             !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
         echo ""
         echo ""
@@ -39,11 +39,12 @@ function banner
       echo "Are you sure that you want to uninstall GhostRecon and all his dependencies?"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
+        pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
 
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING ANONSURF...\e[0m"
-        echo "-------------------------------------------------------------------------------------------------------------"
+        echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
         cd
         echo -e "\e[1;31m[*] OK\e[0m"
@@ -62,7 +63,7 @@ function banner
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING NIKTO...\e[0m"
-        echo "-------------------------------------------------------------------------------------------------------------"
+        echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
         apt-get remove secure-delete nikto
         echo -e "\e[1;31m[*] OK\e[0m"
@@ -75,7 +76,7 @@ function banner
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING IP-TRACER...\e[0m"
-        echo "-------------------------------------------------------------------------------------------------------------"
+        echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING DIRECTORY...\e[0m"
         rm -rf /usr/share/IP-Tracer
         echo -e "\e[1;31m[*] OK\e[0m"
@@ -86,7 +87,7 @@ function banner
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING NMAP...\e[0m"
-        echo "-------------------------------------------------------------------------------------------------------------"
+        echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
         apt-get remove secure-delete nmap
         echo -e "\e[1;31m[*] OK\e[0m"
@@ -98,22 +99,23 @@ function banner
 
 
         echo -e "\e[1;31m [*] UNNSTALLING SHODAN...\e[0m"
-        echo "-------------------------------------------------------------------------------------------------------------"
+        echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PIP MODULE...\e[0m"
         pip uninstall shodan
         echo -e "\e[1;31m[*] OK\e[0m"
 
-
         banner
         echo -e "\e[1;31m ARE YOU SURE? DO YOU REALLY WANT TO WIPE-OUT GHOSTRECON FROM YOUR HARD DRIVE?\n TRUST ME, YOU'LL NOT SEE IT ANYMORE... \n\e[0m"
 
-      read -p "y/n (n) >" y
-      if [ "$y" == "y" ]; then
-        rm -rf $pathtogrecon
-        rm /usr/bin/Grecon
-        banner
-      echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."
-
+        read -p "y/n (n) >" y
+        if [ "$y" == "y" ]; then
+          rm -rf $pathtogrecon
+          rm /usr/bin/Grecon
+          #banner
+          echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."
+        else
+          exit
+        fi
 
       else
         exit

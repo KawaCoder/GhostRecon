@@ -43,7 +43,7 @@ clear
 banner
 #PYTHON
 echo -e "\e[1;31m [*] INSTALLING PYTHON VERSIONS\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 sudo apt-get install python
 sudo apt-get install python-pip
@@ -55,21 +55,28 @@ echo ""
 #phonelocator
 banner
 echo -e "\e[1;31m [*] INSTALLING ANONIMITY\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 cd
 git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf/
 ./installer.sh
 echo ""
-#phonelocator
 
+
+
+#NMAP
+banner
+echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
+apt-get install nmap
 
 
 #SHODAN
 banner
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 sudo pip install shodan
 echo ""
@@ -82,7 +89,7 @@ echo ""
 #MOVE DIR
 banner
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
-echo "-------------------------------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 cd
 
