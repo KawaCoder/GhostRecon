@@ -10,6 +10,7 @@ clear
 
 function banner
     {
+      clear
       echo "
                             ____ _               _   ____
                            / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
@@ -52,6 +53,7 @@ sudo apt-get install python3-pip
 sudo apt-get install python-setuptools
 echo ""
 #phonelocator
+banner
 echo -e "\e[1;31m [*] INSTALLING ANONIMITY\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
@@ -65,6 +67,7 @@ echo ""
 
 
 #SHODAN
+banner
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""
@@ -77,6 +80,7 @@ echo ""
 shodan init $shodan
 echo ""
 #MOVE DIR
+banner
 echo -e "\e[1;31m [*] MOVING DIRECTORIES\e[0m"
 echo "-------------------------------------------------------------------------------------------------------------"
 echo ""

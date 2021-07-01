@@ -104,7 +104,20 @@ function banner
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
-      elif
-      exit
+        banner
+        echo -e "\e[1;31m ARE YOU SURE? DO YOU REALLY WANT TO WIPE-OUT GHOSTRECON FROM YOUR HARD DRIVE?\n TRUST ME, YOU'LL NOT SEE IT ANYMORE... \n\e[0m"
 
-    fi
+      read -p "y/n (n) >" y
+      if [ "$y" == "y" ]; then
+        rm -rf $pathtogrecon
+        rm /usr/bin/Grecon
+        banner
+      echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."
+
+
+      else
+        exit
+      fi
+
+
+    #fi
