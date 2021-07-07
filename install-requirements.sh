@@ -53,12 +53,12 @@ banner
 echo -e "\e[1;31m [*] INSTALLING PYTHON VERSIONS\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo apt-get install python
-sudo apt-get install python-pip
-sudo apt-get install python2
-sudo apt-get install python3
-sudo apt-get install python3-pip
-sudo apt-get install python-setuptools
+sudo apt-get install -y python
+sudo apt-get install -y python-pip
+sudo apt-get install -y python2
+sudo apt-get install -y python3
+sudo apt-get install -y python3-pip
+sudo apt-get install -y python-setuptools
 echo ""
 #phonelocator
 banner
@@ -78,7 +78,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-apt-get install nmap
+apt-get install -y nmap
 
 
 #SHODAN
