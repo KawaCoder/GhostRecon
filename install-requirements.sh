@@ -109,7 +109,7 @@ chmod +x $pathtogrecon/Grecon
 chmod +x $pathtogrecon/uninstall.sh
 
 
-cp -v $pathtogrecon /usr/bin/
+cp -v $pathtogrecon/Grecon /usr/bin/
 
 
 echo ""
