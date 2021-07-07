@@ -65,12 +65,12 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NIKTO...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get remove secure-delete nikto
+        apt-get -y remove secure-delete nikto
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get purge secure-delete nikto
-        apt-get autoremove
+        apt-get -y purge secure-delete nikto
+        apt-get -y autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
@@ -89,11 +89,11 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NMAP...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get remove secure-delete nmap
+        apt-get -y remove secure-delete nmap
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
-        apt-get purge secure-delete nmap
-        apt-get autoremove
+        apt-get -y purge secure-delete nmap
+        apt-get -y autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
