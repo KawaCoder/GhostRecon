@@ -103,8 +103,10 @@ cd
 
 
 
-pathtogrecon=$(find /home/$USER -type f -iname "Grecon")
-chmod +x $pathtogrecon
+pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
+chmod +x $pathtogrecon/Grecon
+
+chmod +x $pathtogrecon/uninstall.sh
 
 
 cp -v $pathtogrecon /usr/bin/
