@@ -8,6 +8,14 @@
 #COMMANDS
 clear
 
+
+# ROOT
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root"
+  echo "Your not rooted, please root your Terminal."
+  exit 1
+fi
+
 function banner
     {
       clear
@@ -17,7 +25,7 @@ function banner
                           | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
                /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
               /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-             /****\   /\.             DEVELOPER: MZZGAMER | VERSION: V.1.0
+             /****\   /\.             DEVELOPER: MZZGAMER | VERSION: V.1.2 by DR34M-M4K3R
             /      \ /**\.
            /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
           /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
