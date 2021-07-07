@@ -53,9 +53,9 @@ function banner
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get remove secure-delete tor i2p i2p-keyring
-        apt-get purge secure-delete tor i2p i2p-keyring
-        apt-get autoremove
+        apt-get -y remove secure-delete tor i2p i2p-keyring
+        apt-get -y purge secure-delete tor i2p i2p-keyring
+        apt-get -y autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
