@@ -53,12 +53,12 @@ banner
 echo -e "\e[1;31m [*] INSTALLING PYTHON VERSIONS\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo apt-get install python
-sudo apt-get install python-pip
-sudo apt-get install python2
-sudo apt-get install python3
-sudo apt-get install python3-pip
-sudo apt-get install python-setuptools
+sudo apt-get -y install python
+sudo apt-get -y install python-pip
+sudo apt-get -y install python2
+sudo apt-get -y install python3
+sudo apt-get -y install python3-pip
+sudo apt-get -y install python-setuptools
 echo ""
 #phonelocator
 banner
@@ -78,7 +78,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-apt-get install nmap
+apt-get -y install nmap
 
 
 #SHODAN
@@ -109,7 +109,7 @@ chmod +x $pathtogrecon/Grecon
 chmod +x $pathtogrecon/uninstall.sh
 
 
-cp -v $pathtogrecon /usr/bin/
+cp -v $pathtogrecon/grecon /usr/bin/
 
 
 echo ""
