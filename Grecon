@@ -104,9 +104,10 @@ function help
   \e[31m update \e[0m               \e[32m Update tool. \e[0m
   \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
   \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
-  \e[31m -h, --help \e[0m            \e[32m shows this help and exists. \e[0m
-  \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
-  \e[31m uninstall \e[0m         \e[32m Wipe out your hard drive from any trace of Ghostrecon and his dependencies. \e[0m
+  \e[31m -h, --help \e[0m           \e[32m shows this help and exists. \e[0m
+  \e[31m -v  --version \e[0m        \e[32m shows the version of the program and exists. \e[0m
+  \e[31m uninstall \e[0m            \e[32m Wipe out your hard drive from any trace of Ghostrecon and his dependencies. \e[0m
+  \e[31m show_path \e[0m            \e[32m Show the path of your GhostRecon directory. \e[0m
 
 
 
@@ -126,6 +127,8 @@ a4='hide identity'
 a5='unhide identity'
 a6='check status'
 a7='exit'
+a8='uninstall'
+a9='show_path'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -196,6 +199,12 @@ do
     echo ""
   elif [ "$x" == "$a7" ]; then
     quit
+  elif [ "$x" == "$a8" ]; then
+    $pathtogrecon/uninstall.sh
+  elif [ "$x" == "$a9" ]; then
+    echo $pathtogrecon
+    echo ""
+    echo ""
 
     ############################################################################################################
   elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
