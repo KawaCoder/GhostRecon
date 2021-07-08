@@ -46,9 +46,6 @@ echo ""
   }
 banner
 
-cd
-
-
 #BANNER EXTRA
 clear
 banner
@@ -56,12 +53,12 @@ banner
 echo -e "\e[1;31m [*] INSTALLING PYTHON VERSIONS\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo apt-get install -y python
-sudo apt-get install -y python-pip
-sudo apt-get install -y python2
-sudo apt-get install -y python3
-sudo apt-get install -y python3-pip
-sudo apt-get install -y python-setuptools
+sudo apt-get install python
+sudo apt-get install python-pip
+sudo apt-get install python2
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo apt-get install python-setuptools
 echo ""
 #phonelocator
 banner
@@ -81,7 +78,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-apt-get install -y nmap
+apt-get install nmap
 
 
 #SHODAN
@@ -106,12 +103,13 @@ cd
 
 
 
-chmod +x GhostRecon/Grecon
+pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
+chmod +x $pathtogrecon/Grecon
 
-chmod +x GhostRecon/uninstall.sh
+chmod +x $pathtogrecon/uninstall.sh
 
 
-cp -v GhostRecon/Grecon /usr/bin/
+cp -v $pathtogrecon /usr/bin/
 
 
 echo ""

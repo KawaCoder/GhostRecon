@@ -78,17 +78,13 @@ banner
 function help
 {
   echo -e "
-
   ABOUT:
   \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
   Developer: \e[0m mZzgamerDEV
   \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
-
-
   \e[35m USAGE: [core_commands] | <sub_commands>
   \e[35m EXAMPLE:  \e[0m domain_scanner, | clear
   You get the point.
-
   <core_commands>
   \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
   \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
@@ -100,9 +96,6 @@ function help
   \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
   \e[31m person_finder (in dev)\e[0m    \e[32m [in developement]Advanced search on internet for a person
                                         by giving multiple personal inforations. \e[0m
-
-
-
   <sub_commands>
   \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
   \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
@@ -111,15 +104,10 @@ function help
   \e[31m update \e[0m               \e[32m Update tool. \e[0m
   \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
   \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
-
-
   \e[31m -h, --help \e[0m            \e[32m shows this help and exists. \e[0m
   \e[31m -v  --version \e[0m         \e[32m shows the version of the program and exists. \e[0m
-
-
   \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
   (CTRL+C  or \"exit\" to exit)
-
   DON'T FORGET TO UPDATE THE TOOL MULTIPLE TIME A DAY AND JOIN THE DISCORD \e[0m"
   echo ""
   echo ""
@@ -150,6 +138,7 @@ b13='person_finder'
 
 echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 
+pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
 banner
 
 #NEW COMMANDS
@@ -167,7 +156,8 @@ do
 
 
     echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
-    cd
+    pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
+    cd $pathtogrecon
     echo -e "\e[1;31m[*] OK\e[0m"
 
     echo -e "\e[1;31m[*] UPDATE FROM GITHUB..."
@@ -235,7 +225,7 @@ do
     echo ""
     echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
     echo "-------------------------------------------------------------------------------"
-    cd
+    cd $pathtogrecon
     python 0xscan.py -d $domain
     echo ""
     echo "-------------------------------------------------------------------------------"
@@ -403,8 +393,8 @@ do
       thatsthem_link="https://thatsthem.com/name/$target_firstname-$target_lastname"
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
-      pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-      cd
+      pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
+      cd $pathtogrecon
       # tests path(useless for you):
       #cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       mkdir results$target_firstname
@@ -459,71 +449,29 @@ do
         echo "
         $(head -1 result$c)
         ---------------------
-
         _____________   Adress   _____________
-
         $(sed -n '2p' result$c)
-
-
         _________   Phone Number(s)   _________
-
 Main:        $extract_phone
 Alternate:   $extract_alt_phone
-
-
        ___________   Email adress   ___________
-
        $extract_email
-
-
        ________   Length of Residence   ________
-
        $extract_residencelength
-
-
        __________   Household Size   __________
-
        $extract_household_size
-
-
        ___________   Ip adress   ___________
-
        $extract_ip
-
-
       ________   Estimated Net Worth   ________
-
       $extract_net_worth
-
-
       _________   Estimated Income   _________
-
       $extract_income
-
-
       ___________   Occupation   __________
-
       $extract_occupation
-
-
       ____________   Language   ____________
-
       $extract_language
-
-
-
       ____________   Scores   ____________
-
       $extract_scores
-
-
-
-
-
-
-
-
-
         "
 
 
@@ -534,8 +482,7 @@ Alternate:   $extract_alt_phone
       done
 
       echo -e "
-
-      \e[0;32m RAW RESULT FILES SAVED INTO GhostRecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
+      \e[0;32m RAW RESULT FILES SAVED INTO $pathtogrecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
 
 
     elif [ i == "2" ] ; then

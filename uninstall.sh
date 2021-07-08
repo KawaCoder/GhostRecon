@@ -39,6 +39,8 @@ function banner
       echo "Are you sure that you want to uninstall GhostRecon and all his dependencies?"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
+        pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
+
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING ANONSURF...\e[0m"
@@ -51,9 +53,9 @@ function banner
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get -y remove secure-delete tor i2p i2p-keyring
-        apt-get -y purge secure-delete tor i2p i2p-keyring
-        apt-get -y autoremove
+        apt-get remove secure-delete tor i2p i2p-keyring
+        apt-get purge secure-delete tor i2p i2p-keyring
+        apt-get autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
@@ -63,12 +65,12 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NIKTO...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove secure-delete nikto
+        apt-get remove secure-delete nikto
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get -y purge secure-delete nikto
-        apt-get -y autoremove
+        apt-get purge secure-delete nikto
+        apt-get autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
@@ -87,11 +89,11 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NMAP...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove secure-delete nmap
+        apt-get remove secure-delete nmap
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
-        apt-get -y purge secure-delete nmap
-        apt-get -y autoremove
+        apt-get purge secure-delete nmap
+        apt-get autoremove
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
@@ -107,8 +109,7 @@ function banner
 
         read -p "y/n (n) >" y
         if [ "$y" == "y" ]; then
-          cd
-          rm -rf GhostRecon
+          rm -rf $pathtogrecon
           rm /usr/bin/Grecon
           #banner
           echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."
