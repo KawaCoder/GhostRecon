@@ -309,14 +309,8 @@ do
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
-    echo ""
-    echo "Example: example@gmail.com"
-    read -p "Email Address: " email_info
-    echo ""
-    echo "Gathering Information..."
-    echo ""
     cd $pathtogrecon/tools
-    python3 email_scanner.py email_info
+    python3 email_scanner.py
     elif [ "$x" == "$b9" ]; then
     echo ""
     echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"

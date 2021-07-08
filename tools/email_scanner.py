@@ -1,10 +1,9 @@
 import requests
-import sys
 
 class ChecK():
 
     def __init__(self):
-        self.email = sys.argv[1]
+        self.email = str(input("Enter Email: "))
         self.twitter()
 
     def PrintT(self):
