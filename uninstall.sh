@@ -39,8 +39,6 @@ function banner
       echo "Are you sure that you want to uninstall GhostRecon and all his dependencies?"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
-        pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING ANONSURF...\e[0m"
@@ -109,7 +107,8 @@ function banner
 
         read -p "y/n (n) >" y
         if [ "$y" == "y" ]; then
-          rm -rf $pathtogrecon
+          cd
+          rm -rf GhostRecon
           rm /usr/bin/Grecon
           #banner
           echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."

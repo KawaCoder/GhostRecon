@@ -150,7 +150,6 @@ b13='person_finder'
 
 echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 
-pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
 banner
 
 #NEW COMMANDS
@@ -168,8 +167,7 @@ do
 
 
     echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
-    pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-    cd $pathtogrecon
+    cd
     echo -e "\e[1;31m[*] OK\e[0m"
 
     echo -e "\e[1;31m[*] UPDATE FROM GITHUB..."
@@ -237,7 +235,7 @@ do
     echo ""
     echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
     echo "-------------------------------------------------------------------------------"
-    cd $pathtogrecon
+    cd
     python 0xscan.py -d $domain
     echo ""
     echo "-------------------------------------------------------------------------------"
@@ -406,7 +404,7 @@ do
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e "\n\e[1;31m[*] SEARCHING ORIGINAL DIRECTORY...\e[0m"
       pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-      cd $pathtogrecon
+      cd
       # tests path(useless for you):
       #cd /media/v1ct0r/DIsque500GO/OSINT/GhostRecon
       mkdir results$target_firstname
@@ -537,7 +535,7 @@ Alternate:   $extract_alt_phone
 
       echo -e "
 
-      \e[0;32m RAW RESULT FILES SAVED INTO $pathtogrecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
+      \e[0;32m RAW RESULT FILES SAVED INTO GhostRecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
 
 
     elif [ i == "2" ] ; then

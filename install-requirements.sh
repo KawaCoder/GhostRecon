@@ -46,6 +46,9 @@ echo ""
   }
 banner
 
+cd
+
+
 #BANNER EXTRA
 clear
 banner
@@ -103,13 +106,12 @@ cd
 
 
 
-pathtogrecon=$(find /home/$USER -type d -iname "GhostRecon")
-chmod +x $pathtogrecon/Grecon
+chmod +x GhostRecon/Grecon
 
-chmod +x $pathtogrecon/uninstall.sh
+chmod +x GhostRecon/uninstall.sh
 
 
-cp -v $pathtogrecon/Grecon /usr/bin/
+cp -v GhostRecon/Grecon /usr/bin/
 
 
 echo ""
