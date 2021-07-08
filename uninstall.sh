@@ -112,7 +112,7 @@ function banner
           rm -rf $pathtogrecon
           rm /usr/bin/Grecon
           #banner
-          echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED. TASK COMPLETED. YOU CAN NOW CLOSE THIS TERMINAL. THANKS HAVING USED GhostRecon."
+          echo "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED, TASK COMPLETED.\n YOU CAN NOW CLOSE THIS TERMINAL.\n THANKS HAVING USED GhostRecon."
         else
           exit
         fi
