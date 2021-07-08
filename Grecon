@@ -306,6 +306,8 @@ do
     echo ""
     echo "Gathering Information..."
     echo ""
+    cd $pathtogrecon/tools
+    python3 email_scanner.py email_info
     elif [ "$x" == "$b9" ]; then
     echo ""
     echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
