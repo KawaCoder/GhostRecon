@@ -60,7 +60,7 @@ sudo apt-get -y install python3
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python-setuptools
 echo ""
-#phonelocator
+
 banner
 echo -e "\e[1;31m [*] INSTALLING ANONIMITY\e[0m"
 echo "-------------------------------------------------------------------------------"
@@ -70,6 +70,7 @@ git clone https://github.com/Und3rf10w/kali-anonsurf.git
 cd kali-anonsurf/
 ./installer.sh
 echo ""
+
 
 
 
