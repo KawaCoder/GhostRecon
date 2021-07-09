@@ -489,7 +489,7 @@ Alternate:   $extract_alt_phone
       done
 
       echo -e "
-      \e[0;32m RAW RESULT FILES SAVED INTO $pathtogrecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
+       RAW RESULT FILES SAVED INTO \e[0;32m$pathtogrecon/results$target_firstname \e[0m LIMITED TO 10 SEARCH A DAY :/  . I AM WORKING ON IT"
 
 
     elif [ i == "2" ] ; then
