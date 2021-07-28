@@ -31,9 +31,9 @@
 A compact research and OSINT tool for linux.
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at https://mozilla.org/MPL/2.0/. 
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/.
    - License holder: DR34M-M4K3R#7751 -->
-   
+
 
                                 ____ _               _   ____
                                / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
@@ -68,7 +68,7 @@ Website scan script by dmaral3noz
 [comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
 ## HOW TO INSTALL (DON'T MISS A THING OR GET A ERROR):
-- `git clone https://github.com/mZzgamer/GhostRecon.git` 
+- `git clone https://github.com/mZzgamer/GhostRecon.git`
 - `cd GhostRecon/`
 - `chmod +x Grecon install-requirements.sh`
 - `./install-requirements.sh`

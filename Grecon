@@ -82,10 +82,11 @@ function help
   \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
   Developer: \e[0m mZzgamerDEV
   \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
-  \e[35m USAGE: [core_commands] | <sub_commands>
-  \e[35m EXAMPLE:  \e[0m domain_scanner, | clear
-  You get the point.
+
+
+
   <core_commands>
+
   \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
   \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
   \e[31m phone_scanner \e[0m            \e[32m Search all possible information from a phone number. \e[0m
@@ -96,7 +97,9 @@ function help
   \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
   \e[31m person_finder (in dev)\e[0m    \e[32m [in developement]Advanced search on internet for a person
                                         by giving multiple personal inforations. \e[0m
+
   <sub_commands>
+
   \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
   \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
   \e[31m check status \e[0m         \e[32m Check Anonimity status. \e[0m
@@ -106,8 +109,9 @@ function help
   \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
   \e[31m -h, --help \e[0m           \e[32m shows this help and exists. \e[0m
   \e[31m -v  --version \e[0m        \e[32m shows the version of the program and exists. \e[0m
-  \e[31m uninstall \e[0m            \e[32m Wipe out your hard drive from any trace of Ghostrecon and his dependencies. \e[0m
+  \e[31m uninstall \e[0m            \e[32m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
   \e[31m show_path \e[0m            \e[32m Show the path of your GhostRecon directory. \e[0m
+  \e[31m reinstall \e[0m           \e[32m Install again Grecon and all his dependencies
 
 
 
@@ -129,6 +133,7 @@ a6='check status'
 a7='exit'
 a8='uninstall'
 a9='show_path'
+a10='reinstall'
 #####################
 b1='-v' ##
 b2='-h' ##
@@ -205,6 +210,10 @@ do
     echo $pathtogrecon
     echo ""
     echo ""
+  elif [ "$x" == "$a10" ]; then
+    echo ""
+    echo ""
+    $pathtogrecon/install-requirements.sh
 
     ############################################################################################################
   elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
