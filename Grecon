@@ -11,7 +11,6 @@ echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d]"
 #COMMAND
 clear
 
-lastupdate_date=$(git log -1 --format=%cd)
 
 #COLORS
 #RED = \e[1;31m
@@ -152,6 +151,8 @@ b13='person_finder'
 echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 
 pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
+cd $pathtogrecon
+lastupdate_date=$(git log -1 --format=%cd)
 banner
 
 #NEW COMMANDS
