@@ -153,6 +153,7 @@ echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
 cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
+lastcommitmessage=$(git log -1 --pretty=%B)
 banner
 
 #NEW COMMANDS
@@ -222,7 +223,7 @@ do
 
     echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
     echo "----------------------------------------------------------------------------"
-    echo -e " -PRIVACY IMPROVED \n -MINOR BUGS FIXED"
+    echo -e "$lastcommitmessage"
     echo "----------------------------------------------------------------------------"
     echo ""
   elif [ "$x" == "$b2" ]; then
@@ -377,12 +378,19 @@ do
     echo -e "\e[0;32m [OK]\e[0m"
     echo -e "\n\n \e[1;31mCTRL + click on this link to get your report: [\e[0m\e[1;34m$criminal_report_link\e[0m\e[1;31m]\e[0m"
   elif [ "$x" == "$b13" ]; then
-    echo -e "Choose database:
-    [1]\e[0;32m www.thatsthem.com\e[0m (10 uses per day)
-    [2]\e[0;32m  coming next...\e[0m"
+    echo -e "
+    \e[0;31mOUT OF SERVICE, JOIN THE DISCORD \nTO KNOW WHEN IT WILL BE IN SERVICE AGAIN.\e[0m
+    "
 
-    read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
 
+
+    #echo -e "Choose database:
+    #[1]\e[0;32m www.thatsthem.com\e[0m (10 uses per day)
+    #[2]\e[0;32m  coming next...\e[0m"
+
+    #read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
+
+    i='1'
 
     if [ $i == 1 ] ; then
       echo ""
@@ -418,7 +426,7 @@ do
       cd results$target_firstname
       echo -e "\e[1;31m[*] OK\e[0m"
       echo -e -n "\e[1;31m [*] REQUESTING DATABASE SERVER... \e[0m"
-      curl -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15" -l $thatsthem_link -o resultpage.html
+      curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4482.0 Safari/537.36 Edg/92.0.874.0" -l $thatsthem_link -o resultpage.html
       echo -e "\e[0;32m [OK]\e[0m"
       echo -e -n "\e[1;31m [*] SHAPING DATA... \e[0m"
       sed 's/<[^>]*>//g ; /^$/d' resultpage.html > resultpage.txt
