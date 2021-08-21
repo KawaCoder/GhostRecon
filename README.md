@@ -68,9 +68,14 @@ Website scan script by dmaral3noz
 [comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
 ## HOW TO INSTALL (DON'T MISS A THING OR GET A ERROR):
-- `git clone https://github.com/mZzgamer/GhostRecon.git`
+- `git clone https://github.com/DR34M-M4K3R/GhostRecon`
 - `cd GhostRecon/`
 - `chmod +x Grecon install-requirements.sh`
 - `./install-requirements.sh`
 ## HOW TO RUN TOOL?
 - Simply type `Grecon` on your terminal.
+## HOW TO UNINSTALL?
+- `cd GhostRecon`
+- `./uninstall.sh`
+(Thid will remove all the files that GhostRecon and his dependencies could put into your system. And GhostRecon and his dependencies too)
+
