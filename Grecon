@@ -392,6 +392,7 @@ do
 
     i='999'
 
+
     if [ $i == 1 ] ; then
       echo ""
       echo -e "\e[0;31m[*]: REQUIERED\e[0m"
