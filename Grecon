@@ -390,7 +390,7 @@ do
 
     #read -p $'[\e[31m*\e[0m] CHOOSE A DATABASE >' i
 
-    i='1'
+    i='999'
 
     if [ $i == 1 ] ; then
       echo ""
