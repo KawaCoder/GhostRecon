@@ -222,7 +222,7 @@ do
 
     echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
     echo "----------------------------------------------------------------------------"
-    echo -e "$lastcommitmessage"
+    echo -e "last modification: $lastcommitmessage"
     echo "----------------------------------------------------------------------------"
     echo ""
   elif [ "$x" == "$b2" ]; then
