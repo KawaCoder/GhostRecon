@@ -115,7 +115,7 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING SHODAN...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PIP MODULE...\e[0m"
-        pip uninstall -y -y shodan
+        apt-get remove --purge python3-shodan
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
