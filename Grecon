@@ -53,11 +53,11 @@ function banner
   clear
   echo "
                                 ____ _               _   ____
-                               / ___| |__   ___  ___| |_|  _ \ ___  ___ ___  _ __
+                               / ___| |__   ___  ___| |_|  _ \ V.1.2___ ___  _ __
                               | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
                    /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
                   /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-                 /****\   /\.  DEVELOPER: MZZGAMER | VERSION: V.1.2 BY DR43M-M4K3R
+                 /****\   /\.  DEVELOPER: MZZGAMER | MAINTAINER: DR43M-M4K3R
                 /      \ /**\.
                /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
               /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
@@ -85,31 +85,31 @@ function help
 
   <core_commands>
 
-  \e[31m domain_scanner \e[0m           \e[32m Search all possible information for Domains. \e[0m
-  \e[31m IP_scanner \e[0m               \e[32m Search all possible information from an IP Address. \e[0m
-  \e[31m phone_scanner \e[0m            \e[32m Search all possible information from a phone number. \e[0m
-  \e[31m email_scanner \e[0m            \e[32m Search all possible information from an email. \e[0m
-  \e[31m vuln_scanner \e[0m             \e[32m Search all possible Vulnerabilities. \e[0m
-  \e[31m link_scanner \e[0m             \e[32m Sniff all links from a Domain. \e[0m
-  \e[31m bitcoin_scanner \e[0m          \e[32m Search all bitcoin wallets addresses from target. \e[0m
-  \e[31m criminal_scanner \e[0m         \e[32m Search if somone is recoreded as a criminal on all the USA. \e[0m
-  \e[31m person_finder (in dev)\e[0m    \e[32m [in developement]Advanced search on internet for a person
+  \e[31m domain_scanner \e[0m           \e[34m Search all possible information for Domains. \e[0m
+  \e[31m IP_scanner \e[0m               \e[34m Search all possible information from an IP Address. \e[0m
+  \e[31m phone_scanner \e[0m            \e[34m Search all possible information from a phone number. \e[0m
+  \e[31m email_scanner \e[0m            \e[34m Search all possible information from an email. \e[0m
+  \e[31m vuln_scanner \e[0m             \e[34m Search all possible Vulnerabilities. \e[0m
+  \e[31m link_scanner \e[0m             \e[34m Sniff all links from a Domain. \e[0m
+  \e[31m bitcoin_scanner \e[0m          \e[34m Search all bitcoin wallets addresses from target. \e[0m
+  \e[31m criminal_scanner \e[0m         \e[34m Search if somone is recoreded as a criminal on all the USA. \e[0m
+  \e[31m person_finder (in dev)\e[0m    \e[34m [in developement]Advanced search on internet for a person
                                         by giving multiple personal inforations. \e[0m
 
   <sub_commands>
 
-  \e[31m hide identity \e[0m        \e[32m enable anonimity (will hide your identity) \e[0m
-  \e[31m unhide identity \e[0m      \e[32m disable anonimity (Will not hide your identity) \e[0m
-  \e[31m check status \e[0m         \e[32m Check Anonimity status. \e[0m
-  \e[31m clear \e[0m                \e[32m Clear terminal. \e[0m
-  \e[31m update \e[0m               \e[32m Update tool. \e[0m
-  \e[31m banner \e[0m               \e[32m To spawn banner. \e[0m
-  \e[31m exit \e[0m                 \e[32m Exit the tool \e[0m
-  \e[31m -h, --help \e[0m           \e[32m shows this help and exists. \e[0m
-  \e[31m -v  --version \e[0m        \e[32m shows the version of the program and exists. \e[0m
-  \e[31m uninstall \e[0m            \e[32m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
-  \e[31m show_path \e[0m            \e[32m Show the path of your GhostRecon directory. \e[0m
-  \e[31m reinstall \e[0m           \e[32m Install again Grecon and all his dependencies
+  \e[31m hide identity \e[0m        \e[34m enable anonimity (will hide your identity) \e[0m
+  \e[31m unhide identity \e[0m      \e[34m disable anonimity (Will not hide your identity) \e[0m
+  \e[31m check status \e[0m         \e[34m Check Anonimity status. \e[0m
+  \e[31m clear \e[0m                \e[34m Clear terminal. \e[0m
+  \e[31m update \e[0m               \e[34m Update tool. \e[0m
+  \e[31m banner \e[0m               \e[34m To spawn banner. \e[0m
+  \e[31m exit \e[0m                 \e[34m Exit the tool \e[0m
+  \e[31m -h, --help \e[0m           \e[34m shows this help and exists. \e[0m
+  \e[31m -v  --version \e[0m        \e[34m shows the version of the program and exists. \e[0m
+  \e[31m uninstall \e[0m            \e[34m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
+  \e[31m show_path \e[0m            \e[34m Show the path of your GhostRecon directory. \e[0m
+  \e[31m reinstall \e[0m           \e[34m Install again Grecon and all his dependencies
 
 
 
