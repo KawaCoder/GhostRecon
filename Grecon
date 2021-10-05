@@ -152,7 +152,7 @@ echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
 cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
-lastcommitmessage=$(git log -1 --pretty=%B)
+lastcommitmessage=$(git log -1 --pretty=%B)²
 banner
 
 #NEW COMMANDS
@@ -173,7 +173,7 @@ do
     cd $pathtogrecon
     echo -e "\e[1;31m[*] OK\e[0m"
 
-    echo -e "\e[1;31m[*] UPDATE FROM GITHUB..."
+    echo -e "\e[1;31m[*] UPDATE FROM GITHUB...\e[0m"
     git pull origin master
     echo -e "\e[1;31m[*] MOVING FILE...\e[0m"
 
@@ -309,9 +309,9 @@ do
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
-    read -p "Enter target email: (a few tries per day)" email
+    read -p "Enter target email: (a few tries per day)>" email
     echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
-    jsondata=$(curl emailrep.io/$email)
+    jsondata=$(curl --silent emailrep.io/$email)
     #jsondata=$(cat brutjson.json)
 
     echo -e "\e[0;32m [OK]\e[0m"
@@ -421,7 +421,7 @@ echo -e "\e[0;32m [OK]\e[0m"
      echo -n "-Spoofable: |"
      booleancolor $email_spoofable
      echo -n "-Strict SPF: |"
-     booleancolor $email_spf_strict
+     reversedbooleancolor $email_spf_strict
      echo -n "-DMARC (Domain-based Message Authentication, Reporting & Conformance) enforced: |"
      reversedbooleancolor $email_DMARC
      echo -n "-Profiles on social medias: |"
