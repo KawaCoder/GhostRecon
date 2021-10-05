@@ -80,3 +80,13 @@ Website scan script by dmaral3noz
 - `cd GhostRecon`
 - `./uninstall.sh`
 (Thid will remove all the files that GhostRecon and his dependencies could put into your system. And GhostRecon and his dependencies too)
+
+
+examples:
+
+![image](https://user-images.githubusercontent.com/67145585/136028190-d3afeba8-0c1d-4a86-bff6-0baf36398f22.png)
+
+![image](https://user-images.githubusercontent.com/67145585/136028284-01ca1d37-8126-4601-94a3-f9c988534f31.png)
+
+![image](https://user-images.githubusercontent.com/67145585/136028072-6f356ba0-5ce5-4d2e-99ce-72ccf761ac9e.png)
+
