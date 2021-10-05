@@ -53,13 +53,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING PYTHON VERSIONS\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo apt-get -y install python
-sudo apt-get -y install python-pip
-sudo apt-get -y install python2
 sudo apt-get -y install python3
-sudo apt-get -y install python3-pip
-sudo apt-get -y install python-setuptools
-pip install requests
 echo ""
 
 banner
@@ -81,12 +75,6 @@ echo ""
 apt-get -y whois
 
 
-#NMAP
-banner
-echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-apt-get -y install nmap
 
 #JQ
 banner
@@ -101,7 +89,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo pip install shodan
+sudo apt install python3-shodan
 echo ""
 echo -e "\e[1;31m[*] HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI\e[0m"
 echo ""

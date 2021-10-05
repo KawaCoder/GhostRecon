@@ -40,7 +40,8 @@ function banner
       Warning: the script will also delete dependencies of previous versions of GhostRecon.
       The following programs are going to  be deleted:
       -ANONSURF
-      -Nikto (previous version)"
+      -Nikto (previous versions)
+      -Nmap (previous versions)"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
         pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
