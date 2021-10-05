@@ -89,7 +89,7 @@ function help
   \e[31m IP_scanner \e[0m               \e[34m Search all possible information from an IP Address. \e[0m
   \e[31m phone_scanner \e[0m            \e[34m Search all possible information from a phone number. \e[0m
   \e[31m email_scanner \e[0m            \e[34m Search all possible information from an email. \e[0m
-  \e[31m vuln_scanner \e[0m             \e[34m Search all possible Vulnerabilities. \e[0m
+  \e[31m email_socialscan \e[0m         \e[34m Detects Instagram, Twitter and Snapchat registration from an email. \e[0m
   \e[31m link_scanner \e[0m             \e[34m Sniff all links from a Domain. \e[0m
   \e[31m bitcoin_scanner \e[0m          \e[34m Search all bitcoin wallets addresses from target. \e[0m
   \e[31m criminal_scanner \e[0m         \e[34m Search if somone is recoreded as a criminal on all the USA. \e[0m
@@ -141,7 +141,7 @@ b5='domain_scanner' #
 b6='IP_scanner' #
 b7='phone_scanner'
 b8='email_scanner'
-b9='vuln_scanner'
+b9='.....'
 b10='link_scanner'
 b11='bitcoin_scanner'
 b12='criminal_scanner'
@@ -276,17 +276,7 @@ do
     echo ""
     whois $ipaddress
     echo ""
-    echo -e "\e[1;31m [*] VULNERABILITIES\e[0m"
     echo "-------------------------------------------------------------------------------"
-    echo ""
-    nmap -sS $ipaddress -O
-    echo ""
-    echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    echo ""
-    nmap -sV --script vuln $ipaddress -O
-    echo "-------------------------------------------------------------------------------"
-    nmap -sS $ipaddress
     echo ""
     echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
     echo "-------------------------------------------------------------------------------"
@@ -319,20 +309,124 @@ do
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
+    read -p "Enter target email: (a few tries per day)" email
+    echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
+    jsondata=$(curl emailrep.io/$email)
+    #jsondata=$(cat brutjson.json)
+
+    echo -e "\e[0;32m [OK]\e[0m"
+
+    echo -e -n " [\e[1;31m*\e[0m] Parsing informations..."
+    email_reputation=$(echo $jsondata | jq .reputation)
+    email_suspicious=$(echo $jsondata | jq .suspicious)
+    email_reputation=$(echo $jsondata | jq .reputation)
+    email_reputationscore=$(echo $jsondata | jq .references)
+    email_blacklisted=$(echo $jsondata | jq .details.blacklisted)
+    email_maliciousactivity=$(echo $jsondata | jq .details.malicious_activity)
+    email_recentmalicious=$(echo $jsondata | jq .details.malicious_activity_recent)
+    email_credsleak=$(echo $jsondata | jq .details.credentials_leaked)
+    email_databreach=$(echo $jsondata | jq .details.data_breach)
+    email_firstseen=$(echo $jsondata | jq .details.first_seen)
+    email_lastseen=$(echo $jsondata | jq .details.last_seen)
+    email_domainexists=$(echo $jsondata | jq .details.domain_exists)
+    email_domainreputation=$(echo $jsondata | jq .details.domain_reputation)
+    email_newdomain=$(echo $jsondata | jq .details.new_domain)
+    email_dayssincedomaincreation=$(echo $jsondata | jq .details.days_since_domain_creation)
+    email_suspicioustld=$(echo $jsondata | jq .details.suspicious_tld)
+    email_spam=$(echo $jsondata | jq .details.spam)
+    email_freeprovider=$(echo $jsondata | jq .details.free_provider)
+    email_disposable=$(echo $jsondata | jq .details.disposable)
+    email_deliverable=$(echo $jsondata | jq .details.deliverable)
+    email_acceptall=$(echo $jsondata | jq .details.accept_all)
+    email_validmx=$(echo $jsondata | jq .details.valid_mx)
+    email_primarymx=$(echo $jsondata | jq .details.primary_mx)
+    email_spoofable=$(echo $jsondata | jq .details.spoofable)
+    email_spf_strict=$(echo $jsondata | jq .details.spf_strict)
+    email_DMARC=$(echo $jsondata | jq .details.dmarc_enforced)
+    email_profiles=$(echo $jsondata | jq .details.profiles)
+
+
+function booleancolor() {
+  if [[ $1 == false ]]; then
+    echo -e "\e[0;32m No\e[0m"
+  elif [[ $1 == true ]]; then
+    echo -e "\e[1;31m Yes\e[0m"
+  else
+    echo "$1"
+  fi
+}
+
+function reversedbooleancolor() {
+  if [[ $1 == true ]]; then
+    echo -e "\e[0;32m No\e[0m"
+  elif [[ $1 == false ]]; then
+    echo -e "\e[1;31m Yes\e[0m"
+  else
+    echo " $1"
+  fi
+}
+
+echo -e "\e[0;32m [OK]\e[0m"
+
+
+     echo -e "\e[1;31m \n_____FULL REPORT_____\e[1;31m \e[0m\n"
+     echo -n "-Suspicious: |"
+     booleancolor $email_suspicious
+     echo -n "-Has reputation: |"
+     booleancolor $email_reputation
+     echo -n "-Reputation score: "
+     booleancolor $email_reputationscore
+     echo -n "-Is blacklisted: |"
+     booleancolor $email_blacklisted
+     echo -n "-Has a malicious activity: |"
+     booleancolor $email_maliciousactivity
+     echo -n "-Has a recent malicious activity: |"
+     booleancolor $email_recentmalicious
+     echo -n "-Creditentials leaked: |"
+     booleancolor $email_credsleak
+     echo -n "-Is on a data breach: |"
+     booleancolor $email_databreach
+     echo -n "-First seen: |"
+     booleancolor $email_firstseen
+     echo -n "-Last seen: |"
+     booleancolor $email_lastseen
+     echo -n "-Domain exists: |"
+     reversedbooleancolor $email_domainexists
+     echo -n "-Domain reputation: |"
+     booleancolor $email_domainreputation
+     echo -n "-Is a new domain: |"
+     booleancolor $email_newdomain
+     echo -n "-Days since domain creation: |"
+     booleancolor $email_dayssincedomaincreation
+     echo -n "-Suspicious extention: |"
+     booleancolor $email_suspicioustld
+     echo -n "-Is spam: |"
+     booleancolor $email_spam
+     echo -n "-Free provider: |"
+     booleancolor $email_freeprovider
+     echo -n "-Temporary address: |"
+     booleancolor $email_disposable
+     echo -n "-Deliverable: |"
+     reversedbooleancolor $email_deliverable
+     echo -n "-Accept all: |"
+     booleancolor $email_acceptall
+     echo -n "-Valid MX: |"
+     reversedbooleancolor $email_validmx
+     echo -n "-Primary Mail Exchanger: |"
+     booleancolor $email_primarymx
+     echo -n "-Spoofable: |"
+     booleancolor $email_spoofable
+     echo -n "-Strict SPF: |"
+     booleancolor $email_spf_strict
+     echo -n "-DMARC (Domain-based Message Authentication, Reporting & Conformance) enforced: |"
+     reversedbooleancolor $email_DMARC
+     echo -n "-Profiles on social medias: |"
+     booleancolor $email_profiles
+
+
+  elif [ "$x" == "$b9" ]; then
     cd $pathtogrecon/tools
     python3 email_scanner.py
-    elif [ "$x" == "$b9" ]; then
-    echo ""
-    echo "Example: (IP) 192.154.214 (DOMAIN) kali.org"
-    read -p "IP/DOMAIN: " vuln
-    echo ""
-    echo " Gathering Information..."
-    echo ""
-    echo -e "\e[1;31m [*] NMAP SCAN\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    echo ""
-    nmap -sS $vuln -O
-    echo ""
   elif [ "$x" == "$b10" ]; then
     echo ""
     echo "Example: kali.org"

@@ -36,7 +36,11 @@ function banner
 
 
 
-      echo "Are you sure that you want to uninstall GhostRecon and all his dependencies?"
+      echo "Are you sure that you want to uninstall GhostRecon and all his dependencies?
+      Warning: the script will also delete dependencies of previous versions of GhostRecon.
+      The following programs are going to  be deleted:
+      -ANONSURF
+      -Nikto (previous version)"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
         pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
@@ -53,11 +57,9 @@ function banner
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get -y remove secure-delete tor i2p i2p-keyring
-        apt-get -y purge secure-delete tor i2p i2p-keyring
-        apt-get -y autoremove
+        apt-get -y remove tor i2p i2p-keyring
+        apt-get -y purge tor i2p i2p-keyring
         echo -e "\e[1;31m[*] OK\e[0m"
-
 
 
 
@@ -65,14 +67,23 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NIKTO...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove secure-delete nikto
+        apt-get -y remove nikto
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
         rm /tmp/i2p-debian-repo.key.asc
-        apt-get -y purge secure-delete nikto
-        apt-get -y autoremove
+        echo -e "\e[1;31m[*] OK\e[0m"
+        echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
+        apt-get -y purge nikto
         echo -e "\e[1;31m[*] OK\e[0m"
 
+
+        banner
+        echo -e "\e[1;31m [*] UNNSTALLING JQ...\e[0m"
+        echo "-------------------------------------------------------------------------------"
+        echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
+        apt-get -y remove jq
+        apt-get -y purge jq
+        echo -e "\e[1;31m[*] OK\e[0m"
 
         banner
         echo -e "\e[1;31m [*] UNNSTALLING IP-TRACER...\e[0m"
@@ -89,11 +100,10 @@ function banner
         echo -e "\e[1;31m [*] UNNSTALLING NMAP...\e[0m"
         echo "-------------------------------------------------------------------------------"
         echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove secure-delete nmap
+        apt-get -y remove nmap
         echo -e "\e[1;31m[*] OK\e[0m"
         echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
-        apt-get -y purge secure-delete nmap
-        apt-get -y autoremove
+        apt-get -y purge nmap
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
@@ -103,6 +113,14 @@ function banner
         echo -e "\n\e[1;31m[*] REMOVING PIP MODULE...\e[0m"
         pip uninstall -y -y shodan
         echo -e "\e[1;31m[*] OK\e[0m"
+
+
+
+        banner
+        echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
+        apt-get -y autoremove
+        echo -e "\e[1;31m[*] OK\e[0m"
+
 
         banner
         echo -e "\e[1;31m ARE YOU SURE? DO YOU REALLY WANT TO WIPE-OUT GHOSTRECON FROM YOUR HARD DRIVE?\n TRUST ME, YOU'LL NOT SEE IT ANYMORE... \n\e[0m"

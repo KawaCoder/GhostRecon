@@ -72,6 +72,12 @@ cd kali-anonsurf/
 echo ""
 
 
+#WHOIS (if not installed)
+banner
+echo -e "\e[1;31m [*] INSTALLING Whois\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
+apt-get -y whois
 
 
 #NMAP
@@ -80,6 +86,13 @@ echo -e "\e[1;31m [*] INSTALLING Nmap\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
 apt-get -y install nmap
+
+#JQ
+banner
+echo -e "\e[1;31m [*] INSTALLING Jq\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
+apt-get -y install jq
 
 
 #SHODAN
