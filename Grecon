@@ -109,7 +109,7 @@ function help
   \e[31m -v  --version \e[0m        \e[34m shows the version of the program and exists. \e[0m
   \e[31m uninstall \e[0m            \e[34m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
   \e[31m show_path \e[0m            \e[34m Show the path of your GhostRecon directory. \e[0m
-  \e[31m reinstall \e[0m           \e[34m Install again Grecon and all his dependencies
+  \e[31m reinstall \e[0m            \e[34m Install again Grecon and all his dependencies
 
 
 
@@ -155,10 +155,18 @@ lastupdate_date=$(git log -1 --format=%cd)
 lastcommitmessage=$(git log -1 --pretty=%B)²
 banner
 
+tor=false
 #NEW COMMANDS
-while true
-do
-  read -p " [GRECON] > " x
+  while true
+  do
+  if [[ $tor == true ]]; then
+    greconinput="\e[31m[\e[0mGRECON\e[31m]\e[0m(\e[1;33;5;45mTor Enabled\e[0m)\n|\n└──>\e[0m"
+  elif [[ $tor == false ]]; then
+    greconinput="\e[31m[\e[0mGRECON\e[31m]\e[0m\n|\n└──>"
+  fi
+
+  echo -e -n $greconinput
+  read x
   if [ "$x" == "$a1" ]; then
     clear
     banner
@@ -189,6 +197,7 @@ do
     echo ""
     echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[0m\e[1;34m$newip\e[0m\e[1;31m]\e[0m"
     echo ""
+    tor='true'
   elif [ "$x" == "$a5" ]; then
     echo ""
     cd
@@ -197,6 +206,7 @@ do
     echo ""
     echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
     echo ""
+    tor='false'
   elif [ "$x" == "$a6" ]; then
     echo ""
     cd
