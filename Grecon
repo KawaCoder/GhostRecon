@@ -276,10 +276,14 @@ tor=false
     echo ""
     echo "Gathering Informations...."
     echo ""
-    echo -e "\e[1;31m [*] IP LOCATION\e[0m"
+    echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
+    echo "-------------------------------------------------------------------------------"
+    cd $pathtogrecon/tools
+    python 0xscan.py -d $domain
+    echo ""
     echo "-------------------------------------------------------------------------------"
     echo ""
-    trace -t $ipaddress
+    echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
     echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
     echo "-------------------------------------------------------------------------------"
@@ -294,12 +298,6 @@ tor=false
     shodan stats --facets vuln net:$ipaddress
     echo ""
     shodan host $ipaddress
-    echo ""
-    echo -e "\e[1;31m [*] DNS RECORDS\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    echo ""
-    curl http://api.hackertarget.com/reverseiplookup/?q=$ipaddress
-    echo ""
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
@@ -319,7 +317,8 @@ tor=false
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
-    read -p "Enter target email: (a few tries per day)>" email
+    echo -e "\e[0;31mWarning: after a few tries, you will be blocked. In this case, chznge your ip with 'hide identity' command.\e[0m"
+    read -p "Enter target email:>" email
     echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
     jsondata=$(curl --silent emailrep.io/$email)
     #jsondata=$(cat brutjson.json)
