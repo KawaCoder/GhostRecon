@@ -374,6 +374,8 @@ echo -e "\e[0;32m [OK]\e[0m"
 
 
      echo -e "\e[1;31m \n_____FULL REPORT_____\e[1;31m \e[0m\n"
+     echo -e "-Email: |"
+     booleancolor $email
      echo -n "-Suspicious: |"
      booleancolor $email_suspicious
      echo -n "-Has reputation: |"
