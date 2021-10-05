@@ -59,6 +59,7 @@ sudo apt-get -y install python2
 sudo apt-get -y install python3
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python-setuptools
+pip install requests
 echo ""
 
 banner
