@@ -276,14 +276,11 @@ tor=false
     echo ""
     echo "Gathering Informations...."
     echo ""
-    echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
+    echo -e "\e[1;31m [*] LOCALISATION\e[0m"
     echo "-------------------------------------------------------------------------------"
-    cd $pathtogrecon/tools
-    python3 0xscan.py -d $domain
+    curl https://api.hackertarget.com/geoip/?q=$ipaddress
     echo ""
     echo "-------------------------------------------------------------------------------"
-    echo ""
-    echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
     echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
     echo "-------------------------------------------------------------------------------"
