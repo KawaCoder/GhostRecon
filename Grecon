@@ -259,7 +259,7 @@ tor=false
     echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
     echo "-------------------------------------------------------------------------------"
     cd $pathtogrecon/tools
-    python30xscan.py -d $domain
+    python3 0xscan.py -d $domain
     echo ""
     echo "-------------------------------------------------------------------------------"
     echo ""
@@ -279,7 +279,7 @@ tor=false
     echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
     echo "-------------------------------------------------------------------------------"
     cd $pathtogrecon/tools
-    python30xscan.py -d $domain
+    python3 0xscan.py -d $domain
     echo ""
     echo "-------------------------------------------------------------------------------"
     echo ""
@@ -313,7 +313,7 @@ tor=false
     echo "-------------------------------------------------------------------------------"
     echo ""
     cd $pathtogrecon/tools
-    python3phone_locator.py $phone_info
+    python3 phone_locator.py $phone_info
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
