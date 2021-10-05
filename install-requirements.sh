@@ -72,7 +72,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING Whois\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-apt-get -y whois
+apt-get -y install whois
 
 
 

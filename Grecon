@@ -310,7 +310,7 @@ tor=false
     echo "-------------------------------------------------------------------------------"
     echo ""
     cd $pathtogrecon/tools
-    python phone_locator.py $phone_info
+    python3 phone_locator.py $phone_info
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then

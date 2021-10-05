@@ -41,7 +41,10 @@ function banner
       The following programs are going to  be deleted:
       -ANONSURF
       -Nikto (previous versions)
-      -Nmap (previous versions)"
+      -Nmap (previous versions)
+      -jq
+      -ip-tracer (previous versions
+      -Shodan)"
       read -p " y/n (n) > " x
       if [ "$x" == "y" ]; then
         pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
