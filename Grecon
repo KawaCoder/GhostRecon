@@ -348,8 +348,10 @@ do
 
 function booleancolor() {
   if [[ $1 == false ]]; then
+    #green
     echo -e "\e[0;32m No\e[0m"
   elif [[ $1 == true ]]; then
+    #red
     echo -e "\e[1;31m Yes\e[0m"
   else
     echo "$1"
@@ -358,9 +360,11 @@ function booleancolor() {
 
 function reversedbooleancolor() {
   if [[ $1 == true ]]; then
-    echo -e "\e[0;32m No\e[0m"
+    #green
+    echo -e "\e[0;32m Yes\e[0m"
   elif [[ $1 == false ]]; then
-    echo -e "\e[1;31m Yes\e[0m"
+    #red
+    echo -e "\e[1;31m No\e[0m"
   else
     echo " $1"
   fi
