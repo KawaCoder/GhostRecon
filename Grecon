@@ -72,7 +72,7 @@ function banner
   echo ""
 }
 banner
-echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d]"
+
 function help
 {
   echo -e "
@@ -154,6 +154,7 @@ cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
 lastcommitmessage=$(git log -1 --pretty=%B)²
 banner
+echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d]"
 
 tor=false
 #NEW COMMANDS
