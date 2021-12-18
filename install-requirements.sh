@@ -75,6 +75,12 @@ echo ""
 apt-get -y install whois
 
 
+#curl
+echo -e "\e[1;31m [*] INSTALLING Curl\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
+apt-get -y install curl
+
 
 #JQ
 banner
