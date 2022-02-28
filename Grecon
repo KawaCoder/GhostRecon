@@ -91,7 +91,6 @@ function help
   \e[31m email_scanner \e[0m            \e[34m Search all possible information from an email. \e[0m
   \e[31m email_socialscan \e[0m         \e[34m Detects Instagram, Twitter and Snapchat registration from an email. \e[0m
   \e[31m link_scanner \e[0m             \e[34m Sniff all links from a Domain. \e[0m
-  \e[31m bitcoin_scanner \e[0m          \e[34m Search all bitcoin wallets addresses from target. \e[0m
   \e[31m criminal_scanner \e[0m         \e[34m Search if somone is recoreded as a criminal on all the USA. \e[0m
   \e[31m person_finder (in dev)\e[0m    \e[34m [in developement]Advanced search on internet for a person
                                         by giving multiple personal inforations. \e[0m
@@ -257,10 +256,11 @@ tor=false
     echo ""
     whois $domain
     echo ""
-    echo -e "\e[1;31m [*] COMPLETE SCAN\e[0m"
+    read -p "Press enter to continue"
+    echo ""
+    echo -e "\e[1;31m [*] DNS LOOKUP\e[0m"
     echo "-------------------------------------------------------------------------------"
-    cd $pathtogrecon/tools
-    python3 0xscan.py -d $domain
+    curl https://api.hackertarget.com/dnslookup/?q=$domain
     echo ""
     echo "-------------------------------------------------------------------------------"
     echo ""
@@ -281,6 +281,7 @@ tor=false
     echo "-------------------------------------------------------------------------------"
     curl https://api.hackertarget.com/geoip/?q=$ipaddress
     echo ""
+    read -p "Press enter to continue"
     echo "-------------------------------------------------------------------------------"
     echo ""
     echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
@@ -288,11 +289,13 @@ tor=false
     echo ""
     whois $ipaddress
     echo ""
+    read -p "Press enter to continue"
     echo "-------------------------------------------------------------------------------"
     echo ""
     echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
     echo "-------------------------------------------------------------------------------"
     echo ""
+    echo "[ * ] Gathering informations..."
     shodan stats --facets vuln net:$ipaddress
     echo ""
     shodan host $ipaddress
@@ -315,7 +318,7 @@ tor=false
     echo ""
     echo ""
   elif [ "$x" == "$b8" ]; then
-    echo -e "\e[0;31mWarning: after a few tries, you will be blocked. In this case, chznge your ip with 'hide identity' command.\e[0m"
+    echo -e "\e[0;31mWarning: after a few tries, you will be blocked. In this case, change your ip with 'hide identity' command.\e[0m"
     read -p "Enter target email:>" email
     echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
     jsondata=$(curl --silent emailrep.io/$email)
