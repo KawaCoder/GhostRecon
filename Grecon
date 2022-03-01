@@ -57,7 +57,7 @@ function banner
                               | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
                    /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
                   /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-                 /****\   /\.  DEVELOPER: MZZGAMER | MAINTAINER: DR43M-M4K3R
+                 /****\   /\.               DEVELOPER: DR43M-M4K3R
                 /      \ /**\.
                /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
               /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
@@ -76,47 +76,41 @@ banner
 function help
 {
   echo -e "
-  ABOUT:
-  \e[31m GhostRecon is compact OSINT tool for OSINT investigators.
-  Developer: \e[0m mZzgamerDEV
-  \e[31mStatus: \e[0m Still under developement, script taken over by DR34M-M4K3R \e[0m
 
 
+  \e[1;31m domain_scanner \e[0m            Search all possible information for Domains.
+  \e[1;31m IP_scanner \e[0m                Search all possible information from an IP Address.
+  \e[1;31m phone_scanner \e[0m             Search all possible information from a phone number.
+  \e[1;31m email_scanner \e[0m             Search all possible information from an email.
+  \e[1;31m email_socialscan \e[0m          Detects Instagram, Twitter and Snapchat registration from an email.
+  \e[1;31m link_scanner \e[0m              Sniff all links from a Domain.
+  \e[1;31m criminal_scanner \e[0m          Search if someone is recoreded as a criminal on all the USA.
+  \e[1;31m person_finder (downed)\e[0m    [downed for technical reasons] Advanced search on internet for a person
+                                        by giving multiple personal inforations.
 
-  <core_commands>
 
-  \e[31m domain_scanner \e[0m           \e[34m Search all possible information for Domains. \e[0m
-  \e[31m IP_scanner \e[0m               \e[34m Search all possible information from an IP Address. \e[0m
-  \e[31m phone_scanner \e[0m            \e[34m Search all possible information from a phone number. \e[0m
-  \e[31m email_scanner \e[0m            \e[34m Search all possible information from an email. \e[0m
-  \e[31m email_socialscan \e[0m         \e[34m Detects Instagram, Twitter and Snapchat registration from an email. \e[0m
-  \e[31m link_scanner \e[0m             \e[34m Sniff all links from a Domain. \e[0m
-  \e[31m criminal_scanner \e[0m         \e[34m Search if somone is recoreded as a criminal on all the USA. \e[0m
-  \e[31m person_finder (in dev)\e[0m    \e[34m [in developement]Advanced search on internet for a person
-                                        by giving multiple personal inforations. \e[0m
-
-  <sub_commands>
-
-  \e[31m hide identity \e[0m        \e[34m enable anonimity (will hide your identity) \e[0m
-  \e[31m unhide identity \e[0m      \e[34m disable anonimity (Will not hide your identity) \e[0m
-  \e[31m check status \e[0m         \e[34m Check Anonimity status. \e[0m
-  \e[31m clear \e[0m                \e[34m Clear terminal. \e[0m
-  \e[31m update \e[0m               \e[34m Update tool. \e[0m
-  \e[31m banner \e[0m               \e[34m To spawn banner. \e[0m
-  \e[31m exit \e[0m                 \e[34m Exit the tool \e[0m
-  \e[31m -h, --help \e[0m           \e[34m shows this help and exists. \e[0m
-  \e[31m -v  --version \e[0m        \e[34m shows the version of the program and exists. \e[0m
-  \e[31m uninstall \e[0m            \e[34m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
-  \e[31m show_path \e[0m            \e[34m Show the path of your GhostRecon directory. \e[0m
-  \e[31m reinstall \e[0m            \e[34m Install again Grecon and all his dependencies
+  \e[1;31m hide identity \e[0m        \e[34m enable anonimity (will hide your identity) \e[0m
+  \e[1;31m unhide identity \e[0m      \e[34m disable anonimity (Will not hide your identity) \e[0m
+  \e[1;31m check status \e[0m         \e[34m Check Anonimity status. \e[0m
+  \e[1;31m clear \e[0m                \e[34m Clear terminal. \e[0m
+  \e[1;31m update \e[0m               \e[34m Update tool. \e[0m
+  \e[1;31m banner \e[0m               \e[34m To spawn banner. \e[0m
+  \e[1;31m exit \e[0m                 \e[34m Exit the tool \e[0m
+  \e[1;31m -h, --help \e[0m           \e[34m shows this help and exists. \e[0m
+  \e[1;31m -v  --version \e[0m        \e[34m shows the version of the program and exists. \e[0m
+  \e[1;31m uninstall \e[0m            \e[34m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
+  \e[1;31m show_path \e[0m            \e[34m Show the path of your GhostRecon directory. \e[0m
+  \e[1;31m reinstall \e[0m            \e[34m Install again Grecon and all his dependencies
 
 
 
 
-  \e[31mDON'T FORGET \"hide identity\" TO HIDE YOUR IP!
-  (CTRL+C  or \"exit\" to exit)
-  DON'T FORGET TO UPDATE THE TOOL MULTIPLE TIME A DAY AND JOIN THE DISCORD \e[0m"
+  \e[31mDON'T FORGET TO:
+  -ACTIVATE BUILD-IN TOR CONNECTION \"hide identity\"!
+  -TO CLEANLY EXIT (CTRL+C  or \"exit\" to exit)
+  -UPDATE THE TOOL MULTIPLE TIME A MONTH AND JOIN THE DISCORD FOR UPDATE ANOUNCEMENTS\e[0m"
   echo ""
+  echo "This script is under the Mozilla Public License 2. https://www.mozilla.org/en-US/MPL/2.0/"
   echo ""
 }
 
@@ -262,6 +256,7 @@ tor=false
     echo "-------------------------------------------------------------------------------"
     curl https://api.hackertarget.com/dnslookup/?q=$domain
     echo ""
+    host $domain
     echo "-------------------------------------------------------------------------------"
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"

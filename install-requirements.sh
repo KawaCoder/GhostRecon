@@ -95,7 +95,7 @@ banner
 echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
 echo "-------------------------------------------------------------------------------"
 echo ""
-sudo apt install python3-shodan
+sudo apt install -y python3-shodan
 echo ""
 echo -e "\e[1;31m[*] HOW TO GET API KEY: https://www.youtube.com/watch?v=nAcaAr00yjI\e[0m"
 echo ""

@@ -66,21 +66,6 @@ function banner
         echo -e "\e[1;31m[*] OK\e[0m"
 
 
-
-        banner
-        echo -e "\e[1;31m [*] UNNSTALLING NIKTO...\e[0m"
-        echo "-------------------------------------------------------------------------------"
-        echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove nikto
-        echo -e "\e[1;31m[*] OK\e[0m"
-        echo -e "\n\e[1;31m[*] REMOVING DEPENDENCIES...\e[0m"
-        rm /tmp/i2p-debian-repo.key.asc
-        echo -e "\e[1;31m[*] OK\e[0m"
-        echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
-        apt-get -y purge nikto
-        echo -e "\e[1;31m[*] OK\e[0m"
-
-
         banner
         echo -e "\e[1;31m [*] UNNSTALLING JQ...\e[0m"
         echo "-------------------------------------------------------------------------------"
@@ -88,28 +73,6 @@ function banner
         apt-get -y remove jq
         apt-get -y purge jq
         echo -e "\e[1;31m[*] OK\e[0m"
-
-        banner
-        echo -e "\e[1;31m [*] UNNSTALLING IP-TRACER...\e[0m"
-        echo "-------------------------------------------------------------------------------"
-        echo -e "\n\e[1;31m[*] REMOVING DIRECTORY...\e[0m"
-        rm -rf /usr/share/IP-Tracer
-        echo -e "\e[1;31m[*] OK\e[0m"
-        echo -e "\n\e[1;31m[*] REMOVING BINARY...\e[0m"
-        rm /usr/bin/trace
-        echo -e "\e[1;31m[*] OK\e[0m"
-
-
-        banner
-        echo -e "\e[1;31m [*] UNNSTALLING NMAP...\e[0m"
-        echo "-------------------------------------------------------------------------------"
-        echo -e "\n\e[1;31m[*] REMOVING PACKAGE...\e[0m"
-        apt-get -y remove nmap
-        echo -e "\e[1;31m[*] OK\e[0m"
-        echo -e "\n\e[1;31m[*] PURGING FILES...\e[0m"
-        apt-get -y purge nmap
-        echo -e "\e[1;31m[*] OK\e[0m"
-
 
 
         echo -e "\e[1;31m [*] UNNSTALLING SHODAN...\e[0m"
@@ -134,7 +97,7 @@ function banner
           rm -rf $pathtogrecon
           rm /usr/bin/Grecon
           #banner
-          echo -e "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED, TASK COMPLETED.\n YOU CAN NOW CLOSE THIS TERMINAL.\n THANKS HAVING USED GhostRecon."
+          echo -e "GhostRecon AND ALL HIS DEPENDENCIES HAVE BEEN DESTROYED, TASK COMPLETED.\n YOU CAN NOW CLOSE THIS TERMINAL.\n THANKS FOR HAVING USED GhostRecon."
         else
           exit
         fi
