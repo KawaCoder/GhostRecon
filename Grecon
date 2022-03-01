@@ -47,25 +47,24 @@ function quit (){
 
 # CATCH CTRL
 trap "quit" 2
-
 function banner
 {
   clear
-  echo "
-                                ____ _               _   ____
-                               / ___| |__   ___  ___| |_|  _ \ V.1.2___ ___  _ __
-                              | |  _| '_ \ / _ \/ __| __| |_) / _ \/ __/ _ \| '_ \.
-                   /\.        | |_| | | | | (_) \__ \ |_|  _ <  __/ (_| (_) | | | |
-                  /**\.        \____|_| |_|\___/|___/\__|_| \_\___|\___\___/|_| |_|
-                 /****\   /\.               DEVELOPER: DR43M-M4K3R
+  echo -e "
+                               \e[32m____\e[0m _               _   \e[32m____\e[0m
+                             \e[32m / ___|\e[0m |__   ___  ___| |_\e[32m|  _ \ V.1.3\e[0m___ ___  _ __
+                             \e[32m| |  _\e[0m| '_ \ / _ \/ __| __\e[32m| |_) \e[0m/ _ \/ __/ _ \| '_ \.
+                   /\.       \e[32m| |_| |\e[0m | | | (_) \__ \ |_\e[32m|  _ <\e[0m  __/ (_| (_) | | | |
+                  /**\.       \e[32m\____|\e[0m_| |_|\___/|___/\__\e[32m|_| \_\ \e[0m__|\___\___/|_| |_|
+                 /****\   /\.               \e[32mDEVELOPER: DR43M-M4K3R\e[0m
                 /      \ /**\.
                /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\.
               /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \.
              /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \.
             /  /      \/  \/\   \  /      \    /   /    \.
          __/__/_______/___/__\___\__________________________________________________."
-  echo -e "\e[34m                        GhostRecon: investigate, search, anonymously.\e[0m"
-  echo -e "\e[1;31m                              !!!  TYPE -h TO SEE COMMANDS  !!!\e[0m"
+  echo -e "\e[32m                        GhostRecon: investigate, search, anonymously.\e[0m"
+  echo -e "\e[1;31m                              !!!  TYPE h TO SEE COMMANDS  !!!\e[0m"
   echo -e "\e[1;31m                              !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  \e[0m"
   echo ""
   echo ""
@@ -78,29 +77,30 @@ function help
   echo -e "
 
 
-  \e[1;31m domain_scanner \e[0m            Search all possible information for Domains.
-  \e[1;31m IP_scanner \e[0m                Search all possible information from an IP Address.
-  \e[1;31m phone_scanner \e[0m             Search all possible information from a phone number.
-  \e[1;31m email_scanner \e[0m             Search all possible information from an email.
-  \e[1;31m email_socialscan \e[0m          Detects Instagram, Twitter and Snapchat registration from an email.
-  \e[1;31m link_scanner \e[0m              Sniff all links from a Domain.
-  \e[1;31m criminal_scanner \e[0m          Search if someone is recoreded as a criminal on all the USA.
-  \e[1;31m person_finder (downed)\e[0m    [downed for technical reasons] Advanced search on internet for a person
+  [\e[32m1\e[0m]  \e[1;31m domain_scanner \e[0m           Search all possible information for Domains.
+  [\e[32m2\e[0m]  \e[1;31m IP_scanner \e[0m               Search all possible information from an IP Address.
+  [\e[32m3\e[0m]  \e[1;31m phone_scanner \e[0m            Search all possible information from a phone number.
+  [\e[32m4\e[0m]  \e[1;31m email_scanner \e[0m            Search all possible information from an email.
+  [\e[32m5\e[0m]  \e[1;31m email_socialscan \e[0m         Detects Instagram, Twitter and Snapchat registration from an email.
+  [\e[32m6\e[0m]  \e[1;31m link_scanner \e[0m             Sniff all links from a Domain.
+  [\e[32m7\e[0m]  \e[1;31m port_scanner \e[0m             Sniff all links from a Domain.
+  [\e[32m8\e[0m]  \e[1;31m criminal_scanner \e[0m         Search if someone is recoreded as a criminal on all the USA.
+  [\e[32m9\e[0m]  \e[1;31m person_finder (downed)\e[0m   [downed for technical reasons] Advanced search on internet for a person
                                         by giving multiple personal inforations.
 
 
-  \e[1;31m hide identity \e[0m        enable \e[1;35mTor\e[0m (will hide your identity)
-  \e[1;31m unhide identity \e[0m      disable \e[1;35mTor\e[0m  (Will not hide your identity)
-  \e[1;31m check status \e[0m         Check Anonimity status.
-  \e[1;31m clear \e[0m                Clear terminal.
-  \e[1;31m update \e[0m               Update tool.
-  \e[1;31m banner \e[0m               To spawn banner.
-  \e[1;31m exit \e[0m                 Exit the tool
-  \e[1;31m -h, --help \e[0m           shows this help and exists.
-  \e[1;31m -v  --version \e[0m        shows the version of the program and exists.
-  \e[1;31m uninstall \e[0m            Wipe out your hard drive from any trace of Ghostrecon and his dependencies.
-  \e[1;31m show_path \e[0m            Show the path of your GhostRecon directory.
-  \e[1;31m reinstall \e[0m            Install again Grecon and all his dependencies.
+  [\e[32mhi\e[0m]   \e[1;31m hide identity \e[0m         enable \e[1;35mTor\e[0m (will hide your identity)
+  [\e[32munhi\e[0m] \e[1;31m unhide identity \e[0m       disable \e[1;35mTor\e[0m  (Will not hide your identity)
+  [\e[32mst\e[0m]   \e[1;31m check status \e[0m          Check Tor status.
+  [\e[32mc\e[0m]    \e[1;31m clear \e[0m                 Clear terminal.
+  [\e[32mu\e[0m]    \e[1;31m update \e[0m                Update tool.
+  [\e[32mb\e[0m]    \e[1;31m banner \e[0m                To spawn banner.
+  [\e[32me\e[0m]    \e[1;31m exit \e[0m                  Exit the tool
+  [\e[32mh\e[0m]    \e[1;31m help \e[0m                  shows this help and exists.
+  [\e[32mv\e[0m]    \e[1;31m version \e[0m               shows the version of the program and exists.
+  [\e[32muni\e[0m]  \e[1;31m uninstall \e[0m             Wipe out your hard drive from any trace of Ghostrecon and his dependencies.
+  [\e[32ms\e[0m]    \e[1;31m show_path \e[0m             Show the path of your GhostRecon directory.
+  [\e[32mr\e[0m]    \e[1;31m reinstall \e[0m             Install again Grecon and all his dependencies.
 
 
 
@@ -126,17 +126,17 @@ a8='uninstall'
 a9='show_path'
 a10='reinstall'
 #####################
-b1='-v' ##
-b2='-h' ##
-b3='--help' ##
-b4='--version' ##
+b1='v' ##
+b2='h' ##
+b3='help' ##
+b4='version' ##
 b5='domain_scanner' #
 b6='IP_scanner' #
 b7='phone_scanner'
 b8='email_scanner'
 b9='email_socialscan'
 b10='link_scanner'
-b11='bitcoin_scanner'
+b11='port_scanner'
 b12='criminal_scanner'
 b13='person_finder'
 
@@ -145,9 +145,9 @@ echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
 cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
-lastcommitmessage=$(git log -1 --pretty=%B)²
+lastcommitmessage=$(git log -1 --pretty=%B)
 banner
-echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d] | Big Update coming!"
+echo "JOIN THE DISCORD --> [https://discord.gg/FPhHhBG25d]"
 
 tor=false
 #NEW COMMANDS
@@ -161,12 +161,12 @@ tor=false
 
   echo -e -n $greconinput
   read x
-  if [ "$x" == "$a1" ]; then
+  if [ "$x" == "$a1" ]||[ "$x" == "c" ]; then
     clear
     banner
-  elif [ "$x" == "$a2" ]; then
+  elif [ "$x" == "$a2" ]||[ "$x" == "b" ]; then
     banner
-  elif [ "$x" == "$a3" ]; then
+  elif [ "$x" == "$a3" ]||[ "$x" == "u" ]; then
 
     echo "LAST UPDATE: $lastupdate_date"
 
@@ -182,40 +182,34 @@ tor=false
     cp Grecon /usr/bin
     echo -e "\e[1;31m[*] OK\n UPDATE COMPLETED.\e[0m"
     exit
-  elif [ "$x" == "$a4" ]; then
+  elif [ "$x" == "$a4" ]||[ "$x" == "hi" ]; then
     echo ""
-    cd
-    cd /root/kali-anonsurf/
     anonsurf start
     newip=$(curl ifconfig.me)
     echo ""
     echo -e "\e[1;31m[*] ANONSURF ENABLED \n YOUR IP IS NOW [\e[0m\e[1;34m$newip\e[0m\e[1;31m]\e[0m"
     echo ""
     tor='true'
-  elif [ "$x" == "$a5" ]; then
+  elif [ "$x" == "$a5" ]||[ "$x" == "unhi" ]; then
     echo ""
-    cd
-    cd /root/kali-anonsurf/
     anonsurf stop
     echo ""
     echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
     echo ""
     tor='false'
-  elif [ "$x" == "$a6" ]; then
+  elif [ "$x" == "$a6" ]||[ "$x" == "st" ]; then
     echo ""
-    cd
-    cd /root/kali-anonsurf/
     anonsurf status
     echo ""
-  elif [ "$x" == "$a7" ]; then
+  elif [ "$x" == "$a7" ]||[ "$x" == "e" ]; then
     quit
-  elif [ "$x" == "$a8" ]; then
+  elif [ "$x" == "$a8" ]||[ "$x" == "uni" ]; then
     $pathtogrecon/uninstall.sh
-  elif [ "$x" == "$a9" ]; then
+  elif [ "$x" == "$a9" ]||[ "$x" == "s" ]; then
     echo $pathtogrecon
     echo ""
     echo ""
-  elif [ "$x" == "$a10" ]; then
+  elif [ "$x" == "$a10" ]||[ "$x" == "r" ]; then
     echo ""
     echo ""
     $pathtogrecon/install-requirements.sh
@@ -229,12 +223,11 @@ tor=false
     echo -e "last modification: $lastcommitmessage"
     echo "----------------------------------------------------------------------------"
     echo ""
-  elif [ "$x" == "$b2" ]; then
-    help
-  elif [ "$x" == "$b3" ]; then
+  elif [ "$x" == "$b2" ]||[ "$x" == "$b3" ]; then
     help
 
-  elif [ "$x" == "$b5" ]; then
+
+  elif [ "$x" == "$b5" ]||[ "$x" == "1" ]; then
     echo ""
     echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
     echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
@@ -261,7 +254,7 @@ tor=false
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
-  elif [ "$x" == "$b6" ]; then
+  elif [ "$x" == "$b6" ]||[ "$x" == "2" ]; then
     echo ""
     echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
     echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
@@ -297,7 +290,7 @@ tor=false
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
-  elif [ "$x" == "$b7" ]; then
+  elif [ "$x" == "$b7" ]||[ "$x" == "3" ]; then
     echo ""
     echo "Please Enter The Number Followed By The Dialing Code"
     echo "for example : +447410490080 / +44 Is My Dialing Code"
@@ -312,7 +305,7 @@ tor=false
     python3 phone_locator.py $phone_info
     echo ""
     echo ""
-  elif [ "$x" == "$b8" ]; then
+  elif [ "$x" == "$b8" ]||[ "$x" == "4" ]; then
     echo -e "\e[0;31mWarning: after a few tries, you will be blocked. In this case, change your ip with 'hide identity' command.\e[0m"
     read -p "Enter target email:>" email
     echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
@@ -435,10 +428,10 @@ echo -e "\e[0;32m [OK]\e[0m"
      booleancolor $email_profiles
 
 
-  elif [ "$x" == "$b9" ]; then
+  elif [ "$x" == "$b9" ]||[ "$x" == "5" ]; then
     cd $pathtogrecon/tools
     python3 email_scanner.py
-  elif [ "$x" == "$b10" ]; then
+  elif [ "$x" == "$b10" ]||[ "$x" == "6" ]; then
     echo ""
     echo "Example: kali.org"
     read -p "Enter DOMAIN: " link
@@ -449,29 +442,36 @@ echo -e "\e[0;32m [OK]\e[0m"
     echo "-------------------------------------------------------------------------------"
     curl https://api.hackertarget.com/pagelinks/?q=$link
     echo ""
-  elif [ "$x" == "$b11" ]; then
+  elif [ "$x" == "$b11" ]||[ "$x" == "7" ]; then
     echo ""
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-    echo -e "\e[1;31m!!!  PUT IN TARGET  !!!\e[0m"
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m###########################\e[0m"
+    echo -e "\e[1;31m##   ENTER TARGET'S IP   ##\e[0m"
+    echo -e "\e[1;31m###########################\e[0m"
     echo ""
-    echo "TARGET EXAMPLE - bitcoinforcharity.com"
-    read -p "Target: " bitcoin
+    read -p "Ip: " IP
     echo ""
-    echo "Gathering Information..."
+    echo -e "\e[1;31m###########################\e[0m"
+    echo -e "\e[1;31m##   ENTER PORTS RANGE   ##\e[0m"
+    echo -e "\e[1;31m###########################\e[0m"
     echo ""
-    echo -e "\e[1;31m [*] BITCOIN WALLET ADDRESSES\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    cd
-    cd spiderfoot/
-    python3 ./sf.py -m sfp_spider,sfp_bitcoin -s $bitcoin -F BITCOIN_ADDRESS -q
-    echo "-------------------------------------------------------------------------------"
-    python3 ./sf.py -m sfp_spider,sfp_ethereum -s $bitcoin -F ETHEREUM_ADDRESS -q
-    echo "-------------------------------------------------------------------------------"
-    python3 ./sf.py -m sfp_spider,sfp_bitcoin,sfp_blockchain -s $bitcoin -F BITCOIN_ADDRESS,BITCOIN_BALANCE -q
-    echo "-------------------------------------------------------------------------------"
+    echo "EXAMPLE : \"0-100\" WILL SCAN PORTS BETWEEN 0 AND 100"
+    read -p "Ports range: " ports
     echo ""
-  elif [ "$x" == "$b12" ]; then
+    firstport="$(echo $ports | cut -d'-' -f1)"
+    lastport="$(echo $ports | cut -d'-' -f2)"
+
+    for PORT in $(eval echo "{$firstport..$lastport}"); do
+
+      if timeout 0.5s bash -c "</dev/tcp/$IP/$PORT" 2>/dev/null
+        then echo -e "[\e[32m+\e[0m] $PORT open"
+      else echo -e "[\e[31m-\e[0m] $PORT closed/filtered/timed out"
+      fi
+
+
+    done
+
+    echo ""
+  elif [ "$x" == "$b12" ]||[ "$x" == "8" ]; then
     echo ""
     read -p "TARGET'S FIRST NAME > " target_firstname
     read -p "TARGET'S LAST NAME >" target_lastname
@@ -500,7 +500,7 @@ echo -e "\e[0;32m [OK]\e[0m"
     i='999'
 
 
-    if [ $i == 1 ] ; then
+    if [ $i == 1 ]||[ "$x" == "9" ]; then
       echo ""
       echo -e "\e[0;31m[*]: REQUIERED\e[0m"
       read -p $'[\e[31m*\e[0m] TARGET\'S FIRST NAME >' target_firstname
@@ -629,7 +629,7 @@ Alternate:   $extract_alt_phone
 
 
   else
-    echo "WRONG COMMAND TRY AGAIN OR TYPE -h TO SEE THEM"
+    echo "WRONG COMMAND TRY AGAIN OR TYPE \"h\" TO SEE THEM"
   fi
   #statements
 done
