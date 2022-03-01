@@ -89,18 +89,18 @@ function help
                                         by giving multiple personal inforations.
 
 
-  \e[1;31m hide identity \e[0m        \e[34m enable anonimity (will hide your identity) \e[0m
-  \e[1;31m unhide identity \e[0m      \e[34m disable anonimity (Will not hide your identity) \e[0m
-  \e[1;31m check status \e[0m         \e[34m Check Anonimity status. \e[0m
-  \e[1;31m clear \e[0m                \e[34m Clear terminal. \e[0m
-  \e[1;31m update \e[0m               \e[34m Update tool. \e[0m
-  \e[1;31m banner \e[0m               \e[34m To spawn banner. \e[0m
-  \e[1;31m exit \e[0m                 \e[34m Exit the tool \e[0m
-  \e[1;31m -h, --help \e[0m           \e[34m shows this help and exists. \e[0m
-  \e[1;31m -v  --version \e[0m        \e[34m shows the version of the program and exists. \e[0m
-  \e[1;31m uninstall \e[0m            \e[34m Wipe out your hard drive from any trace of Ghostrecon and his dependencies \e[0m
-  \e[1;31m show_path \e[0m            \e[34m Show the path of your GhostRecon directory. \e[0m
-  \e[1;31m reinstall \e[0m            \e[34m Install again Grecon and all his dependencies
+  \e[1;31m hide identity \e[0m        enable \e[1;35mTor\e[0m (will hide your identity)
+  \e[1;31m unhide identity \e[0m      disable \e[1;35mTor\e[0m  (Will not hide your identity)
+  \e[1;31m check status \e[0m         Check Anonimity status.
+  \e[1;31m clear \e[0m                Clear terminal.
+  \e[1;31m update \e[0m               Update tool.
+  \e[1;31m banner \e[0m               To spawn banner.
+  \e[1;31m exit \e[0m                 Exit the tool
+  \e[1;31m -h, --help \e[0m           shows this help and exists.
+  \e[1;31m -v  --version \e[0m        shows the version of the program and exists.
+  \e[1;31m uninstall \e[0m            Wipe out your hard drive from any trace of Ghostrecon and his dependencies.
+  \e[1;31m show_path \e[0m            Show the path of your GhostRecon directory.
+  \e[1;31m reinstall \e[0m            Install again Grecon and all his dependencies.
 
 
 
