@@ -153,7 +153,7 @@ cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
 lastcommitmessage=$(git log -1 --pretty=%B)²
 banner
-echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d]"
+echo "NEW: JOIN THE DISCORD! [https://discord.gg/FPhHhBG25d] | Big Update coming!"
 
 tor=false
 #NEW COMMANDS
