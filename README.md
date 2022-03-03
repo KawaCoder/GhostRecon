@@ -17,12 +17,13 @@
     <a href="https://hits.sh/github.com/DR34M-M4K3R/GhostRecon/">
       <img src="https://hits.sh/github.com/DR34M-M4K3R/GhostRecon.svg?style=flat&label=Views"/>
     </a>
-    <a href="https://github.com/DR34M-M4K3R/GhostRecon/commits/master">
-      <img src="https://badges.pufler.dev/updated/DR34M-M4K3R/GhostRecon" />
+    <a href="https://GitHub.com/DR34M-M4K3R/GhostRecon/graphs/commit-activity">
+      <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/>
+    </a>
+    <a href="https://github.com/DR34M-M4K3R/GhostRecon/commits">
+      <img src="https://badgen.net/github/last-commit/DR34M-M4K3R/GhostRecon" />
     </a>
   </p>
-
-
 
 
 
