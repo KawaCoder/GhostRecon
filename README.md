@@ -1,4 +1,4 @@
-# Update your tool, V1.3 is out :)
+# ⚠️ Woops, I messed up with git! Please rm -rf your GhostRecon directory and install it again to avoid update problems due to recent mess. Join the discord for assistance.⚠️
 <p align="center">
     <a href="https://www.mozilla.org/en-US/MPL/">
       <img src="https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla" />
