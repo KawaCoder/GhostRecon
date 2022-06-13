@@ -233,6 +233,13 @@ lastcommitmessage=$(git log -1 --pretty=%B)
 banner
 echo "JOIN THE DISCORD --> [https://discord.gg/FPhHhBG25d]"
 
+echo ""
+echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
+echo "----------------------------------------------------------------------------"
+echo -e "last modification: $lastcommitmessage"
+echo "----------------------------------------------------------------------------"
+echo ""
+
 tor=false
 #NEW COMMANDS
 while true
@@ -301,15 +308,14 @@ do
     ############################################################################################################
   elif [ "$x" == "$b1" ] ||[ "$x" == "$b4" ]; then
     echo ""
-
     echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
     echo "----------------------------------------------------------------------------"
     echo -e "last modification: $lastcommitmessage"
     echo "----------------------------------------------------------------------------"
     echo ""
+
   elif [ "$x" == "$b2" ]||[ "$x" == "$b3" ]; then
     help
-
 
   elif [ "$x" == "$b5" ]||[ "$x" == "1" ]; then
     echo ""
