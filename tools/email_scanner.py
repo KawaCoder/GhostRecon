@@ -45,7 +45,7 @@ class ChecK():
         r.headers.update({'X-CSRFToken': "missing"})
         data = {"email_or_username":self.email}
         req = r.post(url,data=data)
-        print(req.text)
+        #print(req.text)
         print('')
         if req.text.find("We sent an self.email to")>=0:
             self.PrintT()
@@ -82,7 +82,7 @@ class ChecK():
         'app':'BITMOJI_APP'
         }
         req = r.post(url, cookies=cookies, json=data)
-        print(req.text) # If the response is blank, it means Unlinked .
+        #print(req.text) # If the response is blank, it means Unlinked .
         print('')
         if req.text.find("hasSnapchat") >= 0 :
             self.PrintT()

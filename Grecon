@@ -30,13 +30,94 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
+
+
+# SAVING FUNCTIONS
+
+function save() {
+  echo -e "[\e[32m?\e[0m] Save output to a file?"
+  echo ""
+  read -p "y/N" temp
+  filename="temp"
+  appendfilename="temp"
+  appendfile=false
+  savefile=false
+
+  if [ "$temp" == "y" ]; then
+    savefile=true
+
+    # SEARCH IN HOME DIR ONLY: if [ "$(find $(eval echo ~$USER) -maxdepth 1 -type f -name Grecon-data-\*)" == "" ];then
+
+    if [ "$(find $pathtogrecon/ -type f -name 'GR-report*')" == "" ]; then
+      read -p "No previous GhostRecon data file found in $pathtogrecon. Enter a new file name: GR-report_" filename
+
+
+
+    else
+      echo -e "\n\n[\e[32m-\e[0m] Found those already existing reports in $pathtogrecon: \n"
+
+      counter=1
+      find $pathtogrecon -type f -name 'GR-report*'  | while read -r line ; do
+        echo -e "[\e[32m$counter\e[0m] $line"
+        counter=$((counter+1))
+      done
+
+      echo -e "\n\e[1;31mWould you like to append the results to one of them?\e[0m"
+      read -p "y/N >" temp
+
+
+
+      if [ "$temp" == "y" ]; then
+        appendfile=true
+        echo -e "Please enter the \e[32mnumber\e[0m of the file you want to append:\n"
+        read -p ">" temp
+        counter=1
+        find $pathtogrecon -type f -name 'GR-report*'  | while read -r line ; do
+          if [[ "$counter" == "$temp" ]]; then
+            appendfilename=$(basename $line) #  -- doesnt work alone, the variable somehow resets after the loop is finished so i have to write the variable into a file and later recover it from the file :(
+            echo $appendfilename > tempfile
+          fi
+          counter=$((counter+1))
+        done
+      else
+        read -p "Enter a file name: GR-report_" filename
+
+      fi
+    fi
+  fi
+  filename=GR-report_$filename.txt
+}
+
+function collapsefiles() {
+  if [[ "$appendfile" == "true" ]]; then
+
+    appendfilename=$(cat tempfile)
+    cat "$filename" >> "$appendfilename"
+    echo -e "[\e[32m*\e[0m] $appendfilename updated\n"
+    rm $filename tempfile
+
+  elif [[ "$savefile" == "false" ]]; then
+    rm $filename
+
+  else
+    echo -e "\n[\e[32m*\e[0m] $filename created in $pathtogrecon\n"
+  fi
+
+}
+
+
+
+
+
+
+
 # QUIT FUNCTION
 function quit (){
   echo -e "\e[1;31m STOPPING ANONSURF... PLEASE WAIT \e[0m"
   echo ""
   cd
   cd /root/kali-anonsurf/
-  anonsurf stop
+  # anonsurf stop
   echo ""
   echo -e "\e[1;31m[*] ANONSURF DISABLED\e[0m"
   echo ""
@@ -109,7 +190,7 @@ function help
   \e[31mDON'T FORGET TO:
   -ACTIVATE BUILD-IN TOR CONNECTION \"hide identity\"!
   -TO CLEANLY EXIT (CTRL+C  or \"exit\" to exit)
-  -UPDATE THE TOOL MULTIPLE TIME A MONTH AND JOIN THE DISCORD FOR UPDATE ANOUNCEMENTS\e[0m"
+  -UPDATE THE TOOL MULTIPLE TIME A MONTH AND JOIN THE DISCORD FOR UPDATE ANOUNCEMENTS / TROUBLESHOOTING\e[0m"
   echo ""
   echo "This script is under the Mozilla Public License 2. https://www.mozilla.org/en-US/MPL/2.0/"
   echo ""
@@ -141,6 +222,8 @@ b11='port_scanner'
 b12='criminal_scanner'
 b13='person_finder'
 
+temp=""
+
 echo -e "\e[1;31m [*] INITIALISATION...\e[0m"
 
 pathtogrecon=$(find /home/ -type d -iname "GhostRecon")
@@ -152,8 +235,8 @@ echo "JOIN THE DISCORD --> [https://discord.gg/FPhHhBG25d]"
 
 tor=false
 #NEW COMMANDS
-  while true
-  do
+while true
+do
   if [[ $tor == true ]]; then
     greconinput="\e[31m[\e[0mGRECON\e[31m]\e[0m(\e[1;33;5;45mTor Enabled\e[0m)\n|\n└──>\e[0m"
   elif [[ $tor == false ]]; then
@@ -230,85 +313,111 @@ tor=false
 
   elif [ "$x" == "$b5" ]||[ "$x" == "1" ]; then
     echo ""
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-    echo -e "\e[1;31m!!!  WIFI REQUIRED  !!!\e[0m"
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m_____________________\e[0m"
+    echo -e "\e[1;31m\   Domain Scanner  /\e[0m"
+    echo -e "\e[1;31m  -----------------\e[0m"
     echo ""
-    echo "Example: kali.org (JUST ONE DOMAIN)"
+    save
+    echo "Example: kali.org"
     read -p "[DOMAIN]: " domain
     echo ""
     echo "Gathering Informations...."
     echo ""
     echo -e "\e[1;31m [*] ADMIN INFO (WHOIS INFO)\e[0m"
     echo "-------------------------------------------------------------------------------"
+    echo -e "\n\n-----DOMAIN SCAN OF $domain-----\n\n[*] ADMIN INFO (WHOIS INFO)\n-------------------------------------------------------------------------------" >> $filename
     echo ""
-    whois $domain
+    whois $domain | tee -a $filename
     echo ""
     read -p "Press enter to continue"
     echo ""
     echo -e "\e[1;31m [*] DNS LOOKUP\e[0m"
     echo "-------------------------------------------------------------------------------"
-    curl https://api.hackertarget.com/dnslookup/?q=$domain
+    echo -e "\n\n[*] DNS LOOKUP\n-------------------------------------------------------------------------------\n" >> $filename
+    curl https://api.hackertarget.com/dnslookup/?q=$domain | tee -a $filename
     echo ""
-    host $domain
-    echo "-------------------------------------------------------------------------------"
+    host $domain | tee -a $filename
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"
     echo ""
+    collapsefiles
+
   elif [ "$x" == "$b6" ]||[ "$x" == "2" ]; then
     echo ""
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
-    echo -e "\e[1;31m!!!  WIFI AND SHODAN KEY REQUIRED  !!!\e[0m"
-    echo -e "\e[1;31m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+    echo -e "\e[1;31m__________________\e[0m"
+    echo -e "\e[1;31m\   IP  Scanner  /\e[0m"
+    echo -e "\e[1;31m  --------------\e[0m"
     echo ""
-    echo "Example: 192.164.123"
+    echo "Example: 48.345.21.782"
     read -p "[IP ADDRESS]: " ipaddress
+    save
     echo ""
     echo "Gathering Informations...."
     echo ""
+    echo -e "-----IP SCAN OF $ipaddress-----\n" >> $filename
     echo -e "\e[1;31m [*] LOCALISATION\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    curl https://api.hackertarget.com/geoip/?q=$ipaddress
+    echo "[*] LOCALISATION" >> $filename
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
+    curl https://api.hackertarget.com/geoip/?q=$ipaddress  | tee -a $filename
     echo ""
     read -p "Press enter to continue"
-    echo "-------------------------------------------------------------------------------"
+    echo -e "\n-------------------------------------------------------------------------------" | tee -a $filename
     echo ""
     echo -e "\e[1;31m [*] ADMIN INFO\e[0m"
-    echo "-------------------------------------------------------------------------------"
+    echo  "[*] ADMIN INFO" >> $filename
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
     echo ""
-    whois $ipaddress
+    whois $ipaddress  | tee -a $filename
     echo ""
     read -p "Press enter to continue"
-    echo "-------------------------------------------------------------------------------"
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
     echo ""
     echo -e "\e[1;31m [*] SHODAN RESULTS\e[0m"
-    echo "-------------------------------------------------------------------------------"
+    echo  "[*] SHODAN RESULTS" >> $filename
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
     echo ""
     echo "[ * ] Gathering informations..."
-    shodan stats --facets vuln net:$ipaddress
+    shodan stats --facets vuln net:$ipaddress | tee -a $filename
     echo ""
-    shodan host $ipaddress
+    shodan host $ipaddress | tee -a $filename
     echo ""
     echo -e "\e[1;31m [*] DONE\e[0m"
+    echo -e "\n [*] DONE\n" >> $filename
     echo ""
+    collapsefiles
+
   elif [ "$x" == "$b7" ]||[ "$x" == "3" ]; then
     echo ""
+    echo -e "\e[1;31m_____________________\e[0m"
+    echo -e "\e[1;31m\   Phone Scanner   /\e[0m"
+    echo -e "\e[1;31m  -----------------\n\e[0m"
     echo "Please Enter The Number Followed By The Dialing Code"
     echo "for example : +447410490080 / +44 Is My Dialing Code"
     read -p "Phone Number: " phone_info
     echo ""
+    save
+    echo -e "Scan of $phone_info\n" >> $filename
     echo "Gathering Information..."
     echo ""
     echo -e "\e[1;31m [*] PHONE $phone_info\e[0m"
-    echo "-------------------------------------------------------------------------------"
+    echo "-------------------------------------------------------------------------------" >> $filename
     echo ""
-    cd $pathtogrecon/tools
-    python3 phone_locator.py $phone_info
+    #cd $pathtogrecon/tools
+    python3 $pathtogrecon/tools/phone_locator.py $phone_info | tee -a $filename
     echo ""
-    echo ""
+    echo -e "\n [*] DONE" | tee -a $filename
+    collapsefiles
+
   elif [ "$x" == "$b8" ]||[ "$x" == "4" ]; then
+
+    echo -e "\e[1;31m_____________________\e[0m"
+    echo -e "\e[1;31m\   Email Scanner   /\e[0m"
+    echo -e "\e[1;31m  -----------------\n\e[0m"
+
     echo -e "\e[0;31mWarning: after a few tries, you will be blocked. In this case, change your ip with 'hide identity' command.\e[0m"
     read -p "Enter target email:>" email
+    save
     echo -e -n " [\e[1;31m*\e[0m] Gathering informations..."
     jsondata=$(curl --silent emailrep.io/$email)
     #jsondata=$(cat brutjson.json)
@@ -368,6 +477,23 @@ function reversedbooleancolor() {
     echo " $1"
   fi
 }
+
+
+function booleanconvertor() {
+  if [[ $1 == true ]]; then
+    echo -e " Yes"
+
+  elif [[ $1 == false ]]; then
+    echo -e " No"
+
+  else
+    echo " $1"
+  fi
+
+
+}
+
+
 
 echo -e "\e[0;32m [OK]\e[0m"
 
@@ -429,10 +555,86 @@ echo -e "\e[0;32m [OK]\e[0m"
      booleancolor $email_profiles
 
 
+
+
+     echo -e "\n_____ Scan of $email _____\n"
+     #for the saved file: (cannot handle colours)
+     echo -e "-Email: |" | tee -a $filename
+     booleanconvertor $email >> $filename
+     echo -n "-Suspicious: |" >> $filename
+     booleanconvertor $email_suspicious >> $filename
+     echo -n "-Has reputation: |" >> $filename
+     booleanconvertor $email_reputation >> $filename
+     echo -n "-Reputation score: " >> $filename
+     booleanconvertor $email_reputationscore >> $filename
+     echo -n "-Is blacklisted: |" >> $filename
+     booleanconvertor $email_blacklisted >> $filename
+     echo -n "-Has a malicious activity: |" >> $filename
+     booleanconvertor $email_maliciousactivity >> $filename
+     echo -n "-Has a recent malicious activity: |" >> $filename
+     booleanconvertor $email_recentmalicious >> $filename
+     echo -n "-Creditentials leaked: |" >> $filename
+     booleanconvertor $email_credsleak >> $filename
+     echo -n "-Is on a data breach: |" >> $filename
+     booleanconvertor $email_databreach >> $filename
+     echo -n "-First seen: |" >> $filename
+     booleanconvertor $email_firstseen >> $filename
+     echo -n "-Last seen: |" >> $filename
+     booleanconvertor $email_lastseen >> $filename
+     echo -n "-Domain exists: |" >> $filename
+     booleanconvertor $email_domainexists >> $filename
+     echo -n "-Domain reputation: |" >> $filename
+     booleanconvertor $email_domainreputation >> $filename
+     echo -n "-Is a new domain: |" >> $filename
+     booleanconvertor $email_newdomain >> $filename
+     echo -n "-Days since domain creation: |" >> $filename
+     booleanconvertor $email_dayssincedomaincreation >> $filename
+     echo -n "-Suspicious extention: |" >> $filename
+     booleanconvertor $email_suspicioustld >> $filename
+     echo -n "-Is spam: |" >> $filename
+     booleanconvertor $email_spam >> $filename
+     echo -n "-Free provider: |" >> $filename
+     booleanconvertor $email_freeprovider >> $filename
+     echo -n "-Temporary address: |" >> $filename
+     booleanconvertor $email_disposable >> $filename
+     echo -n "-Deliverable: |" >> $filename
+     booleanconvertor $email_deliverable >> $filename
+     echo -n "-Accept all: |" >> $filename
+     booleanconvertor $email_acceptall >> $filename
+     echo -n "-Valid MX: |" >> $filename
+     booleanconvertor $email_validmx >> $filename
+     echo -n "-Primary Mail Exchanger: |" >> $filename
+     booleanconvertor $email_primarymx >> $filename
+     echo -n "-Spoofable: |" >> $filename
+     booleanconvertor $email_spoofable >> $filename
+     echo -n "-Strict SPF: |" >> $filename
+     booleanconvertor $email_spf_strict >> $filename
+     echo -n "-DMARC (Domain-based Message Authentication, Reporting & Conformance) enforced: |" >> $filename
+     booleanconvertor $email_DMARC >> $filename
+     echo -n "-Profiles on social medias: |" >> $filename
+     booleanconvertor $email_profiles >> $filename
+
+
+
+
+
+     collapsefiles
+
   elif [ "$x" == "$b9" ]||[ "$x" == "5" ]; then
-    cd $pathtogrecon/tools
-    python3 email_scanner.py
+    echo -e "\e[1;31m____________________________\e[0m"
+    echo -e "\e[1;31m\   Social media Scanner   /\e[0m"
+    echo -e "\e[1;31m  ------------------------\n\e[0m"
+    save
+    echo -e "__________Social Media Check__________\n" >> $filename
+    python3 $pathtogrecon/tools/email_scanner.py | tee -a $filename
+    collapsefiles
+
   elif [ "$x" == "$b10" ]||[ "$x" == "6" ]; then
+    echo -e "\e[1;31m_____________________\e[0m"
+    echo -e "\e[1;31m\   Link Sniffing   /\e[0m"
+    echo -e "\e[1;31m  -----------------\n\e[0m"
+    save
+    echo -e "__________Link Sniffing__________\n" >> $filename
     echo ""
     echo "Example: kali.org"
     read -p "Enter DOMAIN: " link
@@ -440,10 +642,17 @@ echo -e "\e[0;32m [OK]\e[0m"
     echo "Gathering Information..."
     echo ""
     echo -e "\e[1;31m [*] SNIFFING LINKS\e[0m"
-    echo "-------------------------------------------------------------------------------"
-    curl https://api.hackertarget.com/pagelinks/?q=$link
+    echo "-------------------------------------------------------------------------------" | tee -a $filename
+    curl https://api.hackertarget.com/pagelinks/?q=$link | tee -a $filename
     echo ""
+    collapsefiles
+
   elif [ "$x" == "$b11" ]||[ "$x" == "7" ]; then
+    echo -e "\e[1;31m_____________________\e[0m"
+    echo -e "\e[1;31m\   Port Scanner   /\e[0m"
+    echo -e "\e[1;31m  -----------------\n\e[0m"
+    save
+    echo -e "__________Port Scanner__________\n" >> $filename
     echo ""
     echo -e "\e[1;31m###########################\e[0m"
     echo -e "\e[1;31m##   ENTER TARGET'S IP   ##\e[0m"
@@ -458,20 +667,23 @@ echo -e "\e[0;32m [OK]\e[0m"
     echo "EXAMPLE : \"0-100\" WILL SCAN PORTS BETWEEN 0 AND 100"
     read -p "Ports range: " ports
     echo ""
+    echo "------------- Port Scan of $IP : ports $ports -------------\n" >> $filename
     firstport="$(echo $ports | cut -d'-' -f1)"
     lastport="$(echo $ports | cut -d'-' -f2)"
 
     for PORT in $(eval echo "{$firstport..$lastport}"); do
 
-      if timeout 0.5s bash -c "</dev/tcp/$IP/$PORT" 2>/dev/null
-        then echo -e "[\e[32m+\e[0m] $PORT open"
-      else echo -e "[\e[31m-\e[0m] $PORT closed/filtered/timed out"
+      if timeout 0.5s bash -c "</dev/tcp/$IP/$PORT" 2>/dev/null ; then
+        echo -e "[\e[32m+\e[0m] $PORT open"
+        echo -e "[+] $PORT open" >> $filename
+      else
+        echo -e "[\e[31m-\e[0m] $PORT closed/filtered/timed out"
+        echo -e "[-] $PORT closed/filtered/timed out" >> $filename
       fi
-
-
     done
+    eho ""
+    collapsefiles
 
-    echo ""
   elif [ "$x" == "$b12" ]||[ "$x" == "8" ]; then
     echo ""
     read -p "TARGET'S FIRST NAME > " target_firstname
