@@ -231,7 +231,7 @@ cd $pathtogrecon
 lastupdate_date=$(git log -1 --format=%cd)
 lastcommitmessage=$(git log -1 --pretty=%B)
 banner
-echo "JOIN THE DISCORD --> [https://discord.gg/FPhHhBG25d]"
+echo "JOIN THE DISCORD --> [https://discord.gg/3VEeEdSeVv]"
 
 echo ""
 echo -e "\e[1;31m  VERSION: V.1.2 $lastupdate_date by DR34M-M4K3R\e[0m"
