@@ -3,10 +3,10 @@
     <a href="https://www.mozilla.org/en-US/MPL/">
       <img src="https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla" />
     </a>
-    <a href="https://discord.gg/FPhHhBG25d">
+    <a href="https://discord.gg/3VEeEdSeVv">
       <img src="https://img.shields.io/badge/Join%20me%20on%20discord-181717?style=for-the-badge&logo=discord" />
     </a>
-    <a href="https://discord.gg/FPhHhBG25d">
+    <a href="https://discord.gg/3VEeEdSeVv">
       <img src="https://img.shields.io/discord/858046559316344852.svg?label=We%20are&colorB=7289da&style=for-the-badge" />
     </a>
     <!--<a href="http://showterm.io/8b1589bcb96e72d3a58dc#fast">
