@@ -1,4 +1,6 @@
 ### Have fun
+## Coded this tool as a teen, it is not reliable and maintained. You'll find more interesting projects on my github page.
+
 <p align="center">
     <a href="https://www.mozilla.org/en-US/MPL/">
       <img src="https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla" />
@@ -18,7 +20,7 @@
       <img src="https://hits.sh/github.com/DR34M-M4K3R/GhostRecon.svg?style=flat&label=Views"/>
     </a>
     <a href="https://GitHub.com/DR34M-M4K3R/GhostRecon/graphs/commit-activity">
-      <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/>
+      <img src="https://img.shields.io/badge/Maintained%3F-no-red.svg"/>
     </a>
     <a href="https://github.com/DR34M-M4K3R/GhostRecon/commits">
       <img src="https://badgen.net/github/last-commit/DR34M-M4K3R/GhostRecon" />
