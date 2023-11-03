@@ -77,3 +77,15 @@ examples:
 ![image](https://user-images.githubusercontent.com/67145585/136028284-01ca1d37-8126-4601-94a3-f9c988534f31.png)
 
 ![image](https://user-images.githubusercontent.com/67145585/156190605-48dc0dd8-fb41-43e1-92a2-c731856f7008.png)
+
+
+## Star History
+
+<a href="https://star-history.com/#KawaCoder/GhostRecon&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=KawaCoder/GhostRecon&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=KawaCoder/GhostRecon&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=KawaCoder/GhostRecon&type=Date" />
+  </picture>
+</a>
+
