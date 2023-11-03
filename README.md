@@ -1,5 +1,5 @@
 ### Have fun
-## Coded this tool as a teen, it is not reliable and maintained. You'll find more interesting projects on my github page.
+## I was not experienced while coding this tool. It is not reliable and NOT maintained, but still working. You'll find more interesting projects on my github page ;)
 
 <p align="center">
     <a href="https://www.mozilla.org/en-US/MPL/">
