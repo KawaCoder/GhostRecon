@@ -1,6 +1,9 @@
 ### Have fun
 
-## [Install script]()
+## [Install script](https://downgit.github.io/#/home?url=https://github.com/KawaCoder/GhostRecon/blob/master/install.sh)
+
+![image](https://github.com/user-attachments/assets/31579bd1-c4fc-49be-9263-534fe26a8a2c)
+
 
 
 
@@ -23,10 +26,10 @@
       <img src="https://hits.sh/github.com/DR34M-M4K3R/GhostRecon.svg?style=flat&label=Views"/>
     </a>
     <a href="https://GitHub.com/DR34M-M4K3R/GhostRecon/graphs/commit-activity">
-      <img src="https://img.shields.io/badge/Maintained%3F-no-red.svg"/>
+      <img src="https://img.shields.io/badge/Maintained%3F-Yes-green.svg"/>
     </a>
     <a href="https://github.com/DR34M-M4K3R/GhostRecon/commits">
-      <img src="https://badgen.net/github/last-commit/DR34M-M4K3R/GhostRecon" />
+      <img src="https://badgen.net/github/last-commit/KawaCoder/GhostRecon" />
     </a>
   </p>
 
@@ -41,41 +44,29 @@ A compact research and OSINT tool for linux.
    - file, You can obtain one at https://mozilla.org/MPL/2.0/.
    - License holder: DR34M-M4K3R#7751 -->
 
-![image](https://user-images.githubusercontent.com/67145585/156190001-15d3e9e4-968e-4cd6-8c93-beb04fa488c4.png)
-
 
 
 ## DEVELOPER:
-DR34M-M4K3R (now [KawaCoder](https://github.com/KawaCoder)
+[KawaCoder](https://github.com/KawaCoder)
 
-<br/>- - - -<br/>
-Website scan script by dmaral3noz
-
-[comment]: <> (## TUTORIAL VIDEO SUGGESTED TO WATCH:  https://www.youtube.com/watch?v=0jB3VQbeJ74&feature=youtu.be)
 
 ## HOW TO INSTALL:
-- `git clone https://github.com/DR34M-M4K3R/GhostRecon`
-- `cd GhostRecon/`
-- `chmod +x Grecon install-requirements.sh`
-- `./install-requirements.sh`
+- Give executable rights to ```install.sh```
+- Execute install.sh, NOT AS ROOT. It will ask root privilege for specific commands, not all.
 ## HOW TO RUN TOOL?
 - Simply type `Grecon` on your terminal.
 ## HOW TO UNINSTALL?
-- `Grecon` # open the tool
-- `uninstall` # and just wait :)
-(This will remove GhostRecon and its dependencies and all the files that it could have created into your system.)
+- `Grecon`
+- `uni`
 
-Note: Anonsurf (tor) installation is messy, so consider remove it from the installation script. Given that, consider
-
-it will be unsusable.
 
 examples:
 
-![image](https://user-images.githubusercontent.com/67145585/156190399-4f854a01-daf9-4bb7-ac67-586fae4e93c6.png)
+![Banner image](https://github.com/user-attachments/assets/ab4709bc-5498-405b-929a-4447f1a3b95b)
 
-![image](https://user-images.githubusercontent.com/67145585/136028284-01ca1d37-8126-4601-94a3-f9c988534f31.png)
+![Saving function](https://github.com/user-attachments/assets/5ab3a38e-a3ef-44be-bd10-0de1fb9c2588)
 
-![image](https://user-images.githubusercontent.com/67145585/156190605-48dc0dd8-fb41-43e1-92a2-c731856f7008.png)
+![Port scanner](https://user-images.githubusercontent.com/67145585/156190605-48dc0dd8-fb41-43e1-92a2-c731856f7008.png)
 
 
 ## Star History
