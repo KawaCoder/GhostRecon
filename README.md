@@ -1,5 +1,8 @@
 ### Have fun
-## I was not experienced while coding this tool. It is not reliable and NOT maintained, but still working. You'll find more interesting projects on my github page ;)
+
+## [Install script]()
+
+
 
 <p align="center">
     <a href="https://www.mozilla.org/en-US/MPL/">

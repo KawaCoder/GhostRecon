@@ -92,18 +92,6 @@ class ChecK():
 
 
 if __name__ == "__main__":
-    print("""
-
-             [-] SocialMediaChecker [-]
-          [ Twitter - Instagram - Snapchat ]
-        =======================================
-        [+] Programming By : Remax Alghamdi . |
-        [+] Instagram: @OQO .                 |
-        [+] Discord : Remax#6666 .            |
-        [+] Github : Fah4d .                  |
-        =======================================
-
-        """)
     ChecK()
 
 

@@ -68,8 +68,6 @@ def main():
 		carrier = obj['carrier']
 		line_type = obj['line_type']
 
-		print(color.YELLOW + "[+] " + color.END + "Phone number information gathering -- Firefly | Author: Lexxrt | Github: https://github.com/Lexxrt")
-		print("--------------------------------------")
 		time.sleep(0.2)
 
 		if country_code == "":
