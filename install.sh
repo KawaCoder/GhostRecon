@@ -79,15 +79,14 @@ mkdir -p "$user_home"/.config/GhostRecon
 
 # Path to tools
 
-# sudo curl -s -o "$PATH_TO_TOOLS/email_scanner.py" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/tools/email_scanner.py
-# sudo curl -s -o "$PATH_TO_TOOLS/phone_locator.py" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/phone_locator.py
-# sudo curl -s -o "$PATH_TO_TOOLS/uninstall.sh" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/uninstall.sh
-# sudo curl -s -o "/usr/bin/Grecon" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/Grecon
+sudo curl -s -o "$PATH_TO_TOOLS/email_scanner.py" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/tools/email_scanner.py
+sudo curl -s -o "$PATH_TO_TOOLS/phone_locator.py" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/phone_locator.py
+sudo curl -s -o "$PATH_TO_TOOLS/uninstall.sh" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/uninstall.sh
+sudo curl -s -o "$PATH_TO_TOOLS/install.sh" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/install.sh
+sudo curl -s -o "/usr/bin/Grecon" https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/Grecon
 
-sudo cp "$PWD"/tools/* "$PATH_TO_TOOLS"
-sudo cp "$PWD"/Grecon /usr/bin/Grecon
-
-sudo cp "$PWD"/install.sh "$PATH_TO_TOOLS"/install.sh
+# sudo cp "$PWD"/tools/* "$PATH_TO_TOOLS"
+# sudo cp "$PWD"/Grecon /usr/bin/Grecon
 
 sudo chmod +x "$PATH_TO_TOOLS"/uninstall.sh /usr/bin/Grecon "$PATH_TO_TOOLS"/install.sh
 
