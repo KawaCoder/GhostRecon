@@ -1,6 +1,4 @@
-### Have fun
-
-## [Install script](https://downgit.github.io/#/home?url=https://github.com/KawaCoder/GhostRecon/blob/master/install.sh)
+# [Standalone install script download](https://downgit.github.io/#/home?url=https://github.com/KawaCoder/GhostRecon/blob/master/install.sh)
 
 ![image](https://github.com/user-attachments/assets/31579bd1-c4fc-49be-9263-534fe26a8a2c)
 
