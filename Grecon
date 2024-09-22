@@ -7,8 +7,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # License holder: DR34M-M4K3R#7751
 
-
-
 #IMPORTS
 #NONE YET
 #COMMAND
@@ -99,7 +97,6 @@ function collapsefiles() {
   fi
 
 }
-
 
 
 function booleancolor() {
@@ -280,7 +277,7 @@ b13='person_finder'
 temp=""
 
 PATH_TO_TOOLS="/usr/share/GhostRecon"
-PATH_TO_REPORTS="$HOME/.config/GhostRecon/"
+PATH_TO_REPORTS="$HOME/.config/GhostRecon"
 
 banner
 
