@@ -231,8 +231,6 @@ function help
   [\e[32m6\e[0m]  \e[1;31m link_scanner \e[0m             Sniff all links from a Domain.
   [\e[32m7\e[0m]  \e[1;31m port_scanner \e[0m             Sniff all links from a Domain.
   [\e[32m8\e[0m]  \e[1;31m criminal_scanner \e[0m         Search if someone is recoreded as a criminal on all the USA.
-  [\e[32m9\e[0m]  \e[1;31m person_finder (downed)\e[0m   [downed for technical reasons] Advanced search on internet for a person
-                                        by giving multiple personal inforations.
 
 
   [\e[32mc\e[0m]    \e[1;31m clear \e[0m                 Clear terminal.

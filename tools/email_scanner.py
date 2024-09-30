@@ -13,7 +13,6 @@ class ChecK():
         print(f"{self.email} = Unlinked"+"\n")
 
     def twitter(self):
-        print("==================")
         print("[+] Twitter [+]")
         print("")
         r = requests.Session()
@@ -26,8 +25,6 @@ class ChecK():
         r.headers = {'Accept': Accept}
         req = r.get(url).json()
         text = str(req)
-        print(text)
-        print('')
         if text.find("'valid': False") == True:
             self.PrintT()
         else:
@@ -35,9 +32,7 @@ class ChecK():
         self.instagram()
 
     def instagram(self):
-        print("==================")
         print("[+] Instagram [+]")
-        print("")
         r = requests.Session()
         url = "https://www.instagram.com/accounts/account_recovery_send_ajax/"
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"
@@ -45,7 +40,6 @@ class ChecK():
         r.headers.update({'X-CSRFToken': "missing"})
         data = {"email_or_username":self.email}
         req = r.post(url,data=data)
-        #print(req.text)
         print('')
         if req.text.find("We sent an self.email to")>=0:
             self.PrintT()
@@ -55,10 +49,33 @@ class ChecK():
             self.PrintT()
         else:
             self.PrintF()
+        self.strava()
+
+    def strava(self):
+        print("[+] Strava [+]")
+        print("")
+        url = "https://www.strava.com/frontend/athletes/email_unique"
+        params = {
+            "email": self.email
+        }
+        headers = {
+            "Accept": "application/json"
+        }
+        response = requests.get(url, headers=headers, params=params)
+        if(response.status_code==200):
+            # print("Response ok")
+            if(response.json()==False):
+                self.PrintT()
+            elif(response.json()==True):
+                self.PrintF()
+            else:
+                print(response.json())
+        else:
+            print("error: ", response.status_code)
+
         self.snacphat()
 
     def snacphat(self):
-        print("==================")
         print("[+] Snapchat [+]")
         print("")
         r = requests.Session()
@@ -88,8 +105,6 @@ class ChecK():
             self.PrintT()
         else:
             self.PrintF()
-
-
 
 if __name__ == "__main__":
     ChecK()
