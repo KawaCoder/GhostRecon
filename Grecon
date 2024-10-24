@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version: 2.0.3
+# Version: 2.0.4
 
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -430,7 +430,7 @@ while true; do
 
     if [ -z "$version_remote" ] || dpkg --compare-versions "$version_local" lt "$version_remote"; then
       sudo "$PATH_TO_TOOLS"/install.sh
-
+      exit
     else
       echo "GhostRecon is up to date."
       echo "$version_remote"

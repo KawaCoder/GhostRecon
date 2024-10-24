@@ -61,7 +61,14 @@ sudo curl -s -o "/usr/bin/Grecon" "https://raw.githubusercontent.com/KawaCoder/G
 # Make scripts executable
 sudo chmod +x "$PATH_TO_TOOLS"/uninstall.sh /usr/bin/Grecon "$PATH_TO_TOOLS"/install.sh
 
+version_local=$(get_version "/usr/bin/Grecon")
+api_response=$(curl -s https://api.github.com/repos/KawaCoder/GhostRecon/branches/master)
+lastcommitmessage=$(echo "$api_response" | jq -r '.commit.commit.message')
+lastupdate_date=$(echo "$api_response" | jq -r '.commit.commit.author.date')
 echo ""
-echo -e "\e[1;31m[*] GhostRecon 2.0 is installed/up to date\e[0m"
-echo ""
+echo -e "\e[1;31m  VERSION: $version_local $lastupdate_date by DR34M-M4K3R\e[0m"
+echo "----------------------------------------------------------------------------"
+echo "$lastcommitmessage"
+echo "----------------------------------------------------------------------------"
+echo "You can restart GhostRecon "
 
