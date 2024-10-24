@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version: 2.0.2
+# Version: 2.0.3
 
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -456,12 +456,15 @@ while true; do
   ############################################################################################################
   elif [ "$x" == "$b1" ] || [ "$x" == "$b4" ]; then
     version_local=$(get_version "/usr/bin/Grecon")
-    printf "\n"
-    printf "\e[1;31m  VERSION: %s %s by DR34M-M4K3R\e[0m\n" "$version_local" "$lastupdate_date"
-    printf "----------------------------------------------------------------------------\n"
-    printf "last modification: %s\n" "$lastcommitmessage"
-    printf "----------------------------------------------------------------------------\n"
-    printf "\n"
+    api_response=$(curl -s https://api.github.com/repos/KawaCoder/GhostRecon/branches/master)
+    lastcommitmessage=$(echo "$api_response" | jq -r '.commit.commit.message')
+    lastupdate_date=$(echo "$api_response" | jq -r '.commit.commit.author.date')
+    echo ""
+    echo -e "\e[1;31m  VERSION: $version_local $lastupdate_date by DR34M-M4K3R\e[0m"
+    echo "----------------------------------------------------------------------------"
+    echo "$lastcommitmessage"
+    echo "----------------------------------------------------------------------------"
+    echo ""
 
   elif [ "$x" == "$b2" ] || [ "$x" == "$b3" ]; then
     help
