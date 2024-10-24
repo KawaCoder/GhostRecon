@@ -8,6 +8,16 @@
 #COMMANDS
 clear
 
+function get_version() {
+  local file_path="$1"
+  local version_line
+  version_line=$(sed -n '2p' "$file_path")
+  local version_number
+  version_number=$(echo "$version_line" | cut -d ' ' -f 3)
+  echo "$version_number"
+}
+
+
 echo -e "This script will:\n-Install Curl\n-Install Jq\n-Install shodan framework.\n"
 
 function banner {
@@ -71,4 +81,5 @@ echo "--------------------------------------------------------------------------
 echo "$lastcommitmessage"
 echo "----------------------------------------------------------------------------"
 echo "You can restart GhostRecon "
+
 
