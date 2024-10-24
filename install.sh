@@ -10,11 +10,9 @@ clear
 
 echo -e "This script will:\n-Install Curl\n-Install Jq\n-Install shodan framework.\n"
 
-
-function banner
-{
-clear
-echo -e "
+function banner {
+  clear
+  echo -e "
 \e[32m     █████████   █████                            █████    \e[0m  ███████████                                        
 \e[32m   ███░░░░░███ ░░███                            ░░███      \e[0m ░░███░░░░░███                                       
 \e[32m    ███      ░░░   ████████     ███████     █████   ██████ \e[0m  ░███    ░███   ██████   ██████   ██████  ████████  
@@ -35,60 +33,20 @@ echo -e "
 
   echo -e "\e[32m               GhostRecon: Open Source Intelligence Investigations Made Easy\e[0m"
   echo ""
-
 }
+
 banner
 
 read -p "Press enter to proceed"
 
-#curl
-echo -e "\e[1;31m [*] INSTALLING Curl\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-sudo apt-get -y install curl
+# Install Curl, Jq, Shodan, and Exiv2
+sudo apt-get -y install curl jq python3-shodan exiv2
 
-#JQ
-banner
-echo -e "\e[1;31m [*] INSTALLING Jq\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-sudo apt-get -y install jq
-
-#SHODAN
-banner
-echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-sudo apt install -y python3-shodan
-banner
-
-#EXIV2
-banner
-echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-sudo apt install -y exiv2
-banner
-
-#MOVE DIR
-banner
-echo -e "\e[1;31m [*] FINISHING\e[0m"
-echo "-------------------------------------------------------------------------------"
-echo ""
-
-
+# Create directory for tools
 PATH_TO_TOOLS="/usr/share/GhostRecon"
 sudo mkdir -p "$PATH_TO_TOOLS"
 
-username=${SUDO_USER:-${USER}}
-user_home="/home/$username"
-
-mkdir -p "$user_home"/.config/GhostRecon
-read -p "test"
-# Path to tools
-
-
-# UDATING TOOLS
+# Update tools
 banner
 echo -e "\e[1;31m [*] UPDATING SCRIPTS\e[0m"
 echo "-------------------------------------------------------------------------------"
@@ -100,12 +58,10 @@ sudo curl -s -o "$PATH_TO_TOOLS/uninstall.sh" "https://raw.githubusercontent.com
 sudo curl -s -o "$PATH_TO_TOOLS/install.sh" "https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/install.sh"
 sudo curl -s -o "/usr/bin/Grecon" "https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/Grecon"
 
-# sudo cp "$PWD"/tools/* "$PATH_TO_TOOLS"
-# sudo cp "$PWD"/Grecon /usr/bin/Grecon
-
+# Make scripts executable
 sudo chmod +x "$PATH_TO_TOOLS"/uninstall.sh /usr/bin/Grecon "$PATH_TO_TOOLS"/install.sh
 
 echo ""
 echo -e "\e[1;31m[*] GhostRecon 2.0 is installed/up to date\e[0m"
 echo ""
-#DONE :)
+
