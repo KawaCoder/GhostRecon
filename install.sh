@@ -62,6 +62,14 @@ echo ""
 sudo apt install -y python3-shodan
 banner
 
+#EXIV2
+banner
+echo -e "\e[1;31m [*] INSTALLING SHODAN\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
+sudo apt install -y exiv2
+banner
+
 #MOVE DIR
 banner
 echo -e "\e[1;31m [*] FINISHING\e[0m"
@@ -76,8 +84,15 @@ username=${SUDO_USER:-${USER}}
 user_home="/home/$username"
 
 mkdir -p "$user_home"/.config/GhostRecon
-
+read -p "test"
 # Path to tools
+
+
+# UDATING TOOLS
+banner
+echo -e "\e[1;31m [*] UPDATING SCRIPTS\e[0m"
+echo "-------------------------------------------------------------------------------"
+echo ""
 
 sudo curl -s -o "$PATH_TO_TOOLS/email_scanner.py" "https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/tools/email_scanner.py"
 sudo curl -s -o "$PATH_TO_TOOLS/phone_locator.py" "https://raw.githubusercontent.com/KawaCoder/GhostRecon/master/tools/phone_locator.py"
