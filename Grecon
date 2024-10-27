@@ -16,6 +16,14 @@ clear
 #BLUE = \e[34m
 #END = \e[0m
 
+last_notable_changes="
+Added exif data extract
+Big code cleanup
+Updated install script
+added read, delete, export and write report options
+"
+
+
 #COLORS2
 red='\e[1;31m'
 yellow='\e[0;33m'
@@ -40,6 +48,7 @@ appendfile=false
 savefile=false
 tempfile="/tmp/tempfile"  # Adjust this path as needed
 PATH_TO_REPORTS="/home/victor/.config/GhostRecon"  # Ensure this is set correctly
+filename="/dev/null"
 
 
 function save_output() {
@@ -75,7 +84,8 @@ function save_output() {
         case "$response" in
           [yY])
             appendfile=true
-            read -p "Enter the \e[32mnumber\e[0m of the file to append: " -r target_number
+            echo -e "Enter the \e[32mnumber\e[0m of the file to append: "
+            read -r target_number
             if [[ "$target_number" =~ ^[1-9][0-9]*$ ]] && (( target_number <= ${#report_files[@]} )); then
               target_file="${report_files[target_number - 1]}"
               echo "$target_file" > "$tempfile"
@@ -96,7 +106,9 @@ function save_output() {
       read -p "Enter a file name: GR-report_" target_filename
       target_file="GR-report_${target_filename}.txt"
     fi
-    filename="$PATH_TO_REPORTS/${target_file}"
+    filename=$target_file
+  else
+    filename="/dev/null"
   fi
 }
 
@@ -104,7 +116,7 @@ function collapse_files() {
   local append_filename
   local temp_filename="$tempfile"
 
-  if [[ "$append_file" == true ]]; then
+  if [[ "$appendfile" == true ]]; then
     if [[ -f "$temp_filename" ]]; then
       append_filename="$(< "$temp_filename")"
       if [[ -f "$append_filename" ]]; then
@@ -116,7 +128,7 @@ function collapse_files() {
     else
       echo "Error: Temporary file does not exist: $temp_filename"
     fi
-  elif [[ "$save_file" == false ]]; then
+  elif [[ "$savefile" == false ]]; then
     if [[ -f "$filename" ]]; then
       rm "$filename"
       echo "File $filename deleted."
@@ -130,12 +142,6 @@ function collapse_files() {
     rm "$temp_filename"
   fi
 }
-
-# Example usage
-# Uncomment the following lines to run the functions
-# save
-# collapse_files
-
 
 function booleancolor() {
   if [[ $1 == false ]]; then
@@ -353,6 +359,8 @@ id     Command name              Description
 [\e[32m7\e[0m]   \e[1;31m port_scanner \e[0m             Classic opened \e[1;35mport scanner\e[0m.
 [\e[32m8\e[0m]   \e[1;31m criminal_scanner \e[0m         Checks whether \e[1;35msomeone\e[0m is registered as a criminal in the USA.
 [\e[32m9\e[0m]   \e[1;31m image_scanner \e[0m            Extracts EXIF data from \e[1;35mimage\e[0m.
+[\e[32m10\e[0m]  \e[1;31m ssl_inspect \e[0m              Retrieve detailed information about the \e[1;35mSSL\e[0m certificate for a specified \e[1;35mdomain\e[0m.
+[\e[32m11\e[0m]  \e[1;31m reverse_ip_lookup \e[0m        Identify domain names associated with a specific \e[1;35mIP\e[0m address using DNS records.
 
 [\e[32mrer\e[0m] \e[1;31m read_report \e[0m              \e[1;35mRead\e[0m a report file
 [\e[32medr\e[0m] \e[1;31m edit_report \e[0m              \e[1;35mEdit\e[0m a report file
@@ -404,7 +412,8 @@ b11='port_scanner'
 b12='criminal_scanner'
 b13='person_finder'
 b14='image_scanner'
-
+b15='ssl_inspect'
+b16='reverse_IP_lookup'
 temp=""
 
 banner
@@ -460,12 +469,14 @@ while true; do
     lastcommitmessage=$(echo "$api_response" | jq -r '.commit.commit.message')
     lastupdate_date=$(echo "$api_response" | jq -r '.commit.commit.author.date')
     echo ""
-    echo -e "\e[1;31m  VERSION: $version_local $lastupdate_date by DR34M-M4K3R\e[0m"
-    echo "----------------------------------------------------------------------------"
+    echo -e "\e[1;31m  VERSION: $version_local $lastupdate_date by KawaCoder\e[0m"
+    echo "-----------------------------LAST MINOR COMMIT------------------------------"
     echo "$lastcommitmessage"
     echo "----------------------------------------------------------------------------"
     echo ""
-
+    echo "-----------------------------LAST CHANGES-----------------------------------"
+    echo "$last_notable_changes"
+    echo "----------------------------------------------------------------------------"
   elif [ "$x" == "$b2" ] || [ "$x" == "$b3" ]; then
     help
 
@@ -813,7 +824,48 @@ while true; do
     echo "EXIF data from: $imagepath :"
     exiv2 "$imagepath" | tee -a "$filename" 
     collapse_files
+
+
+  elif [ "$x" == "$b15" ] || [ "$x" == "10" ]; then
+    echo ""
+    echo -e "\e[1;31m__________________________\e[0m"
+    echo -e "\e[1;31m\   SSL Certificate scan  /\e[0m"
+    echo -e "\e[1;31m  ------------------\n\e[0m"
+    read -p "Enter Domain >" domain
+    save_output
+    echo "SSL Certificate info from: $domain :"
+    echo | openssl s_client -connect "$domain":443 -servername "$domain" 2>/dev/null | openssl x509 -text -noout | tee -a "$filename"
+    collapse_files
+
+  
+  elif [ "$x" == "$b16" ] || [ "$x" == "11" ]; then
+
+while true; do
+  read -p "Enter an IP address (or type 'exit' to quit): " ipaddress
+  if [ "$ipaddress" == "exit" ]; then
+    break
+  fi
+
+  # Validate IP address format
+  if [[ ! "$ipaddress" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo "Invalid IP address format. Please try again."
+    continue
+  fi
+
+  # Perform DNS lookup
+  reversed_ip=$(echo "$ipaddress" | awk -F. '{print $4"."$3"."$2"."$1".in-addr.arpa"}')
+  hostname=$(dig +short -x "$ipaddress")
+
+  if [ -n "$hostname" ]; then
+    echo "The hostname for IP address $ipaddress is $hostname."
   else
+    echo "No PTR record found for IP address $ipaddress."
+  fi
+done
+
+
+  else
+
     echo "WRONG COMMAND TRY AGAIN OR TYPE \"h\" TO SEE THEM"
   fi
 done
