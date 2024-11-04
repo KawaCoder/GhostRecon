@@ -59,7 +59,7 @@ A compact research and OSINT tool for linux.
 
 examples:
 
-![Banner image](https://github.com/user-attachments/assets/ab4709bc-5498-405b-929a-4447f1a3b95b)
+![Options](https://github.com/user-attachments/assets/a8c8c4bd-6391-4113-a726-bd4975f2c64c)
 
 ![Saving function](https://github.com/user-attachments/assets/5ab3a38e-a3ef-44be-bd10-0de1fb9c2588)
 
