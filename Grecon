@@ -30,7 +30,7 @@ yellow='\e[0;33m'
 Blue='\e[1;34m'
 
 PATH_TO_TOOLS="/usr/share/GhostRecon"
-PATH_TO_REPORTS="$HOME/.config/GhostRecon"
+PATH_TO_REPORTS="$HOME/.local/share/GhostRecon"
 
 
 function get_version() {
@@ -47,7 +47,6 @@ function get_version() {
 appendfile=false
 savefile=false
 tempfile="/tmp/tempfile"  # Adjust this path as needed
-PATH_TO_REPORTS="/home/victor/.config/GhostRecon"  # Ensure this is set correctly
 filename="/dev/null"
 
 
@@ -104,7 +103,7 @@ function save_output() {
       done
     else
       read -p "Enter a file name: GR-report_" target_filename
-      target_file="GR-report_${target_filename}.txt"
+      target_file="$PATH_TO_REPORTS/GR-report_${target_filename}.txt"
     fi
     filename=$target_file
   else
@@ -862,7 +861,6 @@ while true; do
     echo "No PTR record found for IP address $ipaddress."
   fi
 done
-
 
   else
 
