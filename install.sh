@@ -54,7 +54,8 @@ sudo apt-get -y install curl jq python3-shodan exiv2
 
 # Create directory for tools
 PATH_TO_TOOLS="/usr/share/GhostRecon"
-sudo mkdir -p "$PATH_TO_TOOLS"
+PATH_TO_REPORTS="$HOME/.config/GhostRecon"
+sudo mkdir -p "$PATH_TO_TOOLS" "$PATH_TO_REPORTS"
 
 # Update tools
 banner
@@ -81,5 +82,6 @@ echo "--------------------------------------------------------------------------
 echo "$lastcommitmessage"
 echo "----------------------------------------------------------------------------"
 echo "You can restart GhostRecon "
+
 
 
