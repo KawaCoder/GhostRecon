@@ -33,7 +33,7 @@
 
 
 
-## 🔎 GhostRecon (🚨READ THE DOC!🚨)
+## 🔎 GhostRecon OSINT
 A compact research and OSINT tool for linux.
 
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
@@ -42,19 +42,19 @@ A compact research and OSINT tool for linux.
    - License holder: DR34M-M4K3R#7751 -->
 
 
+## How to install GhostRecon OSINT?
+Download `install.sh` from [here](https://github.com/KawaCoder/GhostRecon/releases/download/v2.0/install.sh)
+```
+$ chmod +x install.sh
+$ ./install.sh
+```
+You will be prompted to enter your sudo password when needed.
 
-## DEVELOPER:
-[KawaCoder](https://github.com/KawaCoder)
-
-
-## HOW TO INSTALL:
-- Give executable rights to ```install.sh```
-- Execute install.sh, NOT AS ROOT. It will ask root privilege for specific commands, not all.
-## HOW TO RUN TOOL?
-- Simply type `Grecon` on your terminal.
-## HOW TO UNINSTALL?
-- `Grecon`
-- `uni`
+## How to execute GhostRecon?
+- Command `Grecon` in a user-level terminal
+## How to uninstall GhostRecon
+- Execute `Grecon`
+- Select `uni`
 
 
 examples:
@@ -76,3 +76,6 @@ examples:
   </picture>
 </a>
 
+### Disclaimer
+
+Please be aware that this software is for educational purposes only and I am not responsible for any misuse.

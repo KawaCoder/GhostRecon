@@ -4,7 +4,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
-# License holder: DR34M-M4K3R#7751
+# License holder: github.com/KawaCoder
 
 #IMPORTS
 #NONE YET
@@ -23,7 +23,6 @@ Updated install script
 added read, delete, export and write report options
 "
 
-
 #COLORS2
 red='\e[1;31m'
 yellow='\e[0;33m'
@@ -31,7 +30,6 @@ Blue='\e[1;34m'
 
 PATH_TO_TOOLS="/usr/share/GhostRecon"
 PATH_TO_REPORTS="$HOME/.local/share/GhostRecon"
-
 
 function get_version() {
   local file_path="$1"
@@ -42,13 +40,11 @@ function get_version() {
   echo "$version_number"
 }
 
-
 # Declare global variables
 appendfile=false
 savefile=false
-tempfile="/tmp/tempfile"  # Adjust this path as needed
+tempfile="/tmp/tempfile" # Adjust this path as needed
 filename="/dev/null"
-
 
 function save_output() {
   local target_file
@@ -57,22 +53,22 @@ function save_output() {
   while true; do
     read -p "Save output to a file? (y/N): " -r response
     case "$response" in
-      [yY])
-        savefile=true
-        break
-        ;;
-      [nN])
-        return
-        ;;
-      *)
-        echo "Invalid input. Please enter y or n."
-        ;;
+    [yY])
+      savefile=true
+      break
+      ;;
+    [nN])
+      return
+      ;;
+    *)
+      echo "Invalid input. Please enter y or n."
+      ;;
     esac
   done
 
   if [[ "$savefile" == true ]]; then
     mapfile -t report_files < <(find "$PATH_TO_REPORTS" -type f -name 'GR-report*')
-    if (( ${#report_files[@]} > 0 )); then
+    if ((${#report_files[@]} > 0)); then
       echo -e "\n\n[\e[32m-\e[0m] Found existing reports in $PATH_TO_REPORTS: \n"
       for i in "${!report_files[@]}"; do
         echo -e "[\e[32m$((i + 1))\e[0m] ${report_files[i]}"
@@ -81,24 +77,24 @@ function save_output() {
       while true; do
         read -p "Append the results to one of them? (y/N): " -r response
         case "$response" in
-          [yY])
-            appendfile=true
-            echo -e "Enter the \e[32mnumber\e[0m of the file to append: "
-            read -r target_number
-            if [[ "$target_number" =~ ^[1-9][0-9]*$ ]] && (( target_number <= ${#report_files[@]} )); then
-              target_file="${report_files[target_number - 1]}"
-              echo "$target_file" > "$tempfile"
-              break
-            else
-              echo "Invalid input. Please enter a valid number."
-            fi
-            ;;
-          [nN])
+        [yY])
+          appendfile=true
+          echo -e "Enter the \e[32mnumber\e[0m of the file to append: "
+          read -r target_number
+          if [[ "$target_number" =~ ^[1-9][0-9]*$ ]] && ((target_number <= ${#report_files[@]})); then
+            target_file="${report_files[target_number - 1]}"
+            echo "$target_file" >"$tempfile"
             break
-            ;;
-          *)
-            echo "Invalid input. Please enter y or n."
-            ;;
+          else
+            echo "Invalid input. Please enter a valid number."
+          fi
+          ;;
+        [nN])
+          break
+          ;;
+        *)
+          echo "Invalid input. Please enter y or n."
+          ;;
         esac
       done
     else
@@ -117,9 +113,9 @@ function collapse_files() {
 
   if [[ "$appendfile" == true ]]; then
     if [[ -f "$temp_filename" ]]; then
-      append_filename="$(< "$temp_filename")"
+      append_filename="$(<"$temp_filename")"
       if [[ -f "$append_filename" ]]; then
-        cat "$filename" >> "$append_filename"
+        cat "$filename" >>"$append_filename"
         echo -e "[\e[32m*\e[0m] $append_filename updated\n"
       else
         echo "Error: Append file does not exist: $append_filename"
@@ -159,7 +155,7 @@ function read_report() {
   i=1
   while IFS= read -r file; do
     echo -e "[\e[32m$i\e[0m] $file"
-    i=$((i+1))
+    i=$((i + 1))
   done < <(find "$PATH_TO_REPORTS" -type f)
   echo ""
 
@@ -178,7 +174,7 @@ function edit_report() {
   i=1
   while IFS= read -r file; do
     echo -e "[\e[32m$i\e[0m] $file"
-    i=$((i+1))
+    i=$((i + 1))
   done < <(find "$PATH_TO_REPORTS" -type f)
   echo ""
 
@@ -192,13 +188,12 @@ function edit_report() {
   fi
 }
 
-
 function export_report() {
   echo -e "\n\n[\e[32m-\e[0m] Files in $PATH_TO_REPORTS: \n"
   i=1
   while IFS= read -r file; do
     echo -e "[\e[32m$i\e[0m] $file"
-    i=$((i+1))
+    i=$((i + 1))
   done < <(find "$PATH_TO_REPORTS" -type f)
   echo ""
 
@@ -218,16 +213,14 @@ function export_report() {
   fi
 }
 
-
 function delete_report() {
   echo -e "\n\n[\e[32m-\e[0m] Files in $PATH_TO_REPORTS: \n"
   i=1
   while IFS= read -r file; do
     echo -e "[\e[32m$i\e[0m] $file"
-    i=$((i+1))
+    i=$((i + 1))
   done < <(find "$PATH_TO_REPORTS" -type f)
   echo ""
-
 
   read -p "Enter the number of the file you want to delete: " -r target_number
   if [[ "$target_number" =~ ^[1-9][0-9]*$ ]]; then
@@ -235,13 +228,13 @@ function delete_report() {
     echo -e "\n\e[1;31m$target_file\e[0m\n"
     read -p "Are you sure you want to delete $target_file? (y/N): " -r response
     case "$response" in
-      [yY])
-        sudo rm "$target_file"
-        echo "File deleted!"
-        ;;
-      *)
-        echo "Operation cancelled."
-        ;;
+    [yY])
+      sudo rm "$target_file"
+      echo "File deleted!"
+      ;;
+    *)
+      echo "Operation cancelled."
+      ;;
     esac
   else
     echo "Invalid input. Please enter a valid number."
@@ -821,9 +814,8 @@ while true; do
     read -p "Enter Path of Image >" imagepath
     save_output
     echo "EXIF data from: $imagepath :"
-    exiv2 "$imagepath" | tee -a "$filename" 
+    exiv2 "$imagepath" | tee -a "$filename"
     collapse_files
-
 
   elif [ "$x" == "$b15" ] || [ "$x" == "10" ]; then
     echo ""
@@ -836,31 +828,30 @@ while true; do
     echo | openssl s_client -connect "$domain":443 -servername "$domain" 2>/dev/null | openssl x509 -text -noout | tee -a "$filename"
     collapse_files
 
-  
   elif [ "$x" == "$b16" ] || [ "$x" == "11" ]; then
 
-while true; do
-  read -p "Enter an IP address (or type 'exit' to quit): " ipaddress
-  if [ "$ipaddress" == "exit" ]; then
-    break
-  fi
+    while true; do
+      read -p "Enter an IP address (or type 'exit' to quit): " ipaddress
+      if [ "$ipaddress" == "exit" ]; then
+        break
+      fi
 
-  # Validate IP address format
-  if [[ ! "$ipaddress" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-    echo "Invalid IP address format. Please try again."
-    continue
-  fi
+      # Validate IP address format
+      if [[ ! "$ipaddress" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        echo "Invalid IP address format. Please try again."
+        continue
+      fi
 
-  # Perform DNS lookup
-  reversed_ip=$(echo "$ipaddress" | awk -F. '{print $4"."$3"."$2"."$1".in-addr.arpa"}')
-  hostname=$(dig +short -x "$ipaddress")
+      # Perform DNS lookup
+      reversed_ip=$(echo "$ipaddress" | awk -F. '{print $4"."$3"."$2"."$1".in-addr.arpa"}')
+      hostname=$(dig +short -x "$ipaddress")
 
-  if [ -n "$hostname" ]; then
-    echo "The hostname for IP address $ipaddress is $hostname."
-  else
-    echo "No PTR record found for IP address $ipaddress."
-  fi
-done
+      if [ -n "$hostname" ]; then
+        echo "The hostname for IP address $ipaddress is $hostname."
+      else
+        echo "No PTR record found for IP address $ipaddress."
+      fi
+    done
 
   else
 
